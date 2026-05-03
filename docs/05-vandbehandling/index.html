@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Modul 05 · Vandbehandling &amp; Analyse</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a></div>
+  <div class="topbar-nav">
+    <a href="../04-forbraending/">← Modul 04</a>
+    <a href="../../index.html">Forside</a>
+    <a href="../06-armaturer-sikkerhed/">Modul 06 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">Forside</a> / Modul 05 — Vandbehandling</div>
+
+<div class="kapitel-tag">Modul 05</div>
+<h1>Vandbehandling &amp; <span class="underline">analyse</span></h1>
+<p class="lede">
+  PA-tal, CA-tal, hårdhed, fosfat, sulfit, ledningsevne — alt om kedelvandets
+  kemi. Hvilke værdier er rigtige? Hvordan doserer du? Hvornår skal du
+  bundblæse? Med skærpede krav for vandrørskedler ved 60 bar med turbinedrift.
+</p>
+
+<!-- ═══════════════════ HVORFOR VANDBEHANDLING ═══════════════════ -->
+<h2>5.1 Hvorfor er vandbehandling kritisk?</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>🪨 Kedelsten (CaCO₃, CaSO₄)</h3>
+    <p>Hårdhed (Ca²⁺, Mg²⁺) udfælder ved opvarmning som hårde aflejringer på
+    hedeflader. Et 1 mm kedelsten-lag øger brændstofforbruget med 5–8%, og kan
+    i værste fald give rørbrud.</p>
+  </div>
+
+  <div class="card">
+    <h3>⚡ Korrosion</h3>
+    <p>Opløst ilt (O₂) angriber stål og giver pittings. CO₂ i kondensat danner
+    kulsyre der angriber kondensatledninger indefra. Begge bekæmpes
+    kemisk.</p>
+  </div>
+
+  <div class="card">
+    <h3>🫧 Skumning &amp; carryover</h3>
+    <p>For højt salt eller alkalitet giver skum i damprum. Skummet bærer
+    vanddråber med dampen (carryover) — forurener processen og kan ødelægge
+    turbinen.</p>
+  </div>
+
+  <div class="card">
+    <h3>💎 SiO₂ (kiselsyre)</h3>
+    <p>Kiselsyre <strong>fordamper</strong> ved højt tryk og aflejres som
+    glasagtigt belag på turbinebladene. Næsten umuligt at fjerne. Kritisk
+    parameter ved &gt; 40 bar.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ PARAMETRE ═══════════════════ -->
+<h2>5.2 De vigtigste parametre</h2>
+
+<table>
+  <thead>
+    <tr><th>Parameter</th><th>Hvad måles?</th><th>Anbefalet område</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PA-tal</strong></td>
+      <td>OH⁻-alkalitet (basisk reserve)</td>
+      <td class="num">6–10 (kedel ≤ 20 bar)</td>
+    </tr>
+    <tr>
+      <td><strong>CA-tal</strong></td>
+      <td>HCO₃⁻ (bikarbonat)</td>
+      <td class="num">&lt; PA-tal</td>
+    </tr>
+    <tr>
+      <td><strong>pH</strong></td>
+      <td>Surhedsgrad</td>
+      <td class="num">10,5–12,0</td>
+    </tr>
+    <tr>
+      <td><strong>Hårdhed (°dH)</strong></td>
+      <td>Ca²⁺ + Mg²⁺</td>
+      <td class="num">0 °dH (skamfrit)</td>
+    </tr>
+    <tr>
+      <td><strong>Fosfat (PO₄³⁻)</strong></td>
+      <td>Restfosfat efter hårdhedsbinding</td>
+      <td class="num">5–15 g/m³</td>
+    </tr>
+    <tr>
+      <td><strong>Sulfit (Na₂SO₃)</strong></td>
+      <td>Iltbinder i kedelvand</td>
+      <td class="num">20–50 g/m³</td>
+    </tr>
+    <tr>
+      <td><strong>Ledningsevne</strong></td>
+      <td>Samlet saltindhold</td>
+      <td class="num">&lt; 6.000 µS/cm</td>
+    </tr>
+    <tr>
+      <td><strong>SiO₂</strong></td>
+      <td>Kiselsyre</td>
+      <td class="num">&lt; 70 + 6×PA mg/l</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════════ ACTION DIAGRAM ═══════════════════ -->
+<h2>5.3 Action-diagram — for høj eller for lav?</h2>
+
+<div class="diagram">
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+  <!-- Two columns -->
+
+  <!-- COL 1: For LAV -->
+  <rect x="20" y="40" width="320" height="290" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <rect x="20" y="40" width="320" height="40" rx="10" fill="#dc2626"/>
+  <text x="180" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="16" fill="white" font-weight="700">⬇ FOR LAV — TILSÆT</text>
+
+  <text x="40" y="105" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">PA for lav (&lt; 6)</text>
+  <text x="40" y="122" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ NaOH: (Ønsket−Målt) × 40 × m³</text>
+
+  <text x="40" y="148" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">Hårdhed &gt; 0</text>
+  <text x="40" y="165" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ Na₃PO₄: °dH × 50 × m³</text>
+
+  <text x="40" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">Sulfit for lav (&lt; 20)</text>
+  <text x="40" y="208" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ Na₂SO₃: (Ønsket−Målt) × m³</text>
+
+  <text x="40" y="234" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">Fosfat for lav (&lt; 5)</text>
+  <text x="40" y="251" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ Na₃PO₄ ekstra dosering</text>
+
+  <text x="40" y="282" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-style="italic">Konsekvens hvis ikke korrigeret:</text>
+  <text x="40" y="298" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">PA lav → korrosion</text>
+  <text x="40" y="312" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Hårdhed → kedelsten</text>
+  <text x="40" y="326" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Sulfit lav → ilttæring</text>
+
+  <!-- COL 2: For HØJT -->
+  <rect x="380" y="40" width="320" height="290" rx="10" fill="#fef3c7" stroke="#ea580c" stroke-width="1.5"/>
+  <rect x="380" y="40" width="320" height="40" rx="10" fill="#ea580c"/>
+  <text x="540" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="16" fill="white" font-weight="700">⬆ FOR HØJT — BUNDBLÆS</text>
+
+  <text x="400" y="105" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">Totalsalt for højt</text>
+  <text x="400" y="122" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ Bundblæsning</text>
+
+  <text x="400" y="148" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">PA for højt (&gt; 12)</text>
+  <text x="400" y="165" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ Bundblæs + reducer NaOH</text>
+
+  <text x="400" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">SiO₂ for højt</text>
+  <text x="400" y="208" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ Bundblæs + bedre forbehandling</text>
+
+  <text x="400" y="234" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">CA &gt; PA</text>
+  <text x="400" y="251" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ Hæv PA først (NaOH)</text>
+
+  <text x="400" y="282" font-family="DM Sans,sans-serif" font-size="11" fill="#ea580c" font-style="italic">Konsekvens hvis ikke korrigeret:</text>
+  <text x="400" y="298" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">PA højt → ludskørhed</text>
+  <text x="400" y="312" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">SiO₂ → turbineaflejringer</text>
+  <text x="400" y="326" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">CA højt → CO₂ i kondensat</text>
+
+  <!-- Title -->
+  <text x="360" y="25" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">Den gyldne regel: lav = tilsæt, høj = bundblæs</text>
+</svg>
+<div class="diagram-caption">Figur 5.1 — Aktionsdiagram for vandanalyse</div>
+</div>
+
+<!-- ═══════════════════ DOSERINGSFORMLER ═══════════════════ -->
+<h2>5.4 Doseringsformler</h2>
+
+<div class="formula">
+<b>NaOH</b>      (hæv PA): &nbsp; gram = (Ønsket PA − Målt PA) × <em>40</em> × m³ vandrum<br>
+<b>Na<sub>3</sub>PO<sub>4</sub></b> (hårdhed):  &nbsp;  gram = °dH × <em>50</em> × m³ vandrum<br>
+<b>Na<sub>2</sub>SO<sub>3</sub></b> (sulfit):  &nbsp;  gram = (Ønsket − Målt) × m³ vandrum
+</div>
+
+<h3>Eksempel — fuld vandanalyse</h3>
+<div class="card">
+<p><strong>Kanal-røgrørskedel, vandrum 7,5 m³, 18 bar abs.</strong></p>
+<table style="margin:8px 0;">
+  <thead><tr><th>Parameter</th><th>Målt</th><th>Krav</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Hårdhed</td><td class="num">0 °dH</td><td>0</td><td class="ok">OK</td></tr>
+    <tr><td>PA-tal</td><td class="num">2,5</td><td>6–10</td><td class="danger">FOR LAVT</td></tr>
+    <tr><td>CA-tal</td><td class="num">3,0</td><td>&lt; PA</td><td class="danger">CA &gt; PA!</td></tr>
+    <tr><td>Sulfit</td><td class="num">15 g/m³</td><td>20–50</td><td class="warn">FOR LAVT</td></tr>
+    <tr><td>SiO₂</td><td class="num">100 g/m³</td><td>&lt; 50</td><td class="danger">FOR HØJT</td></tr>
+  </tbody>
+</table>
+
+<h3>Korrektionsplan i rækkefølge</h3>
+<ol>
+  <li><strong>Bundblæsning</strong> for at sænke SiO₂</li>
+  <li><strong>NaOH</strong> for at hæve PA fra 2,5 til 8:<br>
+    <code>(8 − 2,5) × 40 × 7,5 = <strong>1.650 g NaOH</strong></code></li>
+  <li><strong>Na₂SO₃</strong> for at hæve sulfit fra 15 til 30:<br>
+    <code>(30 − 15) × 7,5 = <strong>112,5 g Na₂SO₃</strong></code></li>
+  <li>Når PA &gt; CA forsvinder bikarbonat-problemet automatisk</li>
+</ol>
+</div>
+
+<!-- ═══════════════════ SKÆRPEDE KRAV ═══════════════════ -->
+<h2>5.5 Skærpede krav — turbinedrift &amp; højtryk</h2>
+
+<p>Ved stigende driftstryk og særligt ved <strong>turbinedrift</strong> bliver
+kravene markant strengere — fordi urenheder i dampen aflejres på
+turbinebladene:</p>
+
+<table>
+  <thead>
+    <tr><th>Parameter</th><th>≤ 20 bar</th><th>≤ 40 bar</th><th>≤ 64 bar</th><th>Turbinedrift (kedelvand)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PA-tal</td>
+      <td class="num">6–10</td>
+      <td class="num">3–6</td>
+      <td class="num">&lt; 3</td>
+      <td class="num">~9,4 (pH-styring)</td>
+    </tr>
+    <tr>
+      <td>SiO₂ (mg/l)</td>
+      <td class="num">70 + 6×PA</td>
+      <td class="num">~30</td>
+      <td class="num">&lt; 10</td>
+      <td class="num danger">&lt; 1 mg/kg</td>
+    </tr>
+    <tr>
+      <td>Ledningsevne (µS/cm)</td>
+      <td class="num">&lt; 6.000</td>
+      <td class="num">&lt; 2.500</td>
+      <td class="num">&lt; 2.500</td>
+      <td class="num">&lt; 40</td>
+    </tr>
+    <tr>
+      <td>Hårdhed (°dH)</td>
+      <td class="num">&lt; 0,1</td>
+      <td class="num">&lt; 0,1</td>
+      <td class="num">0</td>
+      <td class="num">0 (totalafsaltet)</td>
+    </tr>
+    <tr>
+      <td>O₂ (mg/kg)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="num danger">&lt; 0,02</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert danger">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">Vandrørskedel ved 60 bar med turbinedrift</div>
+    <p>Ved disse driftsforhold er <strong>totalafsaltning</strong> obligatorisk.
+    Almindelig blødgøring er ikke tilstrækkeligt — RO-anlæg eller ionbytter
+    med blandet leje (mixed bed) kræves.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ EKSTERN VANDBEHANDLING ═══════════════════ -->
+<h2>5.6 Ekstern vandbehandling</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>Blødgøring (ionbytter)</h3>
+    <p>Ca²⁺ og Mg²⁺ byttes med Na⁺. Fjerner hårdhed, men <strong>ikke
+    bikarbonat (alkalitet)</strong>. Genereres med saltlage (NaCl).</p>
+    <p><strong>Bruges til:</strong> Lavere tryk (&lt; 30 bar) hvor lav alkalitet
+    ikke er kritisk.</p>
+  </div>
+  <div class="card">
+    <h3>Omvendt osmose (RO)</h3>
+    <p>Vand presses gennem membran. Fjerner ~99% af salte, alkalitet, organisk
+    stof og bakterier. Kræver forfiltrering.</p>
+    <p><strong>Bruges til:</strong> Højere tryk og hvor lav alkalitet kræves.</p>
+  </div>
+  <div class="card">
+    <h3>Trykafgasning (afluftning)</h3>
+    <p>Vandet opvarmes til 102–105 °C ved 0,2–0,5 bar overtryk. Ved disse
+    betingelser drives <strong>O₂ og CO₂</strong> ud termisk. Suppleres med
+    Na₂SO₃ i kedlen.</p>
+  </div>
+  <div class="card">
+    <h3>Totalafsaltning</h3>
+    <p>Kombination af kation- og anionbytter (eller mixed bed). Fjerner
+    <strong>alle salte inkl. SiO₂</strong>. Nødvendig ved højtryk og
+    turbinedrift.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../04-forbraending/">
+    <span class="label">← Forrige</span>
+    04 · Forbrænding
+  </a>
+  <a class="next" href="../06-armaturer-sikkerhed/">
+    <span class="label">Næste →</span>
+    06 · Armaturer &amp; Sikkerhed
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">Modul 05 · Vandbehandling &amp; Analyse</div>
+  <div style="opacity:0.4;">Mercantec · Kedelpasser Kursus</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Modul 07 · Drift &amp; Vedligehold</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a></div>
+  <div class="topbar-nav">
+    <a href="../06-armaturer-sikkerhed/">← Modul 06</a>
+    <a href="../../index.html">Forside</a>
+    <a href="../08-energi-groen/">Modul 08 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">Forside</a> / Modul 07 — Drift &amp; Vedligehold</div>
+
+<div class="kapitel-tag">Modul 07</div>
+<h1>Drift &amp; <span class="underline">vedligehold</span></h1>
+<p class="lede">
+  Det praktiske håndværk: opfyringsprocedure, vagtovertagelse, kedelbog,
+  bundblæsning, periodisk overvågning §29 og kontrolleret nedlukning.
+  Det er her teorien møder maskinrummet.
+</p>
+
+<!-- ═══════════════════ OPFYRING ═══════════════════ -->
+<h2>7.1 Opfyringsprocedure</h2>
+
+<p>Opfyring af en kold dampkedel skal foregå <strong>langsomt og kontrolleret</strong>
+for at undgå termiske spændinger i kedelmaterialet. En tommelfingerregel: maks.
+<strong>1°C/min temperaturstigning</strong> i kedelvandet for store kedler.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowOpf" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1a1814"/>
+    </marker>
+  </defs>
+
+  <!-- Step 1 -->
+  <rect x="20" y="30" width="160" height="70" rx="6" fill="#f0f9ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="55" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#1e40af">1. KONTROL</text>
+  <text x="100" y="73" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Vandstand · ventiler</text>
+  <text x="100" y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">brændsel · luft</text>
+  <line x1="180" y1="65" x2="220" y2="65" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 2 -->
+  <rect x="220" y="30" width="160" height="70" rx="6" fill="#f0f9ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="300" y="55" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#1e40af">2. UDLUFTNING</text>
+  <text x="300" y="73" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Åbn lufteventil</text>
+  <text x="300" y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">til damp kommer ud</text>
+  <line x1="380" y1="65" x2="420" y2="65" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 3 -->
+  <rect x="420" y="30" width="160" height="70" rx="6" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="500" y="55" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#b45309">3. FORSKYLNING</text>
+  <text x="500" y="73" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Fyrrum &amp; røgkanaler</text>
+  <text x="500" y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">min. 30 sek.</text>
+  <line x1="580" y1="65" x2="620" y2="65" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 4 -->
+  <rect x="620" y="30" width="120" height="70" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="680" y="55" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#991b1b">4. TÆNDING</text>
+  <text x="680" y="73" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Min. belastning</text>
+  <text x="680" y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">flammevagt OK</text>
+
+  <!-- Vertical arrow down -->
+  <line x1="680" y1="100" x2="680" y2="135" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 5 -->
+  <rect x="600" y="140" width="140" height="70" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="670" y="165" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#991b1b">5. LANGSOM OPVARMNING</text>
+  <text x="670" y="183" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">~1°C/min</text>
+  <text x="670" y="197" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">lufteventil åben</text>
+
+  <line x1="600" y1="175" x2="560" y2="175" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 6 -->
+  <rect x="400" y="140" width="160" height="70" rx="6" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="480" y="165" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#b45309">6. LUK LUFTEVENTIL</text>
+  <text x="480" y="183" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">når damp blæser jævnt</text>
+  <text x="480" y="197" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">≈ 100°C</text>
+  <line x1="400" y1="175" x2="360" y2="175" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 7 -->
+  <rect x="200" y="140" width="160" height="70" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="280" y="165" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#15803d">7. TRYKOPBYGNING</text>
+  <text x="280" y="183" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">til arbejdstryk</text>
+  <text x="280" y="197" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">overvåg vandstand</text>
+  <line x1="200" y1="175" x2="160" y2="175" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 8 -->
+  <rect x="20" y="140" width="140" height="70" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="90" y="165" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#15803d">8. AFPRØVNING</text>
+  <text x="90" y="183" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">SV · vandstandsglas</text>
+  <text x="90" y="197" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">L-W-L blæsning</text>
+
+  <line x1="90" y1="210" x2="90" y2="245" stroke="#1a1814" stroke-width="2" marker-end="url(#arrowOpf)"/>
+
+  <!-- Step 9 -->
+  <rect x="20" y="250" width="160" height="70" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="100" y="275" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#15803d">9. INDKOBLING</text>
+  <text x="100" y="293" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">Hovedstopventil</text>
+  <text x="100" y="307" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a1814">åbnes langsomt</text>
+
+  <!-- Caption -->
+  <rect x="220" y="260" width="500" height="80" rx="4" fill="#fefcf6" stroke="#d4cfc2" stroke-width="1"/>
+  <text x="240" y="285" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#1a1814">⚠ KRITISKE PUNKTER</text>
+  <text x="240" y="305" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">• Lufteventil ÅBEN under hele opvarmningen indtil damp blæser ud</text>
+  <text x="240" y="320" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">• Hold konstant øje med vandstand — fyldevand kan kondensere</text>
+  <text x="240" y="335" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">• Ingen genstart hvis flammen slukkede uden røgkanal-udluftning</text>
+</svg>
+</div>
+<div class="diagram-caption">Opfyringssekvens i 9 trin — fra koldt til indkoblet drift</div>
+
+<div class="alert warn">
+  <div class="alert-icon">⚠</div>
+  <div class="alert-body">
+    <div class="alert-title">Forskylning er ikke til diskussion</div>
+    <p>Manglende forskylning af fyrrum før tænding er en af de mest almindelige
+    årsager til kedelsprængninger ved opfyring. Uforbrændt brændsel + luft +
+    tændkilde = eksplosion. Min. 30 sekunders forskylning ved fuld luftblæser-effekt.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ VAGTOVERTAGELSE ═══════════════════ -->
+<h2>7.2 Vagtovertagelse</h2>
+
+<p>Når du overtager vagten skal du <strong>ikke</strong> bare overtage signaturen
+i kedelbogen — du skal personligt verificere at kedlen er i sikker drift.
+Den afgående vagt har stadig ansvaret indtil overtagelsen er gennemført.</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-head"><div class="card-num">1</div><div class="card-title">Visuel runde</div></div>
+    <p>Gå rundt om kedlen. Lyt efter unormale lyde, kig efter lækager, tjek
+    isolering og temperatur på flader der ikke skal være varme.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">2</div><div class="card-title">Vandstand</div></div>
+    <p>Kontroller vandstandsglas. Blæs det igennem hvis du er i tvivl om
+    visningen. Sammenlign med fjernvisning hvis tilgængelig.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">3</div><div class="card-title">Tryk &amp; temperatur</div></div>
+    <p>Manometer i grønt felt? Røggastemperatur normal? Sammenlign med
+    samme belastning fra tidligere vagt — store afvigelser er røde flag.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">4</div><div class="card-title">Vandanalyse</div></div>
+    <p>Læs sidste prøveresultater. Er PA/CA-tal, ledningsevne og pH inden for
+    grænseværdier? Skal der doseres eller bundblæses i din vagt?</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">5</div><div class="card-title">Brændsel &amp; forsyning</div></div>
+    <p>Brændstofniveau, forsyningstryk på gas, fødevandstanken. Er der
+    nok til vagten — skal der bestilles?</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">6</div><div class="card-title">Kedelbog</div></div>
+    <p>Læs sidste vagts noter. Hvilke alarmer? Hvilke driftsændringer?
+    Står der noget om kommende eftersyn eller reparationer?</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">7</div><div class="card-title">Mundtlig overlevering</div></div>
+    <p>Tal med afgående vagt. Spørg specifikt: <em>Er der noget jeg skal
+    holde øje med?</em> — derefter signér du i kedelbogen.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ KEDELBOG ═══════════════════ -->
+<h2>7.3 Kedelbogen</h2>
+
+<p>Kedelbogen er kedelpasserens <strong>juridiske dokumentation</strong>.
+Den er beviset på at kedlen passes i overensstemmelse med
+bekendtgørelse BEK 498/2024. Den skal være til rådighed for
+Arbejdstilsynet og det inspektionsorgan der udfører eftersyn.</p>
+
+<table>
+  <thead>
+    <tr><th>Hvad noteres</th><th>Hvor ofte</th><th>Eksempel</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Driftsregistrering</strong></td>
+      <td>Hver vagt</td>
+      <td>Tryk, temp, vandstand, brændselsforbrug</td>
+    </tr>
+    <tr>
+      <td><strong>Alarmer &amp; udkoblinger</strong></td>
+      <td>Når de sker</td>
+      <td>"Lavvandsalarm kl. 14:23 — kvitteret efter kontrol"</td>
+    </tr>
+    <tr>
+      <td><strong>Vandanalyse</strong></td>
+      <td>Iht. periodicitet</td>
+      <td>PA, CA, pH, ledningsevne, dosering</td>
+    </tr>
+    <tr>
+      <td><strong>Bundblæsning</strong></td>
+      <td>Hver gang</td>
+      <td>"Bundblæst 30 sek. kl. 09:15"</td>
+    </tr>
+    <tr>
+      <td><strong>Afprøvning af SV/vandstandsglas</strong></td>
+      <td>Iht. periodicitet</td>
+      <td>"SV1 lettet ved 9,8 bar — OK"</td>
+    </tr>
+    <tr>
+      <td><strong>Eftersyn</strong></td>
+      <td>Når udført</td>
+      <td>Inspektør, dato, resultat, attest-nr.</td>
+    </tr>
+    <tr>
+      <td><strong>Reparationer</strong></td>
+      <td>Når udført</td>
+      <td>Hvad, hvem, godkendelse</td>
+    </tr>
+    <tr>
+      <td><strong>Vagtskifte</strong></td>
+      <td>Hver vagt</td>
+      <td>Underskrift afgående + tiltrædende</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════════ PERIODISK OVERVÅGNING ═══════════════════ -->
+<h2>7.4 Periodisk overvågning — §29</h2>
+
+<p>BEK 498/2024 §29 tillader at visse kedler kører <strong>uden konstant
+tilstedeværende kedelpasser</strong>. I stedet udføres periodiske runderinger.
+Det er en stor lettelse driftsmæssigt — men kræver mere af automatikken.</p>
+
+<table>
+  <thead>
+    <tr><th></th><th>Konstant overvågning</th><th>Periodisk overvågning §29</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tilstedeværelse</strong></td>
+      <td>Kedelpasser ved kedlen i hele driftstiden</td>
+      <td>Rundering med fast interval (typisk 24t / 72t)</td>
+    </tr>
+    <tr>
+      <td><strong>Krav til automatik</strong></td>
+      <td>Standard sikkerhedskæde</td>
+      <td>Højere klasse — selvovervågende systemer</td>
+    </tr>
+    <tr>
+      <td><strong>Vandstandsovervågning</strong></td>
+      <td>Min. 1 sikker visning + lavvandsalarm</td>
+      <td>Min. 2 uafhængige lavvandssikringer</td>
+    </tr>
+    <tr>
+      <td><strong>Trykudkobling</strong></td>
+      <td>1 sikkerhedspressostat</td>
+      <td>2 uafhængige sikkerhedspressostater</td>
+    </tr>
+    <tr>
+      <td><strong>Alarmer</strong></td>
+      <td>Lokal lyd/lys</td>
+      <td>Fjernalarmering til vagthavende</td>
+    </tr>
+    <tr>
+      <td><strong>Egenkontrol</strong></td>
+      <td>Manuelt af kedelpasser</td>
+      <td>Automatisk + dokumenteret</td>
+    </tr>
+    <tr>
+      <td><strong>Inspektionsorgan</strong></td>
+      <td>Standard godkendelse</td>
+      <td>Særlig godkendelse til §29-drift</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">72-timers grænsen</div>
+    <p>De fleste moderne, fuldautomatiske kedler godkendes til <strong>72 timers
+    overvågningsfrit drift</strong>. Det betyder at kedelpasseren skal runder mindst
+    hvert 72. time og dokumentere det. Mange anlæg vælger 24 eller 48 timer for
+    at have indbygget margin.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ BUNDBLÆSNING ═══════════════════ -->
+<h2>7.5 Bundblæsning &amp; afblæsning</h2>
+
+<p>Bundblæsning fjerner <strong>slam og bundfald</strong> der samler sig nederst
+i kedlen. Afblæsning (overflade) fjerner <strong>opløste salte</strong> i
+overfladevandet. Begge er nødvendige for at holde vandkvaliteten i ro.</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-head"><div class="card-num">B</div><div class="card-title">Bundblæsning</div></div>
+    <p><strong>Hvad:</strong> Korte, kraftige udblæsninger fra kedlens laveste
+    punkt.</p>
+    <p><strong>Hvornår:</strong> Typisk 1× pr. vagt — eller efter doseringsintervaller.</p>
+    <p><strong>Hvor længe:</strong> 5–10 sekunder. Langere blæsning = unødigt
+    energitab og termisk chok på rørene.</p>
+    <p><strong>Procedure:</strong> Åbn ydre ventil først → åbn indre ventil
+    hurtigt → vent → luk indre først → luk ydre.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">A</div><div class="card-title">Afblæsning</div></div>
+    <p><strong>Hvad:</strong> Kontinuerlig eller intermitterende udblæsning
+    fra overfladen — ofte automatisk styret af ledningsevnemåler.</p>
+    <p><strong>Hvornår:</strong> Når ledningsevnen overstiger grænse.</p>
+    <p><strong>Hvor længe:</strong> Indstillet af automatik — typisk 1–5%
+    af fødevandsmængden.</p>
+    <p><strong>Procedure:</strong> Automatisk. Kedelpasseren overvåger
+    og dokumenterer.</p>
+  </div>
+</div>
+
+<div class="formula">
+TDS = (Cl⁻<sub>fødevand</sub> × <em>fødemængde</em>) / (Cl⁻<sub>kedel-grænse</sub> − Cl⁻<sub>fødevand</sub>) × ... &nbsp; <b>≈ afblæsningsmængde</b>
+</div>
+
+<p style="font-size:0.92em; color:var(--ink-2);">I praksis indstilles afblæsningen
+efter målt ledningsevne mod en grænse — typisk <b>3000–7000 µS/cm</b> afhængigt
+af kedeltype og tryk.</p>
+
+<!-- ═══════════════════ NEDLUKNING ═══════════════════ -->
+<h2>7.6 Kontrolleret nedlukning</h2>
+
+<p>Nedlukning er <strong>ikke</strong> bare at slukke brænderen. En forkert
+nedlukning kan give kondens-korrosion, termiske spændinger og besværlig
+genstart. Følg producentens procedure — herunder er den generelle.</p>
+
+<ol>
+  <li><strong>Reducer belastning gradvist</strong> ned til min. (typisk 30–50%)
+  i 15–30 minutter, så materialet køler langsomt.</li>
+  <li><strong>Luk hovedstopventil</strong> mod dampnettet — kedlen er nu
+  isoleret fra forbrugeren.</li>
+  <li><strong>Sluk brænder</strong> via normal stopfunktion (ikke nødstop).
+  Lad efterskylning køre færdig.</li>
+  <li><strong>Hold fødepumpen aktiv</strong> indtil vandstand er stabil
+  og temperaturen er faldende.</li>
+  <li><strong>Åbn lufteventil</strong> når trykket er nede på ~1 bar overtryk
+  — ellers trækker afkølingen vakuum i kedlen.</li>
+  <li><strong>Lad afkøle naturligt</strong>. Tving ikke afkøling med koldt
+  fødevand på en varm kedel.</li>
+  <li><strong>Aflever til vedligehold</strong> hvis nedlukning er for
+  inspektion: tøm vand, åbn mandedæksler, ventilér.</li>
+</ol>
+
+<div class="alert danger">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">Vakuum kan kollapse kedlen</div>
+    <p>Hvis du lukker en varm kedel uden at åbne lufteventil, vil dampen
+    kondensere og skabe undertryk. Store kedler er ikke designet til vakuum
+    — kedeltrommer kan kollapse indad. Lufteventilen skal være åben senest
+    når trykket nærmer sig atmosfærisk.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ EFTERSYN ═══════════════════ -->
+<h2>7.7 Eftersyn &amp; serviceintervaller</h2>
+
+<table>
+  <thead>
+    <tr><th>Aktivitet</th><th>Interval</th><th>Hvem</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Vandstandsglas blæsning</td><td>Daglig / hver vagt</td><td>Kedelpasser</td></tr>
+    <tr><td>Bundblæsning</td><td>Daglig / efter behov</td><td>Kedelpasser</td></tr>
+    <tr><td>Vandanalyse intern</td><td>Iht. driftsdokument</td><td>Kedelpasser</td></tr>
+    <tr><td>Vandanalyse ekstern (laboratorium)</td><td>Månedlig–kvartalsvis</td><td>Eksternt lab</td></tr>
+    <tr><td>SV-afprøvning (lettelse)</td><td>Månedlig</td><td>Kedelpasser</td></tr>
+    <tr><td>Brænder-service</td><td>Årlig</td><td>Servicetekniker</td></tr>
+    <tr><td>Indvendigt eftersyn (åbning)</td><td>Iht. kontrolklasse</td><td>Inspektionsorgan</td></tr>
+    <tr><td>Trykprøvning</td><td>Iht. kontrolklasse</td><td>Inspektionsorgan</td></tr>
+    <tr><td>Sikkerhedsventil — ny prøvning</td><td>Hvert 4. år (typisk)</td><td>Akkrediteret værksted</td></tr>
+  </tbody>
+</table>
+
+<p>Se Modul 01 for de specifikke krav til eftersyn baseret på kontrolklasse A/B/C.</p>
+
+<div class="pagenav">
+  <a href="../06-armaturer-sikkerhed/">
+    <div class="label">← Forrige</div>
+    <div class="title">Modul 06 · Armaturer &amp; Sikkerhed</div>
+  </a>
+  <a href="../08-energi-groen/" class="next">
+    <div class="label">Næste →</div>
+    <div class="title">Modul 08 · Energi &amp; Grøn omstilling</div>
+  </a>
+</div>
+
+<div class="footer">
+  <div class="footer-line"></div>
+  <p>Kilde: <em>Kedel- og maskinpasser</em>, Erhvervsskolernes forlag, 5. udgave (2008) ·
+  BEK 498/2024 · Nota bognummer 609678</p>
+</div>
+
+</div>
+</body>
+</html>

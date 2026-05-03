@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kedelpasser Kursus — Online Læringsressource</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* Hero override only on landing page */
+  .hero {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--paper) 100%);
+    padding: 80px 24px 40px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
+  .hero-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.0;
+    margin-bottom: 24px;
+  }
+  .meta-strip {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--line);
+  }
+  .meta-strip span b { color: var(--ink); }
+
+  .modules {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .module-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, transparent 50%, currentColor 100%);
+    opacity: 0.04;
+    pointer-events: none;
+  }
+  .module-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--ink);
+  }
+  .module-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .module-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .module-desc {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .module-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+  .module-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .mc-icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+  }
+  .mc-1 { background: var(--ink); }
+  .mc-2 { background: var(--steam); }
+  .mc-3 { background: var(--fire); }
+  .mc-4 { background: var(--warm); }
+  .mc-5 { background: var(--water); }
+  .mc-6 { background: var(--gas); }
+  .mc-7 { background: var(--green); }
+  .mc-8 { background: var(--hot); }
+  .mc-9 { background: var(--ink-2); }
+
+  .stats-strip {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 24px;
+    margin-top: 48px;
+  }
+  .stats-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--hot);
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand">
+    <a href="index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a>
+  </div>
+  <div class="topbar-nav">
+    <a href="docs/01-certifikater/">01 Certifikat</a>
+    <a href="docs/02-dampkedler/">02 Kedler</a>
+    <a href="docs/03-termodynamik/">03 Termo</a>
+    <a href="docs/04-forbraending/">04 Forbrænding</a>
+    <a href="docs/05-vandbehandling/">05 Vand</a>
+    <a href="docs/06-armaturer-sikkerhed/">06 Armaturer</a>
+    <a href="docs/07-drift-vedligehold/">07 Drift</a>
+    <a href="docs/08-energi-groen/">08 Energi</a>
+    <a href="docs/09-formler-tabeller/">09 Formler</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-inner">
+    <div class="kapitel-tag">Online Læringsressource · Mercantec</div>
+    <h1>Kedel- &amp; <span class="underline">maskinpasser</span><br>komplet kursus</h1>
+    <p class="lede">
+      Et samlet online kursus baseret på "Kedel- og maskinpasser" (Erhvervsskolernes
+      forlag, 5. udgave) og BEK 498/2024. Omfattende infografik, beregninger,
+      damptabeller og pædagogiske diagrammer — designet til både certifikatprøver
+      og daglig brug ved kedlen.
+    </p>
+    <div class="meta-strip">
+      <span><b>9</b> Moduler</span>
+      <span><b>40+</b> Diagrammer</span>
+      <span><b>BEK 498</b>/2024</span>
+      <span><b>DA</b> Sprog</span>
+    </div>
+  </div>
+</section>
+
+<section class="modules">
+
+  <h2 style="border:none;margin-top:0;">Moduloversigt</h2>
+  <p class="lede" style="font-size:16px;">
+    Materialet er opdelt i ni moduler. Hvert modul indeholder teori, formler,
+    beregningseksempler og infografik. Læs i rækkefølge eller spring ind i det
+    emne du har brug for at slå op.
+  </p>
+
+  <div class="module-grid">
+
+    <a class="module-card" href="docs/01-certifikater/">
+      <div class="mc-icon mc-1">📜</div>
+      <div class="module-num">Modul 01</div>
+      <div class="module-title">Certifikater &amp; Lovgivning</div>
+      <div class="module-desc">
+        BEK 498/2024, kontrolklasser A/B/C, PS×V beregning, certifikattyper I/II/III,
+        eftersynsintervaller.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">BEK 498</span>
+        <span class="module-tag">Klasser</span>
+        <span class="module-tag">PS×V</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/02-dampkedler/">
+      <div class="mc-icon mc-2">🏭</div>
+      <div class="module-num">Modul 02</div>
+      <div class="module-title">Dampkedeltyper</div>
+      <div class="module-desc">
+        Røgrørskedler, vandrørskedler (natural/La Mont/Benson/Sulzer), elektriske
+        kedler, hedtvandsanlæg, varmtvandskedler.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">Røgrør</span>
+        <span class="module-tag">Vandrør</span>
+        <span class="module-tag">Hedtvand</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/03-termodynamik/">
+      <div class="mc-icon mc-3">🔥</div>
+      <div class="module-num">Modul 03</div>
+      <div class="module-title">Termodynamik &amp; Damptabel</div>
+      <div class="module-desc">
+        Entalpi h'/h'', fordampningsvarme, absolut tryk, virkningsgrad,
+        fordampningstal, Mollier-diagram, Rankine-cyklus.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">Entalpi</span>
+        <span class="module-tag">Damptabel</span>
+        <span class="module-tag">η</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/04-forbraending/">
+      <div class="mc-icon mc-4">💨</div>
+      <div class="module-num">Modul 04</div>
+      <div class="module-title">Forbrænding &amp; Røggas</div>
+      <div class="module-desc">
+        Lambda (λ), luftforbrug, røgmængde, røggastab-formler for olie/gas,
+        brændstoffer, røggasanalyse.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">λ</span>
+        <span class="module-tag">CO₂/O₂</span>
+        <span class="module-tag">Røggastab</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/05-vandbehandling/">
+      <div class="mc-icon mc-5">💧</div>
+      <div class="module-num">Modul 05</div>
+      <div class="module-title">Vandbehandling &amp; Analyse</div>
+      <div class="module-desc">
+        PA/CA-tal, hårdhed, fosfat, sulfit, SiO₂, ledningsevne. Blødgøring,
+        RO, totalafsaltning. Doseringsformler.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">PA-tal</span>
+        <span class="module-tag">NaOH</span>
+        <span class="module-tag">Bundblæs</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/06-armaturer-sikkerhed/">
+      <div class="mc-icon mc-6">🛡</div>
+      <div class="module-num">Modul 06</div>
+      <div class="module-title">Armaturer &amp; Sikkerhed</div>
+      <div class="module-desc">
+        Sikkerhedsventiler, vandstandsglas, pressostater, gasrampe (OT/UT),
+        L-W-L, regulerings- vs. sikkerhedsudkobling.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">SV</span>
+        <span class="module-tag">L-W-L</span>
+        <span class="module-tag">Gasrampe</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/07-drift-vedligehold/">
+      <div class="mc-icon mc-7">🔧</div>
+      <div class="module-num">Modul 07</div>
+      <div class="module-title">Drift &amp; Vedligehold</div>
+      <div class="module-desc">
+        Opfyringsprocedure, vagtovertagelse, kedelbog, periodisk overvågning,
+        nedlukning, bundblæsning.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">Opfyring</span>
+        <span class="module-tag">Kedelbog</span>
+        <span class="module-tag">Periodisk</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/08-energi-groen/">
+      <div class="mc-icon mc-8">🌿</div>
+      <div class="module-num">Modul 08</div>
+      <div class="module-title">Energi &amp; Grøn omstilling</div>
+      <div class="module-desc">
+        Virkningsgradsforbedring, economizer, varmepumpe, biomasse, elkedler,
+        case Carletti A/S og Arla.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">η+</span>
+        <span class="module-tag">CO₂</span>
+        <span class="module-tag">Cases</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/09-formler-tabeller/">
+      <div class="mc-icon mc-9">📊</div>
+      <div class="module-num">Modul 09</div>
+      <div class="module-title">Formler &amp; Damptabeller</div>
+      <div class="module-desc">
+        Komplet formelsamling, damptabel, vandtabel, omregningsfaktorer,
+        konstanter — udskriv og hav ved kedlen.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">Reference</span>
+        <span class="module-tag">Print</span>
+        <span class="module-tag">Snydeark</span>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+<section class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Moduler</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40+</div>
+      <div class="stat-label">Diagrammer</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">Formler &amp; Definitioner</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2024</div>
+      <div class="stat-label">BEK 498</div>
+    </div>
+  </div>
+</section>
+
+<section class="modules">
+  <h2>Sådan bruges materialet</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>📚 Til certifikatprøver</h3>
+      <p>Læs Modul 01 → 06 i rækkefølge. Modul 09 (formelsamling) bør udskrives og holdes ved hånden. Hver side har eksamensrelevante punkter markeret med en rød advarselsboks.</p>
+    </div>
+    <div class="card">
+      <h3>🔧 Til daglig kedlepasning</h3>
+      <p>Modul 07 (drift) og Modul 09 (formler) er det vigtigste opslagsmateriale. Kedelpasserens vagtchecklists og bundblæsningsprocedurer er samlet ét sted.</p>
+    </div>
+    <div class="card">
+      <h3>🧮 Til beregninger</h3>
+      <p>Modul 03 (termodynamik) og Modul 04 (forbrænding) indeholder alle de formler du skal bruge til energiberegninger, virkningsgrad og røggastab.</p>
+    </div>
+    <div class="card">
+      <h3>🌿 Til projekter</h3>
+      <p>Modul 08 indeholder cases om energioptimering hos Carletti A/S og Arla — perfekte til den grønne omstillings-projektopgave.</p>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-line">
+    Baseret på <b>"Kedel- og maskinpasser"</b>, Erhvervsskolernes Forlag, 5. udgave (2008).<br>
+    BEK 498/2024 referencer er til lovgivning gældende fra 1. juni 2024.<br>
+    Materialet er opbygget som studieressource — det erstatter ikke autoriseret undervisning.
+  </div>
+  <div style="opacity:0.4;">
+    Mercantec · Viborg / Nørresundby · 2026
+  </div>
+</div>
+
+</body>
+</html>

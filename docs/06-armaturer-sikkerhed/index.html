@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Modul 06 · Armaturer &amp; Sikkerhed</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a></div>
+  <div class="topbar-nav">
+    <a href="../05-vandbehandling/">← Modul 05</a>
+    <a href="../../index.html">Forside</a>
+    <a href="../07-drift-vedligehold/">Modul 07 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">Forside</a> / Modul 06 — Armaturer &amp; Sikkerhed</div>
+
+<div class="kapitel-tag">Modul 06</div>
+<h1>Armaturer &amp; <span class="underline">sikkerhed</span></h1>
+<p class="lede">
+  Sikkerhedsventiler, vandstandsglas, pressostater og gasrampe. Forskellen mellem
+  reguleringsudkobling og sikkerhedsudkobling, hvad L-W-L betyder, og hvordan
+  du afprøver sikkerhedsudstyret korrekt.
+</p>
+
+<!-- ═══════════════════ SIKKERHEDSVENTIL ═══════════════════ -->
+<h2>6.1 Sikkerhedsventil (SV)</h2>
+
+<p>Sikkerhedsventilen er kedlens <strong>sidste forsvar</strong> mod overtryk.
+Den åbner mekanisk når trykket overstiger den indstillede værdi — uafhængigt
+af elektronik og styring.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Body -->
+  <rect x="280" y="120" width="160" height="80" rx="6" fill="#fefcf6" stroke="#1a1814" stroke-width="2"/>
+  <text x="360" y="167" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#1a1814" font-weight="700">VENTILHUS</text>
+
+  <!-- Spring -->
+  <rect x="335" y="60" width="50" height="60" rx="3" fill="#fef3c7" stroke="#ea580c" stroke-width="1.5"/>
+  <path d="M 340 65 L 380 70 L 340 75 L 380 80 L 340 85 L 380 90 L 340 95 L 380 100 L 340 105 L 380 110 L 340 115"
+        stroke="#ea580c" stroke-width="2" fill="none"/>
+  <text x="360" y="55" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#ea580c" font-weight="700">FJEDER</text>
+
+  <!-- Lever -->
+  <line x1="360" y1="60" x2="430" y2="35" stroke="#1a1814" stroke-width="3"/>
+  <circle cx="430" cy="35" r="6" fill="#dc2626"/>
+  <text x="445" y="40" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-weight="700">Manuelt løft</text>
+  <text x="445" y="55" font-family="DM Sans,sans-serif" font-size="10" fill="#8a8478">(ugentlig afprøvning)</text>
+
+  <!-- Inlet from boiler -->
+  <rect x="320" y="200" width="80" height="50" fill="#1a1814"/>
+  <text x="360" y="230" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f59e0b" font-weight="700">FRA KEDEL</text>
+  <text x="360" y="245" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="white">Damp ↑</text>
+
+  <!-- Outlet -->
+  <line x1="440" y1="160" x2="540" y2="160" stroke="#1a1814" stroke-width="3"/>
+  <text x="490" y="150" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#dc2626" font-weight="700">→ AFBLÆSNINGSRØR</text>
+  <text x="490" y="180" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#8a8478">til fri luft / safe area</text>
+
+  <!-- Side labels -->
+  <rect x="20" y="40" width="220" height="200" rx="8" fill="#f0f9ff" stroke="#0891b2" stroke-width="1"/>
+  <text x="40" y="65" font-family="DM Sans,sans-serif" font-size="12" fill="#0891b2" font-weight="700">FUNKTIONSPRINCIP</text>
+  <text x="40" y="90" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">Fjederen presser ventilen ned</text>
+  <text x="40" y="105" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">og holder den lukket.</text>
+  <text x="40" y="125" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">Når damptrykket overstiger</text>
+  <text x="40" y="140" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">fjederkraften, åbner ventilen</text>
+  <text x="40" y="155" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">automatisk.</text>
+  <text x="40" y="180" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814" font-weight="700">Indstillingstryk:</text>
+  <text x="40" y="195" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">arbejdstryk + 10 %</text>
+  <text x="40" y="220" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-weight="700">Plomberet — må ikke ændres</text>
+
+  <text x="370" y="20" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">Sikkerhedsventil — opbygning</text>
+</svg>
+<div class="diagram-caption">Figur 6.1 — Sikkerhedsventilens opbygning og virkemåde</div>
+</div>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">Hvilken SV åbner først?</div>
+    <p>På en kedel med både damptromle og overheder: <strong>SV på overhederen
+    åbner først</strong>. Dette sikrer, at der altid er damp gennem overheder-rørene
+    og dermed køling — selv ved overtryk. SV på damptromle er
+    indstillet højere.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ VANDSTANDSGLAS ═══════════════════ -->
+<h2>6.2 Vandstandsglas</h2>
+
+<p>Vandstandsglasset viser kedlens vandstand visuelt. Det er kedelpasserens
+<strong>vigtigste daglige kontrolinstrument</strong>.</p>
+
+<h3>Blæsning af vandstandsglas — procedure</h3>
+<div class="card">
+<ol>
+  <li><strong>Luk vandventilen</strong> (nederste)</li>
+  <li><strong>Åbn afblæsningsventilen</strong> — damp blæser glasset rent oppefra og ned</li>
+  <li><strong>Luk afblæsningsventilen</strong></li>
+  <li><strong>Åbn vandventilen</strong> — vandet stiger op til korrekt niveau</li>
+  <li><strong>Kontrollér</strong> at vandstanden er stabil og stemmer med andet vandstandsglas (hvis der er to)</li>
+</ol>
+</div>
+
+<div class="alert danger">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">Vandstandsglas i stykker?</div>
+    <p>Kedlen skal <strong>straks tages ud af drift</strong>. Det er et lovkrav
+    at kunne overvåge vandstanden. Drift uden vandstandskontrol er livsfarligt
+    — vandstanden kan falde under L-W-L uden at man opdager det → tørkogning →
+    eksplosion.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ L-W-L ═══════════════════ -->
+<h2>6.3 L-W-L · Laveste vandstand</h2>
+
+<div class="diagram">
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Boiler outline -->
+  <ellipse cx="350" cy="110" rx="180" ry="80" fill="#fefcf6" stroke="#1a1814" stroke-width="2"/>
+
+  <!-- Water level -->
+  <path d="M 175 130 Q 200 125 230 130 T 290 130 T 350 130 T 410 130 T 470 130 Q 500 128 525 130 L 525 175 Q 470 185 350 185 Q 230 185 175 175 Z"
+        fill="#0891b2" opacity="0.3" stroke="#0891b2" stroke-width="1.5"/>
+
+  <!-- L-W-L line -->
+  <line x1="120" y1="155" x2="580" y2="155" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="585" y="160" font-family="DM Sans,sans-serif" font-size="13" fill="#dc2626" font-weight="700">L-W-L</text>
+  <text x="585" y="175" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">grænse</text>
+
+  <!-- Steam space -->
+  <text x="350" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#0891b2" font-weight="700">DAMPRUM</text>
+
+  <!-- Water -->
+  <text x="350" y="160" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#0891b2" font-weight="700">VANDRUM</text>
+
+  <!-- Tubes -->
+  <line x1="280" y1="115" x2="420" y2="115" stroke="#dc2626" stroke-width="2"/>
+  <line x1="280" y1="140" x2="420" y2="140" stroke="#dc2626" stroke-width="2"/>
+  <text x="350" y="135" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#dc2626" font-weight="700">RØGRØR</text>
+
+  <!-- Annotation arrow down -->
+  <line x1="120" y1="155" x2="120" y2="190" stroke="#dc2626" stroke-width="1.5" marker-end="url(#dn)"/>
+  <defs>
+    <marker id="dn" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,0 L5,10 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <text x="40" y="195" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626">FORBUDT ZONE</text>
+  <text x="40" y="208" font-family="DM Sans,sans-serif" font-size="10" fill="#8a8478">Tørkogning kan ske</text>
+
+  <text x="350" y="25" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">Vandstandsniveauer i en kedel</text>
+</svg>
+<div class="diagram-caption">Figur 6.2 — L-W-L = Laveste tilladte vandstand. Tørkogsikringer udløser når vandstanden nærmer sig denne linje.</div>
+</div>
+
+<p><strong>L-W-L</strong> = "Laveste Vandstand Linje" (Lowest Water Level).
+Markeret fysisk på kedlen og programmeret ind i tørkogsikringerne.
+Vandstanden må <strong>aldrig</strong> falde under denne grænse.</p>
+
+<!-- ═══════════════════ REGULERING VS. SIKKERHED ═══════════════════ -->
+<h2>6.4 Reguleringsudkobling vs. sikkerhedsudkobling</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num" style="background:#15803d;">REG</span>
+      <span class="card-title">Reguleringsudkobling</span>
+    </div>
+    <p>Del af <strong>normal drift</strong>. Kedlen kobler ud, men starter
+    <strong>automatisk</strong> igen når betingelsen er væk:</p>
+    <ul>
+      <li>Trykpressostat (stopper brænder ved driftstryk)</li>
+      <li>Temperaturregulator (stopper ved ønsket temp)</li>
+      <li>Vandstandsregulering (start/stop af fødepumpe)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num" style="background:#dc2626;">SIK</span>
+      <span class="card-title">Sikkerhedsudkobling</span>
+    </div>
+    <p><strong>Farlig situation</strong>. Kræver <strong>manuel kvittering</strong>
+    af kedelpasseren — automatisk genstart er FORBUDT:</p>
+    <ul>
+      <li>Overtrykspressostat</li>
+      <li>Tørkogsikring (LWL-vagt)</li>
+      <li>Flammesvigt</li>
+      <li>Gasovertrykssikring (OT) / Gasmangelsikring (UT)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════ GASRAMPE ═══════════════════ -->
+<h2>6.5 Gasrampe — sikkerhedskæde</h2>
+
+<p>På gasfyrede kedler er <strong>gasrampen</strong> en samling af komponenter
+der sikrer kontrolleret og sikker gastilførsel:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gas line -->
+  <line x1="20" y1="110" x2="700" y2="110" stroke="#7c3aed" stroke-width="6" opacity="0.3"/>
+  <line x1="20" y1="110" x2="700" y2="110" stroke="#7c3aed" stroke-width="2"/>
+
+  <!-- Component nodes -->
+  <g font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">
+    <!-- 1. Hovedhane -->
+    <circle cx="80" cy="110" r="18" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+    <text x="80" y="115" text-anchor="middle" font-weight="700" font-size="11">1</text>
+    <text x="80" y="155" text-anchor="middle" font-size="10">Hovedhane</text>
+    <text x="80" y="170" text-anchor="middle" font-size="9" fill="#8a8478">manuel</text>
+
+    <!-- 2. Filter -->
+    <rect x="135" y="92" width="36" height="36" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5" rx="3"/>
+    <text x="153" y="115" text-anchor="middle" font-weight="700" font-size="11">2</text>
+    <text x="153" y="155" text-anchor="middle" font-size="10">Filter</text>
+
+    <!-- 3. Pressostat OT -->
+    <circle cx="220" cy="110" r="18" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="220" y="115" text-anchor="middle" font-weight="700" font-size="10" fill="#dc2626">OT</text>
+    <text x="220" y="155" text-anchor="middle" font-size="10">Overtryks-</text>
+    <text x="220" y="168" text-anchor="middle" font-size="10">sikring</text>
+
+    <!-- 4. Pressostat UT -->
+    <circle cx="290" cy="110" r="18" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="290" y="115" text-anchor="middle" font-weight="700" font-size="10" fill="#dc2626">UT</text>
+    <text x="290" y="155" text-anchor="middle" font-size="10">Undertryks-</text>
+    <text x="290" y="168" text-anchor="middle" font-size="10">sikring</text>
+
+    <!-- 5. MV1 -->
+    <rect x="345" y="92" width="36" height="36" fill="#fef3c7" stroke="#ea580c" stroke-width="1.5" rx="3"/>
+    <text x="363" y="115" text-anchor="middle" font-weight="700" font-size="11" fill="#ea580c">MV1</text>
+    <text x="363" y="155" text-anchor="middle" font-size="10">Magnet-</text>
+    <text x="363" y="168" text-anchor="middle" font-size="10">ventil 1</text>
+
+    <!-- 6. Tæthedskontrol -->
+    <circle cx="430" cy="110" r="18" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
+    <text x="430" y="115" text-anchor="middle" font-weight="700" font-size="9" fill="#15803d">TK</text>
+    <text x="430" y="155" text-anchor="middle" font-size="10">Tætheds-</text>
+    <text x="430" y="168" text-anchor="middle" font-size="10">kontrol</text>
+
+    <!-- 7. MV2 -->
+    <rect x="485" y="92" width="36" height="36" fill="#fef3c7" stroke="#ea580c" stroke-width="1.5" rx="3"/>
+    <text x="503" y="115" text-anchor="middle" font-weight="700" font-size="11" fill="#ea580c">MV2</text>
+    <text x="503" y="155" text-anchor="middle" font-size="10">Magnet-</text>
+    <text x="503" y="168" text-anchor="middle" font-size="10">ventil 2</text>
+
+    <!-- 8. Reguleringsventil -->
+    <rect x="555" y="92" width="36" height="36" fill="#f0f9ff" stroke="#0891b2" stroke-width="1.5" rx="3"/>
+    <text x="573" y="115" text-anchor="middle" font-weight="700" font-size="11" fill="#0891b2">RV</text>
+    <text x="573" y="155" text-anchor="middle" font-size="10">Regulerings-</text>
+    <text x="573" y="168" text-anchor="middle" font-size="10">ventil</text>
+
+    <!-- 9. Brænder -->
+    <circle cx="660" cy="110" r="22" fill="#dc2626"/>
+    <text x="660" y="115" text-anchor="middle" font-weight="700" font-size="10" fill="white">BR</text>
+    <text x="660" y="155" text-anchor="middle" font-size="10">Brænder</text>
+  </g>
+
+  <!-- Title -->
+  <text x="360" y="30" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">Gasrampens sikkerhedskæde</text>
+  <text x="360" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">Gas →</text>
+
+  <!-- Bottom note -->
+  <text x="360" y="200" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478" font-style="italic">Mindst 2 magnetventiler i serie + tæthedskontrol mellem dem (Dungs GW 50 typisk pressostat)</text>
+</svg>
+<div class="diagram-caption">Figur 6.3 — Gasrampens komponenter — sikkerhedskæden fra hovedhane til brænder</div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Komponent</th><th>Funktion</th><th>Type</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Hovedhane</strong></td><td>Manuel afspærring af gas</td><td>Manuel</td></tr>
+    <tr><td><strong>Filter</strong></td><td>Beskytter mod partikler</td><td>Mekanisk</td></tr>
+    <tr><td><strong>OT (overtryksikring)</strong></td><td>Stopper ved for højt gastryk</td><td>Sikkerhedsudkobling</td></tr>
+    <tr><td><strong>UT (undertryksikring)</strong></td><td>Stopper ved gasmangel</td><td>Sikkerhedsudkobling</td></tr>
+    <tr><td><strong>MV1 + MV2</strong></td><td>To magnetventiler i serie — dobbeltbarriere</td><td>Sikkerhed</td></tr>
+    <tr><td><strong>Tæthedskontrol (TK)</strong></td><td>Tester at MV1 og MV2 ikke lækker — før hver opstart</td><td>Sikkerhed</td></tr>
+    <tr><td><strong>Reguleringsventil</strong></td><td>Justerer gasflow til last</td><td>Regulering</td></tr>
+    <tr><td><strong>Luftvagt</strong></td><td>Sikrer at forbrændingsluft er til stede</td><td>Sikkerhedsudkobling</td></tr>
+    <tr><td><strong>Flammeovervågning</strong></td><td>Detekterer flammen — lukker MV ved svigt</td><td>Sikkerhedsudkobling</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../05-vandbehandling/">
+    <span class="label">← Forrige</span>
+    05 · Vandbehandling
+  </a>
+  <a class="next" href="../07-drift-vedligehold/">
+    <span class="label">Næste →</span>
+    07 · Drift &amp; Vedligehold
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">Modul 06 · Armaturer &amp; Sikkerhed</div>
+  <div style="opacity:0.4;">Mercantec · Kedelpasser Kursus</div>
+</div>
+
+</body>
+</html>

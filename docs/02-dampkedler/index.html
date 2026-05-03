@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Modul 02 · Dampkedeltyper</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a></div>
+  <div class="topbar-nav">
+    <a href="../01-certifikater/">← Modul 01</a>
+    <a href="../../index.html">Forside</a>
+    <a href="../03-termodynamik/">Modul 03 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">Forside</a> / Modul 02 — Dampkedeltyper</div>
+
+<div class="kapitel-tag">Modul 02</div>
+<h1>Dampkedel<span class="underline">typer</span></h1>
+<p class="lede">
+  De vigtigste kedeltyper — røgrørs, vandrørs, elektriske og hedtvandsanlæg —
+  med vandcirkulationsprincipper og anvendelse. Dette modul gennemgår alt fra
+  3-træks røgrørskedler til Benson-once-through kedler i moderne kraftværker.
+</p>
+
+<!-- ═══════════════════ HOVEDTYPER OVERSIGT ═══════════════════ -->
+<h2>2.1 Hovedtyper — overblik</h2>
+
+<div class="diagram">
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- RØGRØRSKEDEL -->
+  <g transform="translate(20,40)">
+    <rect x="0" y="0" width="200" height="120" rx="60" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+    <!-- Tubes inside -->
+    <line x1="40" y1="40" x2="160" y2="40" stroke="#dc2626" stroke-width="3"/>
+    <line x1="40" y1="60" x2="160" y2="60" stroke="#dc2626" stroke-width="3"/>
+    <line x1="40" y1="80" x2="160" y2="80" stroke="#dc2626" stroke-width="3"/>
+    <!-- Water -->
+    <path d="M 25 55 Q 30 50 40 55 T 60 55 T 80 55" stroke="#0891b2" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M 130 90 Q 140 85 150 90 T 175 90" stroke="#0891b2" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <text x="100" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-weight="700">RØGGAS I RØR →</text>
+    <text x="100" y="115" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#0891b2" font-weight="700">VAND OMKRING</text>
+    <text x="100" y="155" text-anchor="middle" font-family="Fraunces,serif" font-size="20" fill="#1a1814" font-weight="700">Røgrørskedel</text>
+    <text x="100" y="173" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">Op til ~25 bar · Stort vandindhold</text>
+    <text x="100" y="190" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">Fire Tube</text>
+  </g>
+
+  <!-- VANDRØRSKEDEL -->
+  <g transform="translate(260,40)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+    <!-- Drum top -->
+    <rect x="20" y="10" width="160" height="22" rx="11" fill="#0891b2" opacity="0.3" stroke="#0891b2"/>
+    <text x="100" y="25" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#0891b2" font-weight="700">DAMPDRUM</text>
+    <!-- Drum bottom -->
+    <rect x="40" y="98" width="120" height="14" rx="7" fill="#0891b2" opacity="0.4" stroke="#0891b2"/>
+    <!-- Water tubes -->
+    <line x1="50" y1="32" x2="50" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <line x1="80" y1="32" x2="80" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <line x1="110" y1="32" x2="110" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <line x1="140" y1="32" x2="140" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <!-- Fire around -->
+    <text x="170" y="60" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#dc2626">🔥</text>
+    <text x="30" y="60" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#dc2626">🔥</text>
+    <text x="100" y="155" text-anchor="middle" font-family="Fraunces,serif" font-size="20" fill="#1a1814" font-weight="700">Vandrørskedel</text>
+    <text x="100" y="173" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">Op til 220 bar / 550 °C</text>
+    <text x="100" y="190" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">Water Tube</text>
+  </g>
+
+  <!-- ELEKTRISK KEDEL -->
+  <g transform="translate(500,40)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+    <!-- Element -->
+    <path d="M 60 30 L 60 90 M 60 90 L 70 90 L 70 30 L 80 30 L 80 90 L 90 90 L 90 30 L 100 30 L 100 90 L 110 90 L 110 30 L 120 30 L 120 90 L 130 90 L 130 30 L 140 30 L 140 90"
+          stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+    <text x="100" y="20" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#7c3aed" font-weight="700">⚡ EL-ELEMENTER</text>
+    <text x="100" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#0891b2" font-weight="700">VAND</text>
+    <text x="100" y="155" text-anchor="middle" font-family="Fraunces,serif" font-size="20" fill="#1a1814" font-weight="700">Elektrisk kedel</text>
+    <text x="100" y="173" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">Op til 20 bar · Nul emission</text>
+    <text x="100" y="190" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">Electric Boiler</text>
+  </g>
+
+  <!-- Comparison row -->
+  <g transform="translate(0,230)">
+    <text x="120" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Træg opstart</text>
+    <text x="120" y="38" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Stor energilager</text>
+    <text x="120" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Lav vedligehold</text>
+
+    <text x="360" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Hurtig opstart (5 min)</text>
+    <text x="360" y="38" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Lille vandindhold</text>
+    <text x="360" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Kraftværker</text>
+
+    <text x="600" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Ingen skorsten</text>
+    <text x="600" y="38" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Hospital, lab</text>
+    <text x="600" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">Grøn omstilling</text>
+  </g>
+</svg>
+<div class="diagram-caption">Figur 2.1 — De tre hovedtyper dampkedler og deres karakteristika</div>
+</div>
+
+<!-- ═══════════════════ RØGRØRSKEDEL DETAIL ═══════════════════ -->
+<h2>2.2 Røgrørskedel (fire tube)</h2>
+
+<p>Den mest udbredte kedeltype til industriel procesopvarmning. Varme røggasser
+passerer gennem rør, der er omgivet af vand. Vandet opvarmes gennem rørenes
+vægge og bliver til damp.</p>
+
+<h3>3-træks opbygning</h3>
+<div class="diagram">
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Boiler outline -->
+  <rect x="50" y="40" width="600" height="160" rx="80" fill="#f0f9ff" stroke="#1a1814" stroke-width="2"/>
+
+  <!-- 1. trek - flammerør (center bottom) -->
+  <ellipse cx="200" cy="155" rx="100" ry="22" fill="#dc2626" opacity="0.85"/>
+  <text x="200" y="160" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="white" font-weight="700">1. TRÆK · Flammerør</text>
+
+  <!-- Reversal chamber back -->
+  <rect x="295" y="120" width="50" height="70" fill="#1a1814" rx="5"/>
+  <text x="320" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="white">Vendekammer</text>
+
+  <!-- 2. trek - upper -->
+  <rect x="120" y="80" width="280" height="22" rx="11" fill="#ea580c" opacity="0.7"/>
+  <text x="260" y="95" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="white" font-weight="700">2. TRÆK · Røgrør</text>
+
+  <!-- 3. trek - lower side -->
+  <rect x="350" y="155" width="250" height="22" rx="11" fill="#f59e0b" opacity="0.7"/>
+  <text x="475" y="170" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="white" font-weight="700">3. TRÆK · Røgrør</text>
+
+  <!-- Burner -->
+  <rect x="20" y="140" width="35" height="30" rx="3" fill="#1a1814"/>
+  <text x="37" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#hot">BR</text>
+  <line x1="55" y1="155" x2="100" y2="155" stroke="#dc2626" stroke-width="3" stroke-dasharray="3 2"/>
+
+  <!-- Røgafgang -->
+  <rect x="640" y="155" width="40" height="22" fill="#1a1814"/>
+  <line x1="640" y1="166" x2="600" y2="166" stroke="#1a1814" stroke-width="2" marker-end="url(#exhaust)"/>
+  <text x="660" y="195" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#1a1814">→ Skorsten</text>
+
+  <!-- Steam space -->
+  <text x="350" y="55" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#0891b2" font-weight="700">↑ DAMPRUM ↑</text>
+  <!-- Water -->
+  <text x="100" y="120" font-family="DM Sans,sans-serif" font-size="11" fill="#0891b2">VAND</text>
+
+  <!-- Bottom labels -->
+  <text x="350" y="225" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#4a443c">Røggassen passerer 3 gange — derfor "3-træks"</text>
+</svg>
+<div class="diagram-caption">Figur 2.2 — 3-træks røgrørskedel: flammerør (1), røgrør tilbage (2), røgrør frem (3)</div>
+</div>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>Fordele</h3>
+    <ul class="checklist">
+      <li>Simpel konstruktion og billig at fremstille</li>
+      <li>Stort vandindhold giver træg, men stabil drift</li>
+      <li>Lave krav til vandkvalitet (sammenlignet med vandrørskedler)</li>
+      <li>Nemt vedligehold</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Begrænsninger</h3>
+    <ul>
+      <li>Maks. ~25 bar pga. trykbeholderens størrelse</li>
+      <li>Lang opstartstid (1+ time fra kold)</li>
+      <li>Stort krav om plads</li>
+      <li>Ved sprængning: stort energiindhold = stor skadepotentiale</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════ VANDRØRSKEDEL DETAIL ═══════════════════ -->
+<h2>2.3 Vandrørskedel (water tube)</h2>
+
+<p>Her er det omvendt: vandet strømmer inde i rør, som er omgivet af varme
+røggasser. Det giver hurtig dampproduktion og mulighed for høje tryk.</p>
+
+<h3>Fire vandcirkulationsprincipper</h3>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">A</span>
+      <span class="card-title">Naturcirkulation</span>
+    </div>
+    <p>Vandet cirkulerer naturligt på grund af <strong>densitetsforskellen</strong>
+    mellem koldt vand i nedløbsrør og dampbobler i opløbsrør. Ingen pumpe nødvendig
+    i selve cirkulationen.</p>
+    <p><strong>Anvendelse:</strong> Op til ca. 180 bar. Mest udbredt i industrielle
+    kraftværker.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">B</span>
+      <span class="card-title">La Mont (tvangscirkulation)</span>
+    </div>
+    <p>En <strong>cirkulationspumpe</strong> tvinger vandet rundt i rørene.
+    Dyser ved indløbet sikrer ensartet fordeling. Cirkulationsforholdet er
+    typisk 8–10.</p>
+    <p><strong>Anvendelse:</strong> Når naturcirkulation er for langsom eller
+    ved kompleks rørgeometri.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">C</span>
+      <span class="card-title">Benson (once-through)</span>
+    </div>
+    <p>Vandet pumpes <strong>én gang igennem</strong> hele kedlen og kommer ud
+    som overhedet damp. Ingen damp-drum. Kan operere over kritisk punkt
+    (221 bar).</p>
+    <p><strong>Anvendelse:</strong> Moderne overkritiske kraftværker — op til
+    300+ bar.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">D</span>
+      <span class="card-title">Sulzer (once-through m. separator)</span>
+    </div>
+    <p>Variant af Benson med en <strong>separator</strong> efter
+    fordampningssektionen — gør kedlen mere tolerant overfor lastvariationer
+    og forskellige vandkvaliteter.</p>
+    <p><strong>Anvendelse:</strong> Kraftværker med ofte skiftende last.</p>
+  </div>
+</div>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">Krav til vandkvalitet</div>
+    <p>Vandrørskedler — især once-through — stiller <strong>meget strenge krav</strong>
+    til vandets renhed. Urenheder bliver ikke fortyndet i et stort vandvolumen
+    som ved røgrørskedler. Se Modul 05 for vandbehandling.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ HEDTVANDSANLÆG ═══════════════════ -->
+<h2>2.4 Hedtvandsanlæg</h2>
+
+<p>I et hedtvandsanlæg cirkulerer der <strong>kun flydende vand</strong> ved
+temperaturer over 100 °C — typisk 120–170 °C. Vandet forbliver flydende fordi
+en <strong>trykholdepumpe</strong> holder anlægstrykket højere end vandets
+mætningstryk.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0891b2"/>
+    </marker>
+  </defs>
+
+  <!-- Boiler -->
+  <rect x="40" y="100" width="120" height="100" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="100" y="135" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#dc2626" font-weight="700">VARMTVANDS-</text>
+  <text x="100" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#dc2626" font-weight="700">KEDEL</text>
+  <text x="100" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#1a1814">120–170 °C</text>
+
+  <!-- Process / heat exchanger -->
+  <rect x="500" y="100" width="120" height="100" rx="8" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="560" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#0891b2" font-weight="700">VARME-</text>
+  <text x="560" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#0891b2" font-weight="700">VEKSLER</text>
+  <text x="560" y="175" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#1a1814">Forbrugssted</text>
+
+  <!-- Top pipe (hot) -->
+  <line x1="160" y1="120" x2="500" y2="120" stroke="#dc2626" stroke-width="3" marker-end="url(#arrh)"/>
+  <text x="330" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#dc2626" font-weight="700">FREMLØB · 150°C</text>
+
+  <!-- Bottom pipe (cold) -->
+  <line x1="500" y1="180" x2="160" y2="180" stroke="#0891b2" stroke-width="3" marker-end="url(#arrc)"/>
+  <text x="330" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#0891b2" font-weight="700">RETUR · 90°C</text>
+
+  <!-- Trykholdepumpe -->
+  <circle cx="280" cy="180" r="18" fill="#1a1814"/>
+  <text x="280" y="184" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#f59e0b" font-weight="700">TP</text>
+  <text x="280" y="220" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814" font-weight="700">Trykholdepumpe</text>
+  <text x="280" y="234" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">Holder &gt; mætningstryk</text>
+
+  <!-- Expansion -->
+  <rect x="380" y="40" width="60" height="50" rx="3" fill="#fef3c7" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="410" y="60" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#ea580c" font-weight="700">EKSPANSION</text>
+  <text x="410" y="75" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#ea580c" font-weight="700">BEHOLDER</text>
+  <line x1="410" y1="90" x2="410" y2="120" stroke="#1a1814" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- Title -->
+  <text x="350" y="20" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">Komplet hedtvandsanlæg</text>
+</svg>
+<div class="diagram-caption">Figur 2.3 — Hedtvandsanlæg: trykholdepumpen sikrer at vandet ikke fordamper, selv ved 150°C</div>
+</div>
+
+<div class="alert danger">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">KUN VAND — ingen damp!</div>
+    <p>I et hedtvandsanlæg findes der <strong>ikke damp</strong> i normal drift.
+    Sikkerhedsventilen er beregnet på <strong>vandafblæsning</strong> — ikke
+    dampafblæsning som på dampkedler.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../01-certifikater/">
+    <span class="label">← Forrige</span>
+    01 · Certifikater
+  </a>
+  <a class="next" href="../03-termodynamik/">
+    <span class="label">Næste →</span>
+    03 · Termodynamik
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">Modul 02 · Dampkedeltyper</div>
+  <div style="opacity:0.4;">Mercantec · Kedelpasser Kursus</div>
+</div>
+
+</body>
+</html>

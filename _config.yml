@@ -1,0 +1,12 @@
+title: Kedelpasser Kursus
+description: Komplet online-kursus til kedel- og maskinpasser-uddannelsen — infografikker, diagrammer, formler og tabeller
+theme: null
+plugins: []
+
+# Brug bare almindelige HTML-filer (ikke Jekyll-rendering)
+include:
+  - assets
+
+exclude:
+  - README.md
+  - .gitignore

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Modul 04 · Forbrænding &amp; Røggas</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a></div>
+  <div class="topbar-nav">
+    <a href="../03-termodynamik/">← Modul 03</a>
+    <a href="../../index.html">Forside</a>
+    <a href="../05-vandbehandling/">Modul 05 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">Forside</a> / Modul 04 — Forbrænding &amp; Røggas</div>
+
+<div class="kapitel-tag">Modul 04</div>
+<h1>Forbrænding &amp; <span class="underline">røggas</span></h1>
+<p class="lede">
+  Lambda (λ), luftforbrug, røgmængde og røggastab — alt hvad du skal vide om
+  forbrænding og hvordan røggassen analyseres. Med konstanter for både
+  fyringsgasolie, fuelolie og naturgas.
+</p>
+
+<!-- ═══════════════════ FORBRÆNDING ═══════════════════ -->
+<h2>4.1 Hvad sker der ved forbrænding?</h2>
+
+<p>Ved fuldstændig forbrænding af kulbrinter (olie, gas) reagerer kulstof og
+brint med iltet i luften:</p>
+
+<div class="formula">
+C   + O<sub>2</sub>    → CO<sub>2</sub>     + varme<br>
+2 H<sub>2</sub> + O<sub>2</sub>    → 2 H<sub>2</sub>O   + varme
+</div>
+
+<div class="grid grid-3">
+  <div class="fact">
+    <div class="fact-label">Luft består af</div>
+    <div class="fact-val">21% O₂</div>
+    <div class="fact-note">+ 78% N₂ + 1% argon mm.</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">Røggas indeholder</div>
+    <div class="fact-val">CO₂, H₂O, N₂, O₂</div>
+    <div class="fact-note">+ ufuldstændige produkter (CO, sod)</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">Antændelses-temp</div>
+    <div class="fact-val">Olie: ~250°C</div>
+    <div class="fact-note">N-gas: 600°C · F-gas: 470°C</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ LAMBDA ═══════════════════ -->
+<h2>4.2 Lambda (λ) — luftoverskudskoefficienten</h2>
+
+<p>Lambda angiver forholdet mellem <strong>aktuelt</strong> luftforbrug og det
+<strong>teoretisk optimale</strong>:</p>
+
+<div class="formula">
+λ = <b>aktuelt luftforbrug ÷ teoretisk luftforbrug</b><br><br>
+Beregnet ud fra O<sub>2</sub>-måling i røggassen:<br>
+λ = 21 ÷ (21 − O<sub>2</sub>%)
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Scale -->
+  <rect x="40" y="80" width="640" height="40" rx="20"
+        fill="url(#lamScale)" stroke="#1a1814" stroke-width="1.5"/>
+  <defs>
+    <linearGradient id="lamScale" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="20%" stop-color="#ea580c"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="45%" stop-color="#15803d"/>
+      <stop offset="60%" stop-color="#15803d"/>
+      <stop offset="75%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tick marks -->
+  <line x1="40" y1="120" x2="40" y2="135" stroke="#1a1814" stroke-width="1.5"/>
+  <text x="40" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814" font-weight="700">0,9</text>
+  <line x1="200" y1="120" x2="200" y2="135" stroke="#1a1814" stroke-width="1.5"/>
+  <text x="200" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814" font-weight="700">1,1</text>
+  <line x1="320" y1="120" x2="320" y2="135" stroke="#1a1814" stroke-width="1.5"/>
+  <text x="320" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#15803d" font-weight="700">1,2</text>
+  <line x1="440" y1="120" x2="440" y2="135" stroke="#1a1814" stroke-width="1.5"/>
+  <text x="440" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814" font-weight="700">1,3</text>
+  <line x1="600" y1="120" x2="600" y2="135" stroke="#1a1814" stroke-width="1.5"/>
+  <text x="600" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814" font-weight="700">1,5</text>
+
+  <!-- Top labels -->
+  <text x="40" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-weight="700">FARLIGT</text>
+  <text x="40" y="50" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#dc2626">Sod, CO</text>
+
+  <text x="320" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#15803d" font-weight="700">OPTIMALT</text>
+  <text x="320" y="50" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#15803d">Lavt røggastab</text>
+
+  <text x="600" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-weight="700">FOR HØJT</text>
+  <text x="600" y="50" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#dc2626">Energitab</text>
+
+  <!-- Title -->
+  <text x="360" y="25" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">Lambda-skala for fyringsgasolie</text>
+
+  <!-- O2 references -->
+  <text x="360" y="195" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#8a8478">λ = 1,15 ⇔ O₂ ≈ 2,7%   ·   λ = 1,25 ⇔ O₂ ≈ 4,2%   ·   λ = 1,4 ⇔ O₂ ≈ 6,0%</text>
+</svg>
+<div class="diagram-caption">Figur 4.1 — Lambda-skala: optimalt område for fyringsgasolie er λ = 1,15–1,25</div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Brændsel</th><th>Optimal λ</th><th>O₂% i røggas</th><th>Bemærkning</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Naturgas</td><td class="num">1,10–1,20</td><td class="num">2,0–3,5%</td><td>Renest forbrænding</td></tr>
+    <tr><td>Fyringsgasolie</td><td class="num">1,15–1,25</td><td class="num">2,7–4,2%</td><td>Mest udbredt</td></tr>
+    <tr><td>Fuelolie (tung)</td><td class="num">1,20–1,30</td><td class="num">3,5–4,8%</td><td>Højere viskositet</td></tr>
+    <tr><td>Kul</td><td class="num">1,30–1,50</td><td class="num">4,8–7,0%</td><td>Heterogen forbrænding</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════════ RØGGASTAB ═══════════════════ -->
+<h2>4.3 Røggastab — formler</h2>
+
+<p>Røggastabet beregnes ud fra <strong>røggassens temperatur</strong>,
+<strong>iltindhold</strong> (eller CO₂-indhold) og en konstant der afhænger af
+brændstoftypen:</p>
+
+<div class="formula">
+<b>Fyringsgasolie (O<sub>2</sub>):</b><br>
+Røggastab % = (<em>68</em> ÷ (21 − O<sub>2</sub>%) + 0,7) × (T<sub>røg</sub> − T<sub>luft</sub>) ÷ 100<br><br>
+<b>Fuelolie (O<sub>2</sub>):</b><br>
+Røggastab % = (<em>70</em> ÷ (21 − O<sub>2</sub>%) + 0,7) × (T<sub>røg</sub> − T<sub>luft</sub>) ÷ 100<br><br>
+<b>Naturgas (O<sub>2</sub>):</b><br>
+Røggastab % = (<em>66</em> ÷ (21 − O<sub>2</sub>%) + 1,0) × (T<sub>røg</sub> − T<sub>luft</sub>) ÷ 100<br><br>
+<b>Fyringsgasolie (CO<sub>2</sub>):</b><br>
+Røggastab % = (<em>50</em> ÷ CO<sub>2</sub>% + 0,7) × (T<sub>røg</sub> − T<sub>luft</sub>) ÷ 100
+</div>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">Hvilken konstant?</div>
+    <p>Konstanterne er <strong>brændstofspecifikke</strong>. Brug 68 for almindelig
+    fyringsgasolie (let olie), 70 for fuelolie (tung olie), og 66 for naturgas.
+    Forveksling med konstanter giver fejlagtigt røggastab.</p>
+  </div>
+</div>
+
+<h3>Eksempel — fyringsgasolie</h3>
+<div class="card">
+<p>Målt: O<sub>2</sub> = 5,5%, T<sub>røg</sub> = 196 °C, T<sub>luft</sub> = 19 °C</p>
+<div class="formula">
+λ = 21 ÷ (21 − 5,5) = 21 ÷ 15,5 = <b>1,35</b><br><br>
+Røggastab = (68 ÷ 15,5 + 0,7) × (196 − 19) ÷ 100<br>
+         = (4,387 + 0,7) × 177 ÷ 100<br>
+         = 5,087 × 1,77 = <b>9,0 %</b>
+</div>
+</div>
+
+<!-- ═══════════════════ LUFT & RØG ═══════════════════ -->
+<h2>4.4 Luftforbrug &amp; røgmængde</h2>
+
+<p>For en given brændstofkvalitet (h<sub>i</sub>) kan minimum luftforbrug og
+røgmængde aflæses fra et diagram:</p>
+
+<div class="formula">
+<b>Min. luftforbrug</b>  L<sub>min</sub> = aflæses fra diagram ved h<sub>i</sub><br>
+<b>Min. røgmængde</b>    R<sub>min</sub> ≈ L<sub>min</sub> + 1 m³<sub>n</sub>/kg<br><br>
+<b>Aktuelt luftforbrug:</b> L = L<sub>min</sub> × λ<br>
+<b>Aktuel røgmængde:</b>    R = R<sub>min</sub> × λ
+</div>
+
+<h3>Eksempel</h3>
+<div class="card">
+<p>Fyringsgasolie h<sub>i</sub> = 42,7 MJ/kg, λ = 1,35:</p>
+<table style="margin-top:8px;">
+  <thead><tr><th></th><th>Min. (λ=1)</th><th>Aktuel (λ=1,35)</th></tr></thead>
+  <tbody>
+    <tr><td>Luftforbrug</td><td class="num">11,3 m³n/kg</td><td class="num">15,26 m³n/kg</td></tr>
+    <tr><td>Røgmængde</td><td class="num">12,3 m³n/kg</td><td class="num">16,61 m³n/kg</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══════════════════ BRÆNDSTOFFER ═══════════════════ -->
+<h2>4.5 Brændstoffer — overblik</h2>
+
+<table>
+  <thead>
+    <tr><th>Brændsel</th><th>h<sub>i</sub> [MJ/kg eller MJ/m³n]</th><th>Densitet</th><th>Brug</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Fyringsgasolie</strong></td>
+      <td class="num">42,7 MJ/kg</td>
+      <td class="num">0,845 kg/l</td>
+      <td>Industri, parcelhus</td>
+    </tr>
+    <tr>
+      <td><strong>Fuelolie (tung)</strong></td>
+      <td class="num">40,1 MJ/kg</td>
+      <td class="num">0,927–0,95 kg/l</td>
+      <td>Skibe, kraftvarme</td>
+    </tr>
+    <tr>
+      <td><strong>Naturgas (N-gas)</strong></td>
+      <td class="num">39,5 MJ/m³n</td>
+      <td class="num">~0,80 kg/m³</td>
+      <td>Industri, husholdning</td>
+    </tr>
+    <tr>
+      <td><strong>F-gas (propan)</strong></td>
+      <td class="num">93,5 MJ/m³n</td>
+      <td class="num">1,86 kg/m³</td>
+      <td>Mobilt, områder uden N-gas</td>
+    </tr>
+    <tr>
+      <td><strong>Biogas</strong></td>
+      <td class="num">~22 MJ/m³n</td>
+      <td>—</td>
+      <td>Grøn omstilling</td>
+    </tr>
+    <tr>
+      <td><strong>Stenkul</strong></td>
+      <td class="num">28–34 MJ/kg</td>
+      <td class="num">~1,3 kg/l</td>
+      <td>Kraftværker (udfases)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert warn">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">Eksplosionsgrænser — vigtigt for gas</div>
+    <p>For naturgas: 5–15 vol% i luft. For propan: 2,1–9,5 vol%. Inden for disse
+    grænser er gasblandingen <strong>eksplosiv</strong>. Derfor er gasrampens
+    sikkerhedssystem (OT/UT, tæthedskontrol) afgørende.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../03-termodynamik/">
+    <span class="label">← Forrige</span>
+    03 · Termodynamik
+  </a>
+  <a class="next" href="../05-vandbehandling/">
+    <span class="label">Næste →</span>
+    05 · Vandbehandling
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">Modul 04 · Forbrænding &amp; Røggas</div>
+  <div style="opacity:0.4;">Mercantec · Kedelpasser Kursus</div>
+</div>
+
+</body>
+</html>

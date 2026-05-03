@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Modul 08 · Energi &amp; Grøn omstilling</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a></div>
+  <div class="topbar-nav">
+    <a href="../07-drift-vedligehold/">← Modul 07</a>
+    <a href="../../index.html">Forside</a>
+    <a href="../09-formler-tabeller/">Modul 09 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">Forside</a> / Modul 08 — Energi &amp; Grøn omstilling</div>
+
+<div class="kapitel-tag">Modul 08</div>
+<h1>Energi &amp; <span class="underline">grøn omstilling</span></h1>
+<p class="lede">
+  Hvor effektiv er kedlen — og hvordan gør vi den bedre? Virkningsgrad,
+  economizer, varmegenvinding, varmepumper, biomasse, elkedler og
+  fjernvarme. Plus to virkelige cases: Carletti og Arla.
+</p>
+
+<!-- ═══════════════════ ENERGIBALANCE ═══════════════════ -->
+<h2>8.1 Hvor bliver energien af?</h2>
+
+<p>En typisk gas- eller oliekedel uden økonomiser har en virkningsgrad på
+<strong>85–90%</strong>. Resten ryger ud af skorstenen, ud gennem isolering,
+og som blowdown-tab. Her er hvor energien går hen i en gennemsnitlig kedel:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Energy in -->
+  <rect x="20" y="120" width="120" height="60" rx="4" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="80" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#b45309">BRÆNDSEL IND</text>
+  <text x="80" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#1a1814" font-weight="700">100%</text>
+
+  <!-- Main pipe -->
+  <path d="M 140 150 L 280 150" stroke="#1a1814" stroke-width="3" fill="none"/>
+
+  <!-- Boiler -->
+  <rect x="280" y="100" width="180" height="100" rx="6" fill="#fefcf6" stroke="#1a1814" stroke-width="2"/>
+  <text x="370" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#1a1814">DAMPKEDEL</text>
+  <text x="370" y="160" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">forbrænding +</text>
+  <text x="370" y="175" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">varmeoverførsel</text>
+
+  <!-- Useful steam out -->
+  <path d="M 460 130 L 600 130" stroke="#15803d" stroke-width="4" fill="none"/>
+  <polygon points="595,125 615,130 595,135" fill="#15803d"/>
+  <rect x="615" y="105" width="120" height="50" rx="4" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="675" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#15803d">NYTTIG DAMP</text>
+  <text x="675" y="145" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#1a1814" font-weight="700">87%</text>
+
+  <!-- Flue gas loss -->
+  <path d="M 370 100 L 370 40" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <polygon points="365,45 370,30 375,45" fill="#dc2626"/>
+  <rect x="290" y="10" width="160" height="30" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="370" y="29" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#991b1b">RØGGASTAB ~10%</text>
+
+  <!-- Radiation/convection loss -->
+  <path d="M 320 200 L 280 240" stroke="#ea580c" stroke-width="2" fill="none"/>
+  <polygon points="282,235 275,245 290,243" fill="#ea580c"/>
+  <rect x="140" y="240" width="140" height="30" rx="4" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="210" y="259" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" fill="#b45309">STRÅLINGSTAB ~2%</text>
+
+  <!-- Blowdown loss -->
+  <path d="M 420 200 L 460 240" stroke="#0891b2" stroke-width="2" fill="none"/>
+  <polygon points="455,235 470,243 460,247" fill="#0891b2"/>
+  <rect x="460" y="240" width="160" height="30" rx="4" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="540" y="259" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" fill="#0e7490">BLOWDOWN-TAB ~1%</text>
+
+  <!-- Bottom note -->
+  <text x="370" y="300" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">Σ tab ≈ 13% &nbsp;·&nbsp; η ≈ 87% &nbsp;·&nbsp; alle værdier er typiske for moderne kedel uden economizer</text>
+</svg>
+</div>
+<div class="diagram-caption">Energiflow i en typisk dampkedel — Sankey-stil oversigt</div>
+
+<!-- ═══════════════════ FORBEDRINGER ═══════════════════ -->
+<h2>8.2 Tiltag der forbedrer virkningsgraden</h2>
+
+<table>
+  <thead>
+    <tr><th>Tiltag</th><th>Virkning</th><th>Forventet besparelse</th><th>Investering</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Economizer</strong></td>
+      <td>Genvinder røggasvarme til fødevandet</td>
+      <td>+3 til +6%</td>
+      <td>Mellem</td>
+    </tr>
+    <tr>
+      <td><strong>Forvarmning af forbrændingsluft</strong></td>
+      <td>Røggas → luftforvarmer (LUVO)</td>
+      <td>+2 til +4%</td>
+      <td>Mellem</td>
+    </tr>
+    <tr>
+      <td><strong>O₂-trim</strong></td>
+      <td>Iltsensor styrer luftoverskud automatisk</td>
+      <td>+1 til +3%</td>
+      <td>Lav</td>
+    </tr>
+    <tr>
+      <td><strong>Frekvensstyret blæser</strong></td>
+      <td>Reducerer elforbrug ved dellast</td>
+      <td>30–60% el-besparelse på blæser</td>
+      <td>Lav–mellem</td>
+    </tr>
+    <tr>
+      <td><strong>Kondenserende kedel (gas)</strong></td>
+      <td>Udnytter kondensationsvarme i røggas</td>
+      <td>+8 til +12% (på øvre brændværdi)</td>
+      <td>Høj</td>
+    </tr>
+    <tr>
+      <td><strong>Varmegenvinding på blowdown</strong></td>
+      <td>Varmeveksler på afblæsningsvand</td>
+      <td>+0,5 til +1%</td>
+      <td>Lav</td>
+    </tr>
+    <tr>
+      <td><strong>Bedre isolering</strong></td>
+      <td>Reducerer strålingstab</td>
+      <td>+0,5 til +1,5%</td>
+      <td>Lav</td>
+    </tr>
+    <tr>
+      <td><strong>Brænder-renovation</strong></td>
+      <td>Optimal flammegeometri, lavt CO</td>
+      <td>+1 til +3%</td>
+      <td>Mellem</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">Tommelfingerregel for økonomiser</div>
+    <p>Hver <strong>20°C reduktion</strong> i røggastemperaturen ≈ <strong>1%
+    forbedring</strong> i virkningsgrad. En kedel med 220°C røggastemperatur
+    der får økonomiser ned til 150°C → ~3,5% besparelse.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ ALTERNATIVE ENERGIKILDER ═══════════════════ -->
+<h2>8.3 Alternativer til fossile brændsler</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-head"><div class="card-num">B</div><div class="card-title">Biomasse / træpiller</div></div>
+    <p><strong>CO₂:</strong> Neutral (biogen)</p>
+    <p><strong>Brændværdi:</strong> Træpiller ~17 MJ/kg, halm ~14 MJ/kg</p>
+    <p><strong>Drift:</strong> Kræver lager, transportør, askesystem.
+    Mere personaleintensiv end gas/olie.</p>
+    <p><strong>Egnet til:</strong> Mellemstore-store anlæg, industri med
+    egen biomasseressource.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">E</div><div class="card-title">Elkedel</div></div>
+    <p><strong>CO₂:</strong> Følger elnettets miks (dansk net ~80% grønt 2024)</p>
+    <p><strong>Virkningsgrad:</strong> ~99%</p>
+    <p><strong>Drift:</strong> Næsten vedligeholdsfri. Kan svare hurtigt på
+    ind/udkobling — godt til timetariffer og overskudsel.</p>
+    <p><strong>Egnet til:</strong> Spids-/reservelast, "power-to-heat"
+    integration med vind/sol.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">V</div><div class="card-title">Varmepumpe</div></div>
+    <p><strong>CO₂:</strong> Følger elnettet — meget lav effektiv CO₂ pga. COP</p>
+    <p><strong>COP:</strong> 3–5 ved moderate temperaturer; falder ved høj
+    fremløbstemperatur</p>
+    <p><strong>Drift:</strong> Høj startinvestering, lav driftsomkostning.
+    Kombineres ofte med eksisterende dampkedel.</p>
+    <p><strong>Egnet til:</strong> Procesvarme &lt;100°C, fjernvarme,
+    forvarmning af fødevand.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">G</div><div class="card-title">Biogas / e-fuels</div></div>
+    <p><strong>CO₂:</strong> Biogas neutral; e-metan/brint kræver grøn el</p>
+    <p><strong>Brændværdi:</strong> Sammenlignelig med naturgas (afhængigt af
+    metanindhold)</p>
+    <p><strong>Drift:</strong> Eksisterende gaskedel kan ofte konverteres
+    med mindre justeringer (luftforhold, brænder).</p>
+    <p><strong>Egnet til:</strong> Industri tæt på biogasanlæg, gradvis
+    omstilling.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CASE: CARLETTI ═══════════════════ -->
+<h2>8.4 Case: Carletti A/S — grøn omstilling</h2>
+
+<p>Carletti A/S i Skødstrup producerer slik. Procesvarmen kommer i dag fra
+<strong>naturgaskedler</strong>. Spørgsmålet i grøn-omstillings-projektet er:
+hvordan kan man reducere CO₂-udledningen mest meningsfuldt?</p>
+
+<div class="grid grid-3">
+  <div class="fact">
+    <div class="fact-label">Udgangspunkt</div>
+    <div class="fact-val">Naturgas</div>
+    <div class="fact-unit">2 stk. dampkedler</div>
+    <div class="fact-note">Procesvarme + opvarmning</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">Behov</div>
+    <div class="fact-val">~3 MW</div>
+    <div class="fact-unit">termisk effekt</div>
+    <div class="fact-note">Damp ved 8–10 bar</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">Mål</div>
+    <div class="fact-val">−70%</div>
+    <div class="fact-unit">CO₂ til 2030</div>
+    <div class="fact-note">Iht. virksomhedsstrategi</div>
+  </div>
+</div>
+
+<h3>Løsningsmodel — kombineret tilgang</h3>
+
+<table>
+  <thead>
+    <tr><th>Trin</th><th>Tiltag</th><th>CO₂-reduktion</th><th>Kommentar</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Energi-screening + LEAN-tiltag</td>
+      <td>~5–10%</td>
+      <td>Lave-/no-cost: lukke ventiler, isolere, reducere standby</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Economizer + O₂-trim på eksisterende kedler</td>
+      <td>~5%</td>
+      <td>Hurtig payback &lt;3 år</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Varmepumpe til lav-temperatur procesvarme + lokaler</td>
+      <td>~20%</td>
+      <td>Bruger overskudsvarme fra kølesystemer</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Elkedel som spidslast / overskudsel-buffer</td>
+      <td>~10%</td>
+      <td>Udnytter timer med billig grøn strøm</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Konvertering til biogas på resterende dampbehov</td>
+      <td>~30%</td>
+      <td>Kræver gasleverandør og evt. konvertering af brænder</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert ok">
+  <div class="alert-icon">✓</div>
+  <div class="alert-body">
+    <div class="alert-title">Hvorfor en hybrid løsning?</div>
+    <p>At udskifte alt med én løsning er sjældent optimalt. Varmepumper er
+    fremragende ved &lt;100°C, men ineffektive ved 180°C damp. Elkedler er
+    perfekte som spidslast men dyre i konstant drift. Biogas løser
+    højtemperatur-procesvarme uden ny infrastruktur. Den smarte plan
+    bruger hver teknologi hvor den passer bedst.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CASE: ARLA ═══════════════════ -->
+<h2>8.5 Case: Arla — varmepumpe + dampkedel</h2>
+
+<p>Arla har implementeret <strong>industrielle varmepumper</strong> på flere
+anlæg. Princippet: overskudsvarme fra kølecentralen (køling af mælk) bliver
+løftet til ~85°C og bruges direkte i forvarmning og rengøringsanlæg.
+Dampkedlerne dækker kun det resterende højtemperatur-behov.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cooling center -->
+  <rect x="20" y="80" width="140" height="80" rx="6" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="90" y="110" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#0e7490">KØLECENTRAL</text>
+  <text x="90" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">overskudsvarme</text>
+  <text x="90" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">~30°C</text>
+
+  <path d="M 160 120 L 220 120" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <polygon points="215,115 230,120 215,125" fill="#dc2626"/>
+
+  <!-- Heat pump -->
+  <rect x="230" y="80" width="160" height="80" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="310" y="110" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#15803d">VARMEPUMPE</text>
+  <text x="310" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">COP ≈ 4</text>
+  <text x="310" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">85°C ud</text>
+
+  <path d="M 390 120 L 450 120" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <polygon points="445,115 460,120 445,125" fill="#dc2626"/>
+
+  <!-- Process -->
+  <rect x="460" y="40" width="160" height="80" rx="6" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="540" y="70" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#b45309">FORVARMNING</text>
+  <text x="540" y="88" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">+ rengøring (CIP)</text>
+  <text x="540" y="103" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">~80°C</text>
+
+  <!-- Dampkedel -->
+  <rect x="460" y="140" width="160" height="80" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="540" y="170" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#991b1b">DAMPKEDEL</text>
+  <text x="540" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">resterende højtemp.</text>
+  <text x="540" y="203" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">8–12 bar damp</text>
+
+  <!-- El input to HP -->
+  <path d="M 310 80 L 310 30" stroke="#7c3aed" stroke-width="2" fill="none"/>
+  <polygon points="305,35 310,20 315,35" fill="#7c3aed"/>
+  <text x="310" y="15" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#7c3aed">EL ind (1 kW)</text>
+  <text x="310" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#15803d">→ 4 kW varme</text>
+
+  <!-- Bottom note -->
+  <text x="380" y="232" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-style="italic">Kølecentralens "spildvarme" bliver til procesvarme — 75% gratis fra spildet</text>
+</svg>
+</div>
+<div class="diagram-caption">Arla-modellen: industriel varmepumpe + eksisterende dampkedel som hybrid</div>
+
+<!-- ═══════════════════ KEDELPASSEREN ═══════════════════ -->
+<h2>8.6 Kedelpasserens rolle i den grønne omstilling</h2>
+
+<p>Den grønne omstilling betyder ikke at kedelpasserens job forsvinder —
+det betyder at <strong>jobbet udvides</strong>. Hybridanlæg, varmepumper,
+batterier, fjernovervågning og spids-/reservelast-strategier kræver
+operatører der forstår både den klassiske kedel og den moderne
+energistyring.</p>
+
+<div class="grid grid-3">
+  <div class="card">
+    <div class="card-head"><div class="card-num">1</div><div class="card-title">Lastfordeling</div></div>
+    <p>I et hybridanlæg afgør du time for time hvilken energikilde der er
+    billigst og grønnest. Det kræver forståelse for elpriser, gaspriser,
+    CO₂-faktorer og automation.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">2</div><div class="card-title">Energiregistrering</div></div>
+    <p>Energiledelse iht. ISO 50001 kræver præcis, kontinuerlig registrering.
+    Kedelpasseren er ofte den der ejer dataindsamlingen og kvalitetssikrer
+    målingerne.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">3</div><div class="card-title">Optimering</div></div>
+    <p>De små gevinster akkumuleres: indsugningsluft fra det rette sted,
+    isolering der vedligeholdes, ventiler der ikke siver. Kedelpasseren
+    er den der ser det først.</p>
+  </div>
+</div>
+
+<div class="pagenav">
+  <a href="../07-drift-vedligehold/">
+    <div class="label">← Forrige</div>
+    <div class="title">Modul 07 · Drift &amp; Vedligehold</div>
+  </a>
+  <a href="../09-formler-tabeller/" class="next">
+    <div class="label">Næste →</div>
+    <div class="title">Modul 09 · Formler &amp; Tabeller</div>
+  </a>
+</div>
+
+<div class="footer">
+  <div class="footer-line"></div>
+  <p>Kilde: <em>Kedel- og maskinpasser</em>, Erhvervsskolernes forlag, 5. udgave (2008) ·
+  Industriel energianalyse · Carletti / Arla cases</p>
+</div>
+
+</div>
+</body>
+</html>

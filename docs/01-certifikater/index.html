@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Modul 01 · Certifikater &amp; Lovgivning</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> KEDEL<b>PASSER</b> KURSUS</a></div>
+  <div class="topbar-nav">
+    <a href="../../index.html">← Forside</a>
+    <a href="../02-dampkedler/">Næste modul →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">Forside</a> / Modul 01 — Certifikater &amp; Lovgivning</div>
+
+<div class="kapitel-tag">Modul 01</div>
+<h1>Certifikater &amp; <span class="underline">lovgivning</span></h1>
+<p class="lede">
+  Hvornår kræves der kedelpassercertifikat? Hvilke kontrolklasser findes der?
+  Hvordan beregner man PS×V? Dette modul samler alt om <strong>BEK 498/2024</strong>,
+  certifikattyper og eftersynsintervaller.
+</p>
+
+<!-- ═══════════════════ HVORNÅR KRÆVES CERTIFIKAT ═══════════════════ -->
+<h2>1.1 Hvornår kræves der certifikat?</h2>
+
+<p>
+  Ifølge <strong>BEK 498/2024</strong> (tidligere BEK 100/2007) kræves
+  kedelpassercertifikat <strong>kun hvis BEGGE betingelser er opfyldt</strong>:
+</p>
+
+<div class="diagram">
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1a1814"/>
+    </marker>
+  </defs>
+
+  <!-- ROW 1: Two conditions -->
+  <rect x="50" y="30" width="280" height="90" rx="10" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+  <text x="190" y="60" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#dc2626" font-weight="700">BETINGELSE 1</text>
+  <text x="190" y="85" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="15" fill="#1a1814" font-weight="700">Arbejdstryk &gt; 10 bar</text>
+  <text x="190" y="105" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#4a443c">(eller hedtvand &gt; 110 °C)</text>
+
+  <rect x="370" y="30" width="280" height="90" rx="10" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+  <text x="510" y="60" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#dc2626" font-weight="700">BETINGELSE 2</text>
+  <text x="510" y="85" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="15" fill="#1a1814" font-weight="700">Vandrum + Damprum</text>
+  <text x="510" y="105" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#1a1814" font-weight="700">&gt; 1000 liter</text>
+
+  <!-- AND gate / merge -->
+  <line x1="190" y1="120" x2="190" y2="160" stroke="#1a1814" stroke-width="1.5"/>
+  <line x1="510" y1="120" x2="510" y2="160" stroke="#1a1814" stroke-width="1.5"/>
+  <line x1="190" y1="160" x2="510" y2="160" stroke="#1a1814" stroke-width="1.5"/>
+  <line x1="350" y1="160" x2="350" y2="190" stroke="#1a1814" stroke-width="2" marker-end="url(#arr1)"/>
+  <text x="350" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814" font-weight="700">OG</text>
+
+  <!-- Result -->
+  <rect x="200" y="200" width="300" height="70" rx="35" fill="#15803d"/>
+  <text x="350" y="232" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="white" font-weight="700">✓ Certifikat KRÆVES</text>
+  <text x="350" y="252" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="white" opacity="0.9">BEK 498/2024</text>
+
+  <!-- Footnote -->
+  <text x="350" y="320" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#8a8478">Hvis kun ÉN af betingelserne opfyldes (eller ingen) — intet certifikat påkrævet.</text>
+  <text x="350" y="340" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#8a8478">Dog skal anlægget altid være forsvarligt opstillet og betjent jf. § 23.</text>
+</svg>
+<div class="diagram-caption">Figur 1.1 — Begge betingelser skal være opfyldt før certifikat kræves (BEK 498/2024 §29)</div>
+</div>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">Bemærk</div>
+    <p>BEK 498/2024 har erstattet BEK 100/2007 pr. 1. juni 2024. Kravstrukturen er
+    i det væsentlige uændret, men kontrolklasserne er opdateret.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CERTIFIKATTYPER ═══════════════════ -->
+<h2>1.2 Certifikattyper I, II &amp; III</h2>
+
+<table>
+  <thead>
+    <tr><th>Type</th><th>Arbejdstryk</th><th>Vandindhold</th><th>Anvendelse</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Type I</strong></td>
+      <td class="num">10–30 bar</td>
+      <td class="num">1.000–5.000 liter</td>
+      <td>Mindre dampkedler, forsyningsanlæg</td>
+    </tr>
+    <tr>
+      <td><strong>Type II</strong></td>
+      <td class="num">≤ 60 bar</td>
+      <td class="num">≤ 20.000 liter</td>
+      <td>Mellemstore industrikedler</td>
+    </tr>
+    <tr>
+      <td><strong>Type III</strong></td>
+      <td class="num">&gt; 60 bar</td>
+      <td>Ubegrænset</td>
+      <td>Kraftværker, store procesanlæg</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Pasning uden certifikat — hvornår er det tilladt?</h3>
+<p>En person uden gyldigt kedelpassercertifikat må <strong>kun</strong> passe en
+kedel, der normalt kræver certifikat, hvis følgende er opfyldt:</p>
+<ul class="checklist">
+  <li>Personen er <strong>under oplæring</strong> og har modtaget instruktion om det specifikke anlæg</li>
+  <li>En person med gyldigt certifikat (af mindst samme type) er <strong>til stede på anlægget</strong></li>
+  <li>Der foreligger <strong>skriftlige anvisninger</strong> for forsvarlig drift, pasning og vedligeholdelse (§ 23)</li>
+  <li>Personen kender <strong>foranstaltninger ved driftsforstyrrelser</strong> og nødprocedurer</li>
+</ul>
+
+<!-- ═══════════════════ KONTROLKLASSER ═══════════════════ -->
+<h2>1.3 Kontrolklasser A, B &amp; C — PS×V</h2>
+
+<p>Klassificeringen bestemmes af <strong>produkttallet PS × V</strong>, hvor
+PS er det maksimalt tilladte tryk i bar og V er beholdervolumenet i liter.</p>
+
+<div class="formula">
+PS × V = <b>produkttal</b>  [bar · liter]<br>
+PS = maks. tilladt tryk [bar]<br>
+V  = volumen (vand + damp) [liter]
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Three vertical bars -->
+  <!-- Klasse A -->
+  <rect x="60" y="40" width="180" height="220" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <rect x="60" y="40" width="180" height="36" rx="8" fill="#dc2626"/>
+  <text x="150" y="63" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="white" font-weight="800">KLASSE A</text>
+  <text x="150" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#1a1814">PS × V &gt;</text>
+  <text x="150" y="135" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="32" fill="#dc2626" font-weight="800">200</text>
+  <text x="150" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#4a443c">bar · l</text>
+  <line x1="80" y1="180" x2="220" y2="180" stroke="#dc2626" stroke-dasharray="2 2" opacity="0.4"/>
+  <text x="150" y="205" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-weight="700">Ydre eftersyn:</text>
+  <text x="150" y="222" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#dc2626" font-weight="700">1 år</text>
+  <text x="150" y="245" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-weight="700">Indre eftersyn:</text>
+  <text x="150" y="262" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#dc2626" font-weight="700">5 år</text>
+
+  <!-- Klasse B -->
+  <rect x="260" y="40" width="180" height="220" rx="8" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <rect x="260" y="40" width="180" height="36" rx="8" fill="#ea580c"/>
+  <text x="350" y="63" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="white" font-weight="800">KLASSE B</text>
+  <text x="350" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#1a1814">PS × V =</text>
+  <text x="350" y="135" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="26" fill="#ea580c" font-weight="800">25–200</text>
+  <text x="350" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#4a443c">bar · l</text>
+  <line x1="280" y1="180" x2="420" y2="180" stroke="#ea580c" stroke-dasharray="2 2" opacity="0.4"/>
+  <text x="350" y="205" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-weight="700">Ydre eftersyn:</text>
+  <text x="350" y="222" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#ea580c" font-weight="700">2 år</text>
+  <text x="350" y="245" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-weight="700">Indre eftersyn:</text>
+  <text x="350" y="262" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#ea580c" font-weight="700">6 år</text>
+
+  <!-- Klasse C -->
+  <rect x="460" y="40" width="180" height="220" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <rect x="460" y="40" width="180" height="36" rx="8" fill="#15803d"/>
+  <text x="550" y="63" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="white" font-weight="800">KLASSE C</text>
+  <text x="550" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#1a1814">PS × V &lt;</text>
+  <text x="550" y="135" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="32" fill="#15803d" font-weight="800">25</text>
+  <text x="550" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#4a443c">bar · l</text>
+  <line x1="480" y1="180" x2="620" y2="180" stroke="#15803d" stroke-dasharray="2 2" opacity="0.4"/>
+  <text x="550" y="205" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-weight="700">Ydre eftersyn:</text>
+  <text x="550" y="222" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#15803d" font-weight="700">4 år</text>
+  <text x="550" y="245" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-weight="700">Indre eftersyn:</text>
+  <text x="550" y="262" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#15803d" font-weight="700">Ingen krav</text>
+
+  <text x="350" y="295" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#8a8478" font-style="italic">Højere klasse = strengere krav</text>
+</svg>
+<div class="diagram-caption">Figur 1.2 — Kontrolklasser efter BEK 498/2024 og deres eftersynsintervaller</div>
+</div>
+
+<h3>Eksempel — beregn produkttal</h3>
+<div class="card">
+<p>En røgrørskedel med <strong>PS = 12 bar</strong> og <strong>V = 8.500 liter</strong>:</p>
+<div class="formula">
+PS × V = 12 × 8.500 = <b>102.000</b> bar·l
+</div>
+<p>Resultat: <span class="badge badge-red">KLASSE A</span> — produkttallet er over 200 (langt over),
+så kedlen falder i klasse A med <strong>1 år ydre / 5 år indre</strong> eftersyn.</p>
+</div>
+
+<!-- ═══════════════════ KEDELPASSERENS ANSVAR ═══════════════════ -->
+<h2>1.4 Kedelpasserens ansvar</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>Daglige opgaver</h3>
+    <ul>
+      <li>Tilsyn med kedlens drift og sikkerhedsudstyr</li>
+      <li>Aflæsning af tryk, temperatur og vandstand</li>
+      <li>Vandanalyse efter foreskreven frekvens</li>
+      <li>Bundblæsning og overfladeblæsning</li>
+      <li>Føring af kedelbog</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Periodiske opgaver</h3>
+    <ul>
+      <li>Ugentlig afprøvning af sikkerhedsventil (manuelt løft)</li>
+      <li>Ugentlig blæsning af vandstandsglas</li>
+      <li>Månedlig kontrol af regulatorer og pressostater</li>
+      <li>Tilsyn ved indre/ydre eftersyn af inspektionsorgan</li>
+    </ul>
+  </div>
+</div>
+
+<div class="alert warn">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">Vigtigt — Kedelbog</div>
+    <p>Alle observationer, hændelser, vandanalyser, bundblæsninger og vagtskift
+    skal indføres i kedelbogen. Den er det officielle dokument over kedlens drift
+    og indgår i inspektionsorganets vurdering ved eftersyn.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../../index.html">
+    <span class="label">← Tilbage</span>
+    Forside
+  </a>
+  <a class="next" href="../02-dampkedler/">
+    <span class="label">Næste modul →</span>
+    02 · Dampkedeltyper
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">Modul 01 · Certifikater &amp; Lovgivning · BEK 498/2024</div>
+  <div style="opacity:0.4;">Mercantec · Kedelpasser Kursus</div>
+</div>
+
+</body>
+</html>
