@@ -293,6 +293,26 @@ der sikrer kontrolleret og sikker gastilførsel:</p>
   </tbody>
 </table>
 
+<!-- ═══════════════════ INGENIØRENS PERSPEKTIV: EL & STYRING ═══════════════════ -->
+<h2>6.6 Ingeniørens Perspektiv: El- &amp; Styringsteknik</h2>
+
+<p>Moderne kedelanlæg styres i stigende grad af avancerede elektroniske systemer, hvor kravene til funktionssikkerhed er ekstremt høje.</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>🛡️ Safety Integrity Level (SIL)</h3>
+    <p>Sikkerhedskritiske komponenter (som brænderstyringen og L-W-L) vurderes efter <strong>SIL (Safety Integrity Level)</strong>, typisk SIL 2 eller SIL 3 for kedler. For at opnå dette bruges redundans, fx <em>1oo2 (One out of Two)</em> eller <em>2oo3 (Two out of Three)</em> arkitekturer, hvor styringen kræver enighed fra flere uafhængige sensorer for at tillade drift.</p>
+  </div>
+  <div class="card">
+    <h3>🌡️ Sensorteknologier</h3>
+    <p>Kedelpasserens analoge instrumenter suppleres af elektroniske transmittere. Temperatur måles oftest med <strong>Pt100 (RTD)</strong> eller termoelementer (Type K for høje temperaturer). Vandstand måles kontinuerligt med <strong>differenstryktransmittere (DP-celler)</strong> eller kapacitive/konduktive prober inde i kedeltromlen, som sender et 4-20 mA signal til styringen.</p>
+  </div>
+  <div class="card">
+    <h3>💻 Failsafe PLC'er</h3>
+    <p>Den overordnede styring varetages af en Safety PLC (Failsafe PLC). Denne PLC har to uafhængige processorer, der konstant krydstjekker hinandens beregninger. Hvis de er uenige, eller hvis der opstår en kortslutning eller ledningsbrud, falder udgangene øjeblikkeligt til en sikker tilstand (0V), hvilket lukker brænderen og magnetventilerne (fail-safe).</p>
+  </div>
+</div>
+
 <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
 <div class="pagenav">
   <a href="../05-vandbehandling/">
