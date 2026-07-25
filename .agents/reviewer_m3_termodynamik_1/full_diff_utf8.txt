@@ -1,0 +1,395 @@
+﻿diff --git a/docs/03-termodynamik/index.html b/docs/03-termodynamik/index.html
+index cdd0c18..551963e 100644
+--- a/docs/03-termodynamik/index.html
++++ b/docs/03-termodynamik/index.html
+@@ -53,13 +53,83 @@ eller damp ÔÇö ved et bestemt tryk og temperatur. Enheden er <strong>kJ/kg</stro
+ </div>
+ 
+ <h3>Hvordan finder vi h'?</h3>
++<p>For m├ªttet v├ªske (vand p├Ñ kogepunktet) afh├ªnger entalpi af tryk og temperatur:</p>
+ <div class="formula">
+-<b>Vand under 105 ┬░C:</b>  h' = T ├ù c<sub>p</sub> = T ├ù <em>4,19</em> kJ/kg<br>
++<b>Vand under 105 ┬░C:</b>  h' Ôëê T ├ù c<sub>p</sub> = T ├ù <em>4,19</em> kJ/(kg┬ÀK)<br>
+ <b>Vand over 105 ┬░C:</b>   sl├Ñ op i <em>damptabellen</em> (m├ªttet v├ªske)
+ </div>
+ 
++<div class="alert info">
++  <div class="alert-icon">i</div>
++  <div class="alert-body">
++    <div class="alert-title">Den specifikke varmekapacitet (c<sub>p</sub>) varierer</div>
++    <p>V├ªrdien <strong>4,19 kJ/(kg┬ÀK)</strong> er en praktisk gennemsnitsv├ªrdi for vand under 105 ┬░C ved atmosf├ªrisk tryk. I virkeligheden ├ªndrer c<sub>p</sub> sig med b├Ñde temperatur og tryk. For pr├ªcise industrielle beregninger anvendes den internationale standard <strong>IAPWS-IF97</strong> (udarbejdet af International Association for the Properties of Water and Steam), som definerer de n├©jagtige matematiske tilstandsligninger for vand og damp.</p>
++  </div>
++</div>
++
+ <p>Eksempel: F├©devand ved 80 ┬░C ÔåÆ
+-<span class="badge badge-blue">h' = 80 ├ù 4,19 = 335,2 kJ/kg</span></p>
++<span class="badge badge-blue">h' Ôëê 80 ├ù 4,19 = 335,2 kJ/kg</span></p>
++
++<h3>3.1.1 Overhedet damp og specifik varmekapacitet</h3>
++<p>
++  N├Ñr m├ªttet damp tilf├©res yderligere varme i en overheder, stiger dens temperatur over m├ªtningstemperaturen ved det givne tryk. Den overhedede damp indeholder mere energi end m├ªttet damp, og temperaturen kan reguleres uafh├ªngigt af trykket. Den specifikke entalpi for overhedet damp kan tiln├ªrmes med f├©lgende formel:
++</p>
++
++<div class="formula">
++  <b>h<sub>overhedet</sub> = h'' + c<sub>p,damp</sub> ├ù (T<sub>overhedet</sub> ÔêÆ T<sub>m├ªtning</sub>)</b> &nbsp; <em>[kJ/kg]</em>
++</div>
++
++<p>Hvor:</p>
++<ul>
++  <li><strong>h''</strong> er entalpien for m├ªttet damp ved det givne tryk [kJ/kg] (findes i damptabellen).</li>
++  <li><strong>c<sub>p,damp</sub></strong> er dampens specifikke varmekapacitet, som ved typiske kedeltryk (1ÔÇô20 bar) kan antages at v├ªre <strong>~2,0 kJ/(kg┬ÀK)</strong> (eller mere n├©jagtigt 2,0 - 2,5 kJ/(kg┬ÀK) afh├ªngigt af tryk og temperatur).</li>
++  <li><strong>T<sub>overhedet</sub></strong> er den faktiske temperatur af den overhedede damp [┬░C].</li>
++  <li><strong>T<sub>m├ªtning</sub></strong> er m├ªtningstemperaturen ved det givne tryk [┬░C] (findes i damptabellen).</li>
++</ul>
++
++<div class="card">
++  <div class="card-head">
++    <div class="card-num">EKSEMPEL</div>
++    <div class="card-title">Entalpi for overhedet damp</div>
++  </div>
++  <p>
++    En dampkedel leverer overhedet damp ved <strong>10 bar absolut tryk</strong> og en temperatur p├Ñ <strong>250 ┬░C</strong>.
++  </p>
++  <ul>
++    <li>M├ªtningstemperatur fra damptabellen ved 10 bar: T<sub>m├ªtning</sub> = 179,9 ┬░C</li>
++    <li>Entalpi for m├ªttet damp fra damptabellen: h'' = 2778,1 kJ/kg</li>
++    <li>Overhedning i Kelvin: &Delta;T = 250 ÔêÆ 179,9 = 70,1 K</li>
++  </ul>
++  <div class="formula">
++    h<sub>overhedet</sub> = 2778,1 + 2,0 ├ù 70,1 = <b>2918,3 kJ/kg</b>
++  </div>
++</div>
++
++<div class="alert info">
++  <div class="alert-icon">i</div>
++  <div class="alert-body">
++    <div class="alert-title">Brug af tabeller for overhedet damp</div>
++    <p>Da den specifikke varmekapacitet for damp (c<sub>p,damp</sub>) ├ªndrer sig markant med tryk og temperatur, b├©r man til pr├ªcise beregninger altid sl├Ñ entalpien op i en tabel for overhedet damp eller benytte software baseret p├Ñ IAPWS-IF97 frem for den simple line├ªre tiln├ªrmelse.</p>
++  </div>
++</div>
++
++<h3>3.1.2 V├Ñd damp og dampkvalitet (x)</h3>
++<p>
++  I mange kedler (is├ªr r├©gr├©rskedler uden overheder) vil dampen tr├ªkke sm├Ñ vanddr├Ñber med sig. Dette kaldes <strong>v├Ñd damp</strong>. Dampens kvalitet angives ved t├©rhedsgraden <b>x</b> (dampkvalitet), som angiver masseandelen af t├©r damp i blandingen:
++</p>
++<div class="formula">
++  <b>x = m<sub>damp</sub> ├À (m<sub>damp</sub> + m<sub>vand</sub>)</b> &nbsp; <em>(hvor 0 Ôëñ x Ôëñ 1)</em>
++</div>
++<p>
++  Entalpien for v├Ñd damp (h<sub>x</sub>) beregnes ud fra entalpien for m├ªttet v├ªske (h') og fordampningsvarmen (r):
++</p>
++<div class="formula">
++  <b>h<sub>x</sub> = h' + x ├ù r = h' + x ├ù (h'' ÔêÆ h')</b> &nbsp; <em>[kJ/kg]</em>
++</div>
++<p>
++  En dampkvalitet p├Ñ x = 0,97 betyder eksempelvis, at dampstr├©mmen indeholder 3 % flydende vand. Dette reducerer den tilg├ªngelige varmeenergi og ├©ger risikoen for vandslag i r├©rledningerne.
++</p>
++
+ 
+ <!-- ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ ABSOLUT TRYK ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ -->
+ <h2>3.2 Absolut tryk vs. arbejdstryk</h2>
+@@ -152,8 +222,84 @@ eller damp ÔÇö ved et bestemt tryk og temperatur. Enheden er <strong>kJ/kg</stro
+   </div>
+ </div>
+ 
++<!-- ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ LINE├åR INTERPOLATION ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ -->
++<h3>3.3.1 Line├ªr interpolation i damptabellen</h3>
++<p>Hvis det aktuelle tryk eller den aktuelle temperatur ligger mellem to punkter i damptabellen, skal man anvende <strong>line├ªr interpolation</strong> for at finde den mellemliggende v├ªrdi. Formlen for line├ªr interpolation er:</p>
++
++<div class="formula">
++  <b>y = y<sub>1</sub> + [ (x ÔêÆ x<sub>1</sub>) ├À (x<sub>2</sub> ÔêÆ x<sub>1</sub>) ] ├ù (y<sub>2</sub> ÔêÆ y<sub>1</sub>)</b>
++</div>
++
++<p>Hvor:</p>
++<ul>
++  <li><strong>x</strong> er den v├ªrdi, du kender og vil sl├Ñ op (f.eks. trykket p├Ñ 5 bar eller 15 bar).</li>
++  <li><strong>x<sub>1</sub></strong> og <strong>x<sub>2</sub></strong> er de to n├ªrmeste tabellagte v├ªrdier under og over x.</li>
++  <li><strong>y<sub>1</sub></strong> og <strong>y<sub>2</sub></strong> er de tilsvarende tabelv├ªrdier for den egenskab, du vil finde.</li>
++  <li><strong>y</strong> er den beregnede (interpolerede) v├ªrdi.</li>
++</ul>
++
++<div class="grid grid-2">
++  <div class="card">
++    <h4>Eksempel 1: Interpolation ved 5 bar</h4>
++    <p>Find den specifikke entalpi for m├ªttet v├ªske (h') ved et absolut tryk p├Ñ <strong>5 bar</strong>.</p>
++    <p>Fra damptabellen i afsnit 3.3 finder vi de to n├ªrmeste v├ªrdier:</p>
++    <ul>
++      <li>x<sub>1</sub> = 4 bar &rarr; y<sub>1</sub> (h'<sub>1</sub>) = 604,7 kJ/kg</li>
++      <li>x<sub>2</sub> = 6 bar &rarr; y<sub>2</sub> (h'<sub>2</sub>) = 670,4 kJ/kg</li>
++    </ul>
++    <p>Inds├ªt v├ªrdierne i formlen:</p>
++    <div class="formula">
++      h'<sub>(5 bar)</sub> = 604,7 + [ (5 ÔêÆ 4) ├À (6 ÔêÆ 4) ] ├ù (670,4 ÔêÆ 604,7)<br>
++      h'<sub>(5 bar)</sub> = 604,7 + 0,5 ├ù 65,7 = <b>637,55 kJ/kg</b>
++    </div>
++  </div>
++
++  <div class="card">
++    <h4>Eksempel 2: Interpolation ved 15 bar</h4>
++    <p>Find den specifikke entalpi for m├ªttet v├ªske (h') ved et absolut tryk p├Ñ <strong>15 bar</strong>.</p>
++    <p>Fra damptabellen i afsnit 3.3 finder vi de to n├ªrmeste v├ªrdier:</p>
++    <ul>
++      <li>x<sub>1</sub> = 13 bar &rarr; y<sub>1</sub> (h'<sub>1</sub>) = 814,7 kJ/kg</li>
++      <li>x<sub>2</sub> = 18 bar &rarr; y<sub>2</sub> (h'<sub>2</sub>) = 884,5 kJ/kg</li>
++    </ul>
++    <p>Inds├ªt v├ªrdierne i formlen:</p>
++    <div class="formula">
++      h'<sub>(15 bar)</sub> = 814,7 + [ (15 ÔêÆ 13) ├À (18 ÔêÆ 13) ] ├ù (884,5 ÔêÆ 814,7)<br>
++      h'<sub>(15 bar)</sub> = 814,7 + 0,4 ├ù 69,8 = <b>842,62 kJ/kg</b>
++    </div>
++  </div>
++</div>
++
++<!-- TILF├ÿJELSE: Det kritiske punkt og Mollier-diagrammet -->
++<h3>3.3.2 Fordampningsvarme (r) og det kritiske punkt</h3>
++<p>
++  Fordampningsvarmen (r = h'' ÔêÆ h') angiver den energim├ªngde, der kr├ªves for at omdanne 1 kg kogende vand til t├©r damp ved konstant tryk. Som det ses i damptabellen, <strong>falder fordampningsvarmen gradvist, n├Ñr trykket stiger</strong>.
++</p>
++<p>
++  Dette skyldes, at forskellen i massefylde (og dermed molekyl├ªr afstand) mellem vand og damp mindskes. Ved det <strong>kritiske punkt</strong> (et absolut tryk p├Ñ <strong>221,2 bar</strong> og en temperatur p├Ñ <strong>374,15 ┬░C</strong>) forsvinder faseovergangen fuldst├ªndigt:
++</p>
++<div class="formula">
++  Ved det kritiske punkt: <b>r = 0 kJ/kg</b> og <b>h' = h'' = 2011,1 kJ/kg</b>
++</div>
++<p>
++  Over det kritiske punkt kan vand opvarmes og omdannes til damp uden at koge (enfaset str├©mning), hvilket udnyttes i overkritiske kraftv├ªrkskedler (f.eks. Benson-kedler).
++</p>
++
++<h3>3.3.3 Mollier-diagrammet (h-s diagram)</h3>
++<p>
++  Mollier-diagrammet er et grafisk v├ªrkt├©j, der afbilder specifik entalpi (h p├Ñ y-aksen) mod specifik entropi (s p├Ñ x-aksen). Det bruges til hurtigt at visualisere damptekniske processer uden komplekse tabelslag:
++</p>
++<ul>
++  <li><strong>Isobarer (konstant tryk):</strong> Linjer, der sk├ªrer op gennem diagrammet. I v├Ñddampsomr├Ñdet er de rette linjer, men kn├ªkker opad i overhedningsomr├Ñdet.</li>
++  <li><strong>Isotermer (konstant temperatur):</strong> F├©lger isobarerne i v├Ñddampsomr├Ñdet (da tryk og temperatur er koblede under kogning), men flader ud mod h├©jre i overhedningsomr├Ñdet.</li>
++  <li><strong>Konstante x-linjer (dampkvalitet):</strong> Kurver under m├ªtningslinjen (x = 1,0), der g├©r det muligt at afl├ªse entalpien af v├Ñd damp direkte.</li>
++</ul>
++<p>
++  Processer som <strong>drosling</strong> (trykfald uden energiudveksling, f.eks. i en reduktionsventil) forl├©ber som en vandret linje i diagrammet (h = konstant), mens en ideel ekspansion i en dampturbine forl├©ber som en lodret linje (s = konstant).
++</p>
++
+ <!-- ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ VIRKNINGSGRAD ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ -->
+-<h2>3.4 Virkningsgrad &amp; energiberegning</h2>
++<h2>3.4 Virkningsgrad &amp; energiberegning (EN 12953-11 / EN 12952-15)</h2>
+ 
+ <p>Den centrale beregningsk├ªde for en dampkedel:</p>
+ 
+@@ -203,13 +349,107 @@ eller damp ÔÇö ved et bestemt tryk og temperatur. Enheden er <strong>kJ/kg</stro
+ <div class="diagram-caption">Figur 3.2 ÔÇö Beregningsk├ªden: k├ªden kan l├©ses begge veje</div>
+ </div>
+ 
++<h3>3.4.1 Kedelvirkningsgrad ÔÇö Direkte og indirekte metode</h3>
++<p>Kedlens virkningsgrad (&eta;) angiver, hvor stor en del af den tilf├©rte energi i br├ªndselet, der overf├©res til dampmediet. Bestemmelse af virkningsgraden foretages efter en af to hovedmetoder:</p>
++
++<div class="grid grid-2">
++  <div class="card">
++    <h3>1. Den direkte metode</h3>
++    <p>Virkningsgraden beregnes direkte som forholdet mellem den nyttiggjorte energi i dampen og den tilf├©rte energi i br├ªndselet:</p>
++    
++    <div class="formula">
++      <b>&eta;<sub>direkte</sub> = Q<sub>produceret</sub> ├À Q<sub>indfyret</sub></b>
++    </div>
++    
++    <p>Hvor:</p>
++    <ul>
++      <li><strong>Q<sub>produceret</sub></strong> = ß╣ü<sub>damp</sub> ├ù (h<sub>damp</sub> ÔêÆ h'<sub>f├©devand</sub>) [MJ/h]</li>
++      <li><strong>Q<sub>indfyret</sub></strong> = ß╣ü<sub>br├ªndsel</sub> ├ù h<sub>i</sub> [MJ/h] (h<sub>i</sub> er br├ªndselets nedre br├ªndv├ªrdi)</li>
++      <li><strong>ß╣ü<sub>damp</sub></strong> = dampm├ªngde [kg/h]</li>
++      <li><strong>h<sub>damp</sub></strong> = entalpi for den producerede damp ($h''$ eller $h$) [kJ/kg]</li>
++      <li><strong>h'<sub>f├©devand</sub></strong> = entalpi for f├©devandet ($h'$) [kJ/kg]</li>
++      <li><strong>ß╣ü<sub>br├ªndsel</sub></strong> = br├ªndselsforbrug [kg/h eller m┬│<sub>n</sub>/h]</li>
++    </ul>
++    
++    <p><strong>Fordampningstal:</strong> Angiver, hvor mange kg damp der produceres pr. kg br├ªndsel (eller pr. m┬│<sub>n</sub> gas):</p>
++    <div class="formula">
++      <b>Fordampningstal = kg<sub>damp</sub> ├À kg<sub>br├ªndsel</sub></b>
++    </div>
++    
++    <p class="note"><strong>Fordel:</strong> Simpel at forst├Ñ.<br><strong>Ulempe:</strong> Kr├ªver meget n├©jagtige flowm├Ñlinger af b├Ñde damp og br├ªndsel, hvilket i praksis er beh├ªftet med stor usikkerhed.</p>
++  </div>
++  
++  <div class="card">
++    <h3>2. Den indirekte metode (Tabmetoden)</h3>
++    <p>Her bestemmes virkningsgraden ved at m├Ñle og fratr├ªkke de enkelte energitab (angivet i % af den tilf├©rte energi) fra 100 %:</p>
++    
++    <div class="formula">
++      <b>&eta;<sub>indirekte</sub> = 100 % ÔêÆ (q<sub>r├©ggas</sub> + q<sub>str├Ñling</sub> + q<sub>aske</sub> + q<sub>andet</sub>)</b>
++    </div>
++    
++    <p>Hvor tabene angives i procent [%]:</p>
++    <ul>
++      <li><strong>q<sub>r├©ggas</sub>:</strong> R├©ggastab (den varmeenergi, der forlader kedlen med r├©ggassen ÔÇö normalt det absolut st├©rste tab).</li>
++      <li><strong>q<sub>str├Ñling</sub>:</strong> Str├Ñlings- og konvektionstab fra kedelkappen til omgivelserne.</li>
++      <li><strong>q<sub>aske</sub>:</strong> Tab som f├©lge af uforbr├ªndte rester i slagger og aske.</li>
++      <li><strong>q<sub>andet</sub>:</strong> Resttab (f.eks. sp├ªdevandstab, afsalting og udbl├ªsning).</li>
++    </ul>
++    <p class="note"><strong>Fordel:</strong> Meget h├©jere m├Ñlen├©jagtighed, da relative fejl p├Ñ m├Ñling af r├©ggasparametre har mindre indvirkning p├Ñ den samlede virkningsgrad.</p>
++  </div>
++</div>
++
++<h3>Siegerts formel for r├©ggastab (q<sub>r├©ggas</sub>)</h3>
++<p>R├©ggastabet (q<sub>r├©ggas</sub>) er det dominerende tab og kan under normale driftsforhold estimeres ud fra r├©ggassens temperatur samt CO<sub>2</sub>- eller O<sub>2</sub>-indholdet i den t├©rre r├©ggas. For at sikre overensstemmelse med formelsamlingen i Modul 09 anvendes f├©lgende to udgaver:</p>
++
+ <div class="formula">
+-<b>Q indfyret</b>      = ß╣ü<sub>br</sub> ├ù h<sub>i</sub>            [MJ/h]<br>
+-<b>Q produceret</b>    = ß╣ü<sub>damp</sub> ├ù (h'' ÔêÆ h'<sub>f├©devand</sub>) [MJ/h]<br>
+-<b>Virkningsgrad</b> ╬À = Q<sub>produceret</sub> ├À Q<sub>indfyret</sub><br>
+-<b>Fordampningstal</b> = kg<sub>damp</sub> ├À kg<sub>br├ªndsel</sub>     <em>(eller m┬│n for gas)</em>
++  <b>1. Baseret p├Ñ t├©r kuldioxid (CO<sub>2</sub>) ÔÇö simple Siegert-formel:</b><br>
++  q<sub>r├©ggas</sub> Ôëê K ├ù (T<sub>r├©ggas</sub> ÔêÆ T<sub>luft</sub>) ├À (CO<sub>2,%</sub> ├ù 100) &nbsp; [%]
++  <br><br>
++  <b>2. Baseret p├Ñ t├©r ilt (O<sub>2</sub>) ÔÇö standardformel:</b><br>
++  q<sub>r├©ggas</sub> = (T<sub>r├©ggas</sub> ÔêÆ T<sub>luft</sub>) ├ù [ A<sub>1</sub> ├À (21 ÔêÆ O<sub>2,%</sub>) + B ] &nbsp; [%]
+ </div>
+ 
++<p>Hvor:</p>
++<ul>
++  <li><strong>T<sub>r├©ggas</sub></strong> = r├©ggastemperatur efter kedlen/economiseren [┬░C]</li>
++  <li><strong>T<sub>luft</sub></strong> = temperatur p├Ñ den indsugede forbr├ªndingsluft [┬░C]</li>
++  <li><strong>CO<sub>2,%</sub></strong> = m├Ñlt volumenprocent af kuldioxid i den t├©rre r├©ggas [%] (f.eks. indtastes 12 ved 12 %)</li>
++  <li><strong>O<sub>2,%</sub></strong> = m├Ñlt volumenprocent af ilt i den t├©rre r├©ggas [%] (f.eks. indtastes 3 ved 3 %)</li>
++  <li><strong>K</strong> = den simple Siegert-konstant fra tabellen nedenfor. Bem├ªrk, at konstanten K i formlen divideres med 100 (s├Ñ f.eks. K = 68 svarer til en faktor p├Ñ 0,68).</li>
++  <li><strong>A<sub>1</sub>, B</strong> = standardiserede Siegert-konstanter for ilt-formlen.</li>
++</ul>
++
++<table>
++  <thead>
++    <tr>
++      <th>Br├ªndselstype</th>
++      <th>Simpel konstant K</th>
++      <th>Konstant A<sub>1</sub> (ved O<sub>2</sub>)</th>
++      <th>Konstant B (ved O<sub>2</sub>)</th>
++    </tr>
++  </thead>
++  <tbody>
++    <tr><td>Naturgas</td><td class="num">66</td><td class="num">0,38</td><td class="num">0,009</td></tr>
++    <tr><td>Fyringsgasolie (let olie)</td><td class="num">68</td><td class="num">0,48</td><td class="num">0,007</td></tr>
++    <tr><td>Fuelolie (tung olie)</td><td class="num">70</td><td class="num">0,52</td><td class="num">0,007</td></tr>
++    <tr><td>Tr├ª / biomasse</td><td class="num">74</td><td class="num">0,70</td><td class="num">0,008</td></tr>
++  </tbody>
++</table>
++
++<h3>3.4.2 Normaliseret fordampningstal (f<sub>norm</sub>)</h3>
++<p>
++  Det r├Ñ fordampningstal (f = kg damp / kg br├ªndsel) angiver m├ªngden af damp produceret pr. enhed br├ªndsel. Da kedler arbejder under forskellige f├©devandstemperaturer og tryk, kan r├Ñ fordampningstal ikke sammenlignes direkte.
++</p>
++<p>
++  For at muligg├©re sammenligning introduceres det <strong>normaliserede fordampningstal</strong> (f<sub>norm</sub> / equivalent evaporation). Dette omregner den faktiske dampproduktion til en referencefordampning "fra og ved 100 ┬░C" under atmosf├ªrisk tryk, hvor fordampningsvarmen er en konstant (r<sub>0</sub> = 2257,9 kJ/kg):
++</p>
++<div class="formula">
++  <b>f<sub>norm</sub> = f ├ù (h'' ÔêÆ h'<sub>f├©devand</sub>) ├À 2257,9</b> &nbsp; <em>[kg damp/kg br├ªndsel]</em>
++</div>
++<p>
++  Dette tal fungerer som en central n├©glev├ªrdi (KPI) for kedlens sande termodynamiske effektivitet over tid, uafh├ªngigt af skiftende driftsbetingelser.
++</p>
++
+ <!-- ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ EKSEMPEL ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ -->
+ <h2>3.5 Komplet beregningseksempel</h2>
+ 
+@@ -246,19 +486,101 @@ eller damp ÔÇö ved et bestemt tryk og temperatur. Enheden er <strong>kJ/kg</stro
+ <!-- ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ INGENI├ÿRENS PERSPEKTIV: MEKANIK ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ -->
+ <h2>3.6 Ingeni├©rens Perspektiv: Turbiner &amp; Pumper</h2>
+ 
+-<p>For at forst├Ñ hele termodynamikken i et dampanl├ªg, kigger ingeni├©ren ogs├Ñ p├Ñ komponenterne der tr├ªkker energien ud af, eller flytter, vandet.</p>
++<p>For at forst├Ñ hele dampkredsl├©bet (f.eks. Rankine-kredsl├©bet), skal vi ogs├Ñ analysere de komponenter, der udtager arbejde (dampturbinen) eller tilf├©rer arbejde (f├©devandspumpen).</p>
+ 
+ <div class="grid grid-2">
+   <div class="card">
+-    <h3>ÔÜÖ´©Å Isentropisk Turbinevirkningsgrad</h3>
+-    <p>N├Ñr dampen ekspanderer gennem en dampturbine i et ideelt (isentropisk) system, foreg├Ñr det uden ├ªndring i entropi. I virkeligheden vil friktion og turbulens medf├©re et tab. Den isentropiske virkningsgrad beskriver hvor meget af den teoretisk mulige energi (fra entalpifaldet) turbinen faktisk kan oms├ªtte til mekanisk arbejde. Et typisk fald er fra overhedet damp ned til vakuum i kondensatoren.</p>
++    <h3>ÔÜÖ´©Å Isentropisk turbinevirkningsgrad (&eta;<sub>is,turbine</sub>)</h3>
++    <p>N├Ñr damp ekspanderer gennem en turbine, vil intern friktion, hvirveldannelser og varmetab medf├©re, at processen afviger fra den ideelle (isentropiske) proces. Den isentropiske virkningsgrad beskriver forholdet mellem det faktiske entalpifald og det teoretisk maksimale (isentropiske) entalpifald:</p>
++    
++    <div class="formula">
++      <b>&eta;<sub>is,turbine</sub> = (h<sub>1</sub> ÔêÆ h<sub>2,faktisk</sub>) ├À (h<sub>1</sub> ÔêÆ h<sub>2,isentropisk</sub>)</b>
++    </div>
++    
++    <p>Hvor:</p>
++    <ul>
++      <li><strong>h<sub>1</sub></strong> = specifik entalpi ved turbinens indl├©b [kJ/kg]</li>
++      <li><strong>h<sub>2,faktisk</sub></strong> = faktisk specifik entalpi ved turbinens afgang [kJ/kg]</li>
++      <li><strong>h<sub>2,isentropisk</sub></strong> = teoretisk specifik afgangsentalpi ved isentropisk ekspansion (s<sub>2</sub> = s<sub>1</sub>) [kJ/kg]</li>
++    </ul>
++
++    <p>Den faktiske mekaniske akseleffekt (W<sub>aksel</sub>), som turbinen leverer, beregnes som:</p>
++    <div class="formula">
++      <b>W<sub>aksel</sub> = ß╣ü<sub>damp</sub> ├ù (h<sub>1</sub> ÔêÆ h<sub>2,faktisk</sub>) ├ù &eta;<sub>mekanisk</sub></b> [kW]
++    </div>
++    <p>Hvor ß╣ü<sub>damp</sub> er dampflowet i [kg/s] (eller dampflowet i [kg/h] divideret med 3600), og &eta;<sub>mekanisk</sub> er den mekaniske virkningsgrad for lejer, koblinger, gear osv.</p>
+   </div>
++
+   <div class="card">
+-    <h3>­ƒîè NPSH &amp; Kavitation</h3>
+-    <p>Kedelf├©devandspumper opererer med vand t├ªt p├Ñ kogepunktet (f.eks. 105 ┬░C fra f├©devandstanken). Hvis trykket i pumpens indl├©b falder under vandets damptryk, vil vandet koge og danne dampbobler inde i pumpen. N├Ñr boblerne kollapser ved h├©jere tryk l├ªngere inde i pumpen, skabes trykb├©lger, der langsomt spiser af pumpehjulet (<strong>kavitation</strong>). For at undg├Ñ dette skal <strong>NPSH (Net Positive Suction Head)</strong> v├ªre tilstr├ªkkelig h├©jt ÔÇö oftest l├©st ved at placere f├©devandstanken h├©jt oppe.</p>
++    <h3>­ƒîè Pump NPSH &amp; kavitationsmekanik</h3>
++    <p>Kedelf├©devandspumper opererer med vand t├ªt p├Ñ kogepunktet (m├ªtningstemperatur). For at undg├Ñ kogning p├Ñ pumpens sugeside skal det tilg├ªngelige tryk ved pumpens sugestuds (NPSHa) altid v├ªre st├©rre end det af fabrikanten p├Ñkr├ªvede tryk (NPSHr) plus en sikkerhedsmargin:</p>
++    
++    <div class="formula">
++      <b>NPSHa &gt; NPSHr + sikkerhedsmargin</b>
++    </div>
++
++    <p>Det r├Ñdige NPSH (NPSHa) kan defineres direkte ved pumpens sugeflange som:</p>
++    <div class="formula">
++      <b>NPSHa = (p<sub>sug,abs</sub> ÔêÆ p<sub>v</sub>(T)) ├À (&rho; ├ù g)</b> [m]
++    </div>
++    <p>Eller det kan beregnes ud fra f├©devandstankens placering og sugeledningens tryktab:</p>
++    <div class="formula">
++      <b>NPSHa = (p<sub>tank,abs</sub> ÔêÆ p<sub>v</sub>(T)) ├À (&rho; ├ù g) + z<sub>statisk</sub> ÔêÆ h<sub>f,sug</sub></b> [m]
++    </div>
++
++    <p>Hvor:</p>
++    <ul>
++      <li><strong>p<sub>sug,abs</sub></strong> = absolut statisk tryk ved pumpens sugestuds [Pa]</li>
++      <li><strong>p<sub>tank,abs</sub></strong> = absolut statisk tryk p├Ñ v├ªskeoverfladen i f├©devandstanken [Pa] (ca. 101.325 Pa ved atmosf├ªretryk)</li>
++      <li><strong>p<sub>v</sub>(T)</strong> = vandets m├ªtningsdamptryk (damptryk) ved den aktuelle temperatur T [Pa] (findes i damptabellen)</li>
++      <li><strong>&rho;</strong> = vandets densitet ved den aktuelle temperatur [kg/m┬│] (f.eks. ca. 958 kg/m┬│ ved 100 ┬░C)</li>
++      <li><strong>g</strong> = tyngdeaccelerationen (9,81 m/s┬▓)</li>
++      <li><strong>z<sub>statisk</sub></strong> = lodret geodetisk h├©jdeforskel fra tankens vandoverflade til midtlinjen af pumpens sugestuds [m] (positiv hvis tanken er placeret over pumpen, negativ ved sugedrift)</li>
++      <li><strong>h<sub>f,sug</sub></strong> = samlet gnidnings- og friktionstryktab i sugeledningen omregnet to meter v├ªskes├©jle [m]</li>
++      <li><strong>NPSHr</strong> = p├Ñkr├ªvet NPSH fra pumpeproducenten [m]. Sikkerhedsmarginen s├ªttes typisk til mindst 0,5 til 1,0 m.</li>
++    </ul>
++
++    <h4>Kavitationsmekanik</h4>
++    <p>Hvis det lokale tryk i pumpens l├©behjul falder under vandets damptryk (NPSHa &lt; NPSHr), begynder vandet at koge lokalt, hvilket skaber dampbobler. N├Ñr disse bobler f├©res med v├ªskestr├©mmen til omr├Ñder med h├©jere tryk inde i pumpen, kollapser (imploderer) de ├©jeblikkeligt. Implosionerne danner mikroskopiske v├ªskestr├Ñler (micro-jets) med hastigheder op til 1.000 m/s og trykspidser op til 10.000 bar (1 GPa). Dette f├©rer til kraftig st├©j (lyder som grus i pumpen), vibrationer, nedsat pumpeydelse og alvorlig materialet├ªring (pitting-skader) p├Ñ pumpehjulet.</p>
++
++    <h4>Afhj├ªlpningsstrategier mod kavitation:</h4>
++    <ol>
++      <li><strong>For├©g den geodetiske h├©jde (z<sub>statisk</sub>):</strong> H├ªv f├©devandstanken h├©jere op over pumpen for at ├©ge det statiske till├©bstryk.</li>
++      <li><strong>S├ªnk f├©devandstemperaturen:</strong> Lavere temperatur s├ªnker damptrykket p<sub>v</sub>(T) markant, hvilket ├©ger NPSHa.</li>
++      <li><strong>Minimer sugetab (h<sub>f,sug</sub>):</strong> Anvend sugeledninger med st├©rre diameter, g├©r sugelinjen kort og lige, undg├Ñ skarpe b├©jninger/un├©dige ventiler, og rens sugefilteret regelm├ªssigt.</li>
++      <li><strong>Driftstilpasning og pumpevalg:</strong> Reguler pumpens omdrejningstal, v├ªlg en pumpe med lav NPSHr, eller installer en booster-pumpe (f.eks. med inducer).</li>
++    </ol>
+   </div>
+ </div>
+ 
++<!-- ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ LITTERATUR, STANDARDER & REFERENCER ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ -->
++<h2>3.7 Litteratur, standarder &amp; referencer</h2>
++<p>
++  Alle termodynamiske beregninger, sikkerhedskrav og driftsbetingelser i dette modul refererer til anerkendte standarder, dansk lovgivning og teknisk litteratur:
++</p>
++<div class="grid grid-2">
++  <div class="card">
++    <h4>Lovgivning &amp; standarder</h4>
++    <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
++      <li><strong>BEK nr. 1009 af 25/08/2017:</strong> <em>Bekendtg├©relse om anvendelse af trykb├ªrende udstyr.</em> Fastl├ªgger de retslige rammer for sikker drift, opstillingskontrol, periodiske eftersyn samt krav om kedelpassercertifikat i Danmark.</li>
++      <li><strong>DS/EN 12953-11:</strong> <em>R├©gr├©rskedler - Del 11: Krav til modtagerinspektion af kedlen og forbr├ªndingsudstyret.</em> Dansk/Europ├ªisk Standard for bestemmelse af virkningsgrad og tab p├Ñ r├©gr├©rskedler (direkte/indirekte metode).</li>
++      <li><strong>DS/EN 12952-15:</strong> <em>Vandr├©rskedler og hj├ªlpeinstallationer - Del 15: Modtagelsespr├©vninger.</em> Dansk/Europ├ªisk Standard for virkningsgrads- og tabsm├Ñling p├Ñ vandr├©rskedler.</li>
++      <li><strong>Siegert-formlen:</strong> Standardiseret kedelpraksis for r├©ggastabsberegninger, oprindeligt afledt under DIN 1942: <em>"Abnahmeversuche an Dampferzeugern"</em>.</li>
++      <li><strong>API Standard 610 / ISO 13709:</strong> <em>"Centrifugal Pumps for Petroleum, Petrochemical and Natural Gas Industries"</em>. Beskriver bl.a. designregler og sikkerhedsmargener for NPSH og forebyggelse af kavitation.</li>
++    </ul>
++  </div>
++  <div class="card">
++    <h4>Fagb├©ger &amp; tabeller</h4>
++    <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
++      <li><strong>Praktisk Dampteknik:</strong> af Carl-Erik Andersen. Det prim├ªre referencev├ªrk for kedelpassere og driftsledere i Danmark, som d├ªkker praktisk anvendt dampteknologi og beregningsmetoder.</li>
++      <li><strong>Kedel- og maskinpasser:</strong> (Erhvervsskolernes Forlag). Standard l├ªrebog anvendt i undervisningen p├Ñ de danske erhvervsskoler.</li>
++      <li><strong>IAPWS-IF97:</strong> <em>"Formulation 1997 for the Thermodynamic Properties of Water and Steam for Industrial Use"</em>. International Association for the Properties of Water and Steam (IAPWS). Den g├ªldende standard for beregning af vands og damps termodynamiske egenskaber i industrien.</li>
++      <li><strong>Thermodynamics: An Engineering Approach</strong> af Yunus A. ├çengel og Michael A. Boles. Klassisk akademisk l├ªrebog om anvendt termodynamik, isentropisk ekspansion og fluidmekanik.</li>
++    </ul>
++  </div>
++</div>
++
++
+ <!-- ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ NAVIGATION ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ -->
+ <div class="pagenav">
+   <a href="../02-dampkedler/">

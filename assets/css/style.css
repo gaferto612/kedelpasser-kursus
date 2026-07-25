@@ -494,5 +494,59 @@ ul.checklist li::before {
   .pagenav { grid-template-columns: 1fr; }
   .topbar { flex-direction: column; gap: 8px; align-items: flex-start; }
   table { font-size: 13px; }
-  th, td { padding: 8px 10px; }
+}
+
+/* ============================================================
+   RTL SUPPORT (ARABIC)
+   ============================================================ */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .topbar-brand {
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] ul, html[dir="rtl"] ol {
+  margin: 12px 24px 16px 0;
+}
+
+html[dir="rtl"] ul.checklist li {
+  padding-left: 0;
+  padding-right: 28px;
+}
+
+html[dir="rtl"] ul.checklist li::before {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .alert {
+  border-left: none;
+  border-right: 4px solid;
+}
+
+html[dir="rtl"] .alert.danger { border-right-color: var(--fire); }
+html[dir="rtl"] .alert.warn { border-right-color: var(--hot); }
+html[dir="rtl"] .alert.info { border-right-color: var(--steam); }
+html[dir="rtl"] .alert.ok { border-right-color: var(--green); }
+
+html[dir="rtl"] .formula::before {
+  right: auto;
+  left: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 6px;
+}
+
+html[dir="rtl"] th {
+  text-align: right;
+}
+
+html[dir="rtl"] td.num {
+  text-align: left;
+}
+
+html[dir="rtl"] .pagenav .next {
+  text-align: left;
 }

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>الوحدة 02 · أنواع الغلايات البخارية</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> دورة <b>مشغل</b> الغلايات</a></div>
+  <div class="topbar-nav">
+    <a href="../../../docs/02-dampkedler/index.html">Dansk</a>
+    <a href="../01-certifikater/">← الوحدة 01</a>
+    <a href="../../index.html">الصفحة الرئيسية</a>
+    <a href="../03-termodynamik/">الوحدة 03 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">الصفحة الرئيسية</a> / الوحدة 02 — أنواع الغلايات البخارية</div>
+
+<div class="kapitel-tag">الوحدة 02</div>
+<h1>أنواع الغلايات <span class="underline">البخارية</span></h1>
+<p class="lede">
+  أهم أنواع الغلايات — أنابيب الدخان، أنابيب المياه، الغلايات الكهربائية وأنظمة المياه الساخنة —
+  مع مبادئ دوران المياه والتطبيق. تغطي هذه الوحدة كل شيء من غلايات أنابيب الدخان ثلاثية الممرات
+  إلى غلايات Benson ذات التدفق المباشر في محطات الطاقة الحديثة.
+</p>
+
+<!-- ═══════════════════ HOVEDTYPER OVERSIGT ═══════════════════ -->
+<h2>2.1 الأنواع الرئيسية — نظرة عامة</h2>
+
+<div class="diagram">
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- RØGRØRSKEDEL -->
+  <g transform="translate(20,40)">
+    <rect x="0" y="0" width="200" height="120" rx="60" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+    <!-- Tubes inside -->
+    <line x1="40" y1="40" x2="160" y2="40" stroke="#dc2626" stroke-width="3"/>
+    <line x1="40" y1="60" x2="160" y2="60" stroke="#dc2626" stroke-width="3"/>
+    <line x1="40" y1="80" x2="160" y2="80" stroke="#dc2626" stroke-width="3"/>
+    <!-- Water -->
+    <path d="M 25 55 Q 30 50 40 55 T 60 55 T 80 55" stroke="#0891b2" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M 130 90 Q 140 85 150 90 T 175 90" stroke="#0891b2" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <text x="100" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-weight="700">غاز العادم في الأنابيب →</text>
+    <text x="100" y="115" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#0891b2" font-weight="700">الماء حولها</text>
+    <text x="100" y="155" text-anchor="middle" font-family="Fraunces,serif" font-size="20" fill="#1a1814" font-weight="700">غلاية أنابيب الدخان</text>
+    <text x="100" y="173" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">تصل إلى ~25 بار · حجم ماء كبير</text>
+    <text x="100" y="190" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">Fire Tube</text>
+  </g>
+
+  <!-- VANDRØRSKEDEL -->
+  <g transform="translate(260,40)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+    <!-- Drum top -->
+    <rect x="20" y="10" width="160" height="22" rx="11" fill="#0891b2" opacity="0.3" stroke="#0891b2"/>
+    <text x="100" y="25" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#0891b2" font-weight="700">مجمع البخار</text>
+    <!-- Drum bottom -->
+    <rect x="40" y="98" width="120" height="14" rx="7" fill="#0891b2" opacity="0.4" stroke="#0891b2"/>
+    <!-- Water tubes -->
+    <line x1="50" y1="32" x2="50" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <line x1="80" y1="32" x2="80" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <line x1="110" y1="32" x2="110" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <line x1="140" y1="32" x2="140" y2="98" stroke="#0891b2" stroke-width="3"/>
+    <!-- Fire around -->
+    <text x="170" y="60" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#dc2626">🔥</text>
+    <text x="30" y="60" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#dc2626">🔥</text>
+    <text x="100" y="155" text-anchor="middle" font-family="Fraunces,serif" font-size="20" fill="#1a1814" font-weight="700">غلاية أنابيب المياه</text>
+    <text x="100" y="173" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">تصل إلى 220 بار / 550 °C</text>
+    <text x="100" y="190" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">Water Tube</text>
+  </g>
+
+  <!-- ELEKTRISK KEDEL -->
+  <g transform="translate(500,40)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#fefcf6" stroke="#1a1814" stroke-width="1.5"/>
+    <!-- Element -->
+    <path d="M 60 30 L 60 90 M 60 90 L 70 90 L 70 30 L 80 30 L 80 90 L 90 90 L 90 30 L 100 30 L 100 90 L 110 90 L 110 30 L 120 30 L 120 90 L 130 90 L 130 30 L 140 30 L 140 90"
+          stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+    <text x="100" y="20" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#7c3aed" font-weight="700">⚡ عناصر كهربائية</text>
+    <text x="100" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#0891b2" font-weight="700">الماء</text>
+    <text x="100" y="155" text-anchor="middle" font-family="Fraunces,serif" font-size="20" fill="#1a1814" font-weight="700">غلاية كهربائية</text>
+    <text x="100" y="173" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">تصل إلى 20 بار · صفر انبعاثات</text>
+    <text x="100" y="190" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">Electric Boiler</text>
+  </g>
+
+  <!-- Comparison row -->
+  <g transform="translate(0,230)">
+    <text x="120" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">بدء تشغيل بطيء</text>
+    <text x="120" y="38" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">تخزين طاقة كبير</text>
+    <text x="120" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">صيانة منخفضة</text>
+
+    <text x="360" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">بدء تشغيل سريع (5 دقائق)</text>
+    <text x="360" y="38" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">محتوى ماء قليل</text>
+    <text x="360" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">محطات الطاقة</text>
+
+    <text x="600" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">بدون مدخنة</text>
+    <text x="600" y="38" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">مستشفيات، مختبرات</text>
+    <text x="600" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">تحول أخضر</text>
+  </g>
+</svg>
+<div class="diagram-caption">الشكل 2.1 — الأنواع الثلاثة الرئيسية للغلايات البخارية وخصائصها</div>
+</div>
+
+<!-- ═══════════════════ RØGRØRSKEDEL DETAIL ═══════════════════ -->
+<h2>2.2 غلاية أنابيب الدخان (Fire tube)</h2>
+
+<p>أكثر أنواع الغلايات استخدامًا في التدفئة الصناعية. تمر الغازات الساخنة
+عبر الأنابيب المحاطة بالماء. يتم تسخين الماء من خلال جدران
+الأنابيب ويتحول إلى بخار.</p>
+
+<h3>تصميم ثلاثي الممرات</h3>
+<div class="diagram">
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Boiler outline -->
+  <rect x="50" y="40" width="600" height="160" rx="80" fill="#f0f9ff" stroke="#1a1814" stroke-width="2"/>
+
+  <!-- 1. trek - flammerør (center bottom) -->
+  <ellipse cx="200" cy="155" rx="100" ry="22" fill="#dc2626" opacity="0.85"/>
+  <text x="200" y="160" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="white" font-weight="700">الممر 1 · أنبوب اللهب</text>
+
+  <!-- Reversal chamber back -->
+  <rect x="295" y="120" width="50" height="70" fill="#1a1814" rx="5"/>
+  <text x="320" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="white">غرفة الانعكاس</text>
+
+  <!-- 2. trek - upper -->
+  <rect x="120" y="80" width="280" height="22" rx="11" fill="#ea580c" opacity="0.7"/>
+  <text x="260" y="95" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="white" font-weight="700">الممر 2 · أنابيب الدخان</text>
+
+  <!-- 3. trek - lower side -->
+  <rect x="350" y="155" width="250" height="22" rx="11" fill="#f59e0b" opacity="0.7"/>
+  <text x="475" y="170" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="white" font-weight="700">الممر 3 · أنابيب الدخان</text>
+
+  <!-- Burner -->
+  <rect x="20" y="140" width="35" height="30" rx="3" fill="#1a1814"/>
+  <text x="37" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#hot">حارق</text>
+  <line x1="55" y1="155" x2="100" y2="155" stroke="#dc2626" stroke-width="3" stroke-dasharray="3 2"/>
+
+  <!-- Røgafgang -->
+  <rect x="640" y="155" width="40" height="22" fill="#1a1814"/>
+  <line x1="640" y1="166" x2="600" y2="166" stroke="#1a1814" stroke-width="2" marker-end="url(#exhaust)"/>
+  <text x="660" y="195" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#1a1814">→ مدخنة</text>
+
+  <!-- Steam space -->
+  <text x="350" y="55" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#0891b2" font-weight="700">↑ حيز البخار ↑</text>
+  <!-- Water -->
+  <text x="100" y="120" font-family="DM Sans,sans-serif" font-size="11" fill="#0891b2">الماء</text>
+
+  <!-- Bottom labels -->
+  <text x="350" y="225" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#4a443c">يمر غاز العادم 3 مرات — لذلك يسمى "ثلاثي الممرات"</text>
+</svg>
+<div class="diagram-caption">الشكل 2.2 — غلاية أنابيب الدخان ثلاثية الممرات: أنبوب اللهب (1)، أنابيب الدخان عائدة (2)، أنابيب الدخان متجهة (3)</div>
+</div>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>المزايا</h3>
+    <ul class="checklist">
+      <li>بناء بسيط ورخيص التصنيع</li>
+      <li>محتوى ماء كبير يوفر تشغيلًا بطيئًا ولكنه مستقر</li>
+      <li>متطلبات منخفضة لجودة المياه (مقارنة بغلايات أنابيب المياه)</li>
+      <li>سهولة الصيانة</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>القيود</h3>
+    <ul>
+      <li>أقصى ضغط ~25 بار بسبب حجم وعاء الضغط</li>
+      <li>وقت بدء تشغيل طويل (ساعة أو أكثر من حالة البارد)</li>
+      <li>متطلبات مساحة كبيرة</li>
+      <li>عند الانفجار: محتوى طاقة كبير = ضرر محتمل كبير</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════ VANDRØRSKEDEL DETAIL ═══════════════════ -->
+<h2>2.3 غلاية أنابيب المياه (Water tube)</h2>
+
+<p>هنا الوضع معاكس: يتدفق الماء داخل الأنابيب المحاطة بغازات العادم
+الساخنة. هذا يوفر إنتاج سريع للبخار ويسمح بالوصول إلى ضغوط عالية.</p>
+
+<h3>أربعة مبادئ لدوران المياه</h3>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">A</span>
+      <span class="card-title">الدوران الطبيعي</span>
+    </div>
+    <p>يتم تشغيله بالكامل بواسطة <strong>فرق الكثافة</strong> (تأثير الترموسيفون) بين الماء البارد غير المضاء في الأنابيب النازلة وخليط البخار/الماء الساخن في الأنابيب الصاعدة في غرفة الاحتراق.</p>
+    <p>يتم حساب فرق الضغط الدافع كالتالي:</p>
+    <div class="formula">
+      Δp<sub>driv</sub> = g · H · (ρ<sub>ned</sub> − ρ<sub>stig</sub>) &nbsp; [Pa]
+    </div>
+    <p style="font-size:0.92em;">حيث <i>H</i> هو الارتفاع الفعال للدائرة (م)، <i>g</i> هو تسارع الجاذبية (9.81 م/ث²)، و <i>ρ</i> هي الكثافة (كجم/م³) لكل من الوسط البارد والساخن. نظرًا لأن فرق الكثافة يقل مع زيادة الضغط ويختفي تمامًا عند الضغط الحرج (221.2 بار)، يتوقف الدوران الطبيعي عمليًا عند حوالي <strong>170-180 بار</strong>. معدل الدوران (نسبة الماء المتداول إلى البخار المتكون) مرتفع، وعادةً يكون 5-30.</p>
+    <p><strong>الاستخدام:</strong> الغلايات دون الحرجة التي تصل إلى حوالي 160-180 بار. تستخدم بكثرة في المحطات الصناعية.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">B</span>
+      <span class="card-title">لا مونت (الدوران القسري)</span>
+    </div>
+    <p>تقوم مضخة <strong>دوران قسري خارجية</strong> بضخ المياه بنشاط من أسطوانة البخار عبر أنابيب التبخير. تضمن <strong>فوهات التوزيع المعايرة</strong> عند مدخل كل أنبوب تبخير توزيعًا متساويًا ومتحكمًا فيه للمياه ويتكيف مع الحمل الحراري المحلي.</p>
+    <p style="font-size:0.92em;">هذا يمنع الجفاف الموضعي (DNB). يُعرّف معدل الدوران (<i>n</i>) على النحو التالي:</p>
+    <div class="formula">
+      n = ṁ<sub>vand</sub> / ṁ<sub>damp</sub> &nbsp; ≈ &nbsp; 8 – 10
+    </div>
+    <p style="font-size:0.92em;">هذا يعني أن الماء يدور 8-10 مرات عبر النظام قبل أن يتبخر تمامًا، مما يحمي الأنابيب من ارتفاع درجة الحرارة في تصاميم الأنابيب المعقدة.</p>
+    <p><strong>الاستخدام:</strong> المحطات دون الحرجة ذات الأنابيب المعقدة أو المدمجة تصل إلى حوالي 190-200 بار.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">C</span>
+      <span class="card-title">بينسون (التدفق المباشر / Once-through)</span>
+    </div>
+    <p>تضغط مضخة مياه التغذية الماء <strong>لمرة واحدة فقط</strong> عبر الموفر، المبخر والمحمص في مسار مستمر دون إعادة دوران أو استخدام أسطوانة بخار. معدل الدوران هو 1.0 بالضبط.</p>
+    <p style="font-size:0.92em;">يمكن تشغيل غلايات بنسون تحت كل من الضغوط دون الحرجة و <strong>فوق الحرجة (أكثر من 221.2 بار / 374 °C)</strong>، عادة ما تصل إلى 300+ بار في درجات حرارة 560-600 °C. عند الضغط الحرج، يتحول الماء فوراً إلى بخار دون تكوين فقاعات. نقطة الجفاف تتحرك بحرية حسب الحمل. هذا يضع <strong>متطلبات صارمة للغاية بشأن النقاء الكيميائي لمياه التغذية</strong> (التوصيل &lt; 0.1 µS/cm)، حيث تترسب جميع الشوائب مباشرة في الأنابيب.</p>
+    <p><strong>الاستخدام:</strong> وحدات محطات الطاقة الكبيرة وعالية الكفاءة ذات الضغط العالي ودرجات الحرارة المرتفعة.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-num">D</span>
+      <span class="card-title">سولزر (تدفق مباشر مع فاصل)</span>
+    </div>
+    <p>تطوير لغلاية التدفق المباشر من بنسون، حيث يتم تركيب <strong>فاصل مياه</strong> عند مخرج المبخر. عند بدء التشغيل وتحت الأحمال المنخفضة (عادةً تحت 30-40٪ حمل)، حيث لا يتبخر الماء تمامًا، يقوم الفاصل بتجميع المياه الزائدة.</p>
+    <p style="font-size:0.92em;">يتم إرجاع هذا الماء إلى نظام مياه التغذية عبر مضخة إعادة دوران أو يتم تفريغه، مما يحمي أنابيب المحمص من الصدمات المائية ورواسب الملح. عند الأحمال العالية، يتبخر كل الماء في المبخر، وتعمل الغلاية كغلاية بنسون نقية بفاصل جاف. هذا يمنح الغلاية قدرة كبيرة على <strong>المرونة التشغيلية</strong> ووقت استجابة أسرع عند تغير الأحمال.</p>
+    <p><strong>الاستخدام:</strong> غلايات محطات الطاقة الحديثة التي تتطلب تغيرات متكررة في الحمل وحمل أدنى منخفض (حتى 15-20٪ حمل).</p>
+  </div>
+</div>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">متطلبات جودة المياه</div>
+    <p>تضع غلايات أنابيب المياه — وخاصة التدفق المباشر — متطلبات <strong>صارمة للغاية</strong>
+    لِنقاء المياه. لا يتم تخفيف الشوائب في حجم كبير من الماء
+    كما هو الحال في غلايات أنابيب الدخان. انظر الوحدة 05 لمعالجة المياه.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ HEDTVANDSANLÆG ═══════════════════ -->
+<h2>2.4 أنظمة المياه الساخنة (الماء الساخن المضغوط)</h2>
+
+<p>في نظام الماء الساخن، يتم تدوير <strong>الماء السائل فقط</strong> عند
+درجات حرارة تزيد عن 100 °C — عادة 120-170 °C. يظل الماء سائلًا لأن
+<strong>مضخة حفظ الضغط</strong> تحافظ على ضغط النظام أعلى من
+ضغط تشبع الماء.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0891b2"/>
+    </marker>
+  </defs>
+
+  <!-- Boiler -->
+  <rect x="40" y="100" width="120" height="100" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="100" y="135" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#dc2626" font-weight="700">غلاية</text>
+  <text x="100" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#dc2626" font-weight="700">الماء الساخن</text>
+  <text x="100" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#1a1814">120–170 °C</text>
+
+  <!-- Process / heat exchanger -->
+  <rect x="500" y="100" width="120" height="100" rx="8" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="560" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#0891b2" font-weight="700">مبادل</text>
+  <text x="560" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#0891b2" font-weight="700">حراري</text>
+  <text x="560" y="175" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#1a1814">موقع الاستهلاك</text>
+
+  <!-- Top pipe (hot) -->
+  <line x1="160" y1="120" x2="500" y2="120" stroke="#dc2626" stroke-width="3" marker-end="url(#arrh)"/>
+  <text x="330" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#dc2626" font-weight="700">تدفق · 150°C</text>
+
+  <!-- Bottom pipe (cold) -->
+  <line x1="500" y1="180" x2="160" y2="180" stroke="#0891b2" stroke-width="3" marker-end="url(#arrc)"/>
+  <text x="330" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#0891b2" font-weight="700">عودة · 90°C</text>
+
+  <!-- Trykholdepumpe -->
+  <circle cx="280" cy="180" r="18" fill="#1a1814"/>
+  <text x="280" y="184" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#f59e0b" font-weight="700">TP</text>
+  <text x="280" y="220" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814" font-weight="700">مضخة حفظ الضغط</text>
+  <text x="280" y="234" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">تحافظ على &gt; ضغط التشبع</text>
+
+  <!-- Expansion -->
+  <rect x="380" y="40" width="60" height="50" rx="3" fill="#fef3c7" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="410" y="60" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#ea580c" font-weight="700">وعاء</text>
+  <text x="410" y="75" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#ea580c" font-weight="700">التمدد</text>
+  <line x1="410" y1="90" x2="410" y2="120" stroke="#1a1814" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- Title -->
+  <text x="350" y="20" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">نظام مياه ساخنة متكامل</text>
+</svg>
+<div class="diagram-caption">الشكل 2.3 — نظام الماء الساخن: تضمن مضخة الضغط عدم تبخر الماء حتى عند 150°C</div>
+</div>
+
+<div class="alert danger">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">ماء فقط — لا يوجد بخار!</div>
+    <p>في نظام الماء الساخن، <strong>لا يوجد بخار</strong> أثناء التشغيل العادي.
+    صمام الأمان مصمم من أجل <strong>تصريف الماء</strong> — وليس
+    لتصريف البخار كما في الغلايات البخارية.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ INGENIØRENS PERSPEKTIV: MEKANIK ═══════════════════ -->
+<h2>2.5 منظور المهندس: الميكانيكا والمواد</h2>
+
+<p>من الناحية الميكانيكية، تعد الغلاية البخارية جهاز ضغط معقد يتعرض لكل من الضغوط العالية والإجهاد الحراري. إليك أهم الاعتبارات الميكانيكية في تصميم الغلاية:</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>⚙️ تصميم وعاء الضغط والإجهادات (معادلة الأسطوانة)</h3>
+    <p>غلاف الغلاية، أسطوانات البخار، وأنابيب الغلاية هي عناصر أسطوانية مضغوطة. عندما تتعرض لضغط داخلي زائد، ينشأ إجهادان ميكانيكيان رئيسيان في جدار المادة:</p>
+    
+    <div style="margin: 12px 0; padding: 12px; background: #faf8f5; border-left: 4px solid #1a1814; border-radius: 4px;">
+      <p style="margin: 0 0 10px 0;"><strong>1. الإجهاد المماسي (Hoop stress / الإجهاد القطري)، σ<sub>t</sub>:</strong> 
+        يميل إلى شق الأسطوانة طوليًا. هذا هو الإجهاد الأكبر وبالتالي العامل المحدد للتصميم:
+        <br><code class="math" style="font-size: 14px; font-weight: bold; display: block; margin: 6px 0; font-family: monospace;">σ<sub>t</sub> = (p · d<sub>i</sub>) / (2 · s) &nbsp; [N/mm²]</code>
+      </p>
+      <p style="margin: 0;"><strong>2. الإجهاد الطولي (Longitudinal stress)، σ<sub>l</sub>:</strong> 
+        يميل إلى فصل الأسطوانة في نهاياتها (ضغط محوري نحو النهايات):
+        <br><code class="math" style="font-size: 14px; font-weight: bold; display: block; margin: 6px 0; font-family: monospace;">σ<sub>l</sub> = (p · d<sub>i</sub>) / (4 · s) &nbsp; [N/mm²]</code>
+      </p>
+    </div>
+
+    <p><strong>تعريف الرموز:</strong></p>
+    <ul>
+      <li><code>p</code>: ضغط التصميم الداخلي بـ N/mm² (MPa). ملاحظة: 1 بار = 0.1 N/mm².</li>
+      <li><code>d<sub>i</sub></code>: القطر الداخلي للوعاء أو الأنبوب بالملم.</li>
+      <li><code>s</code>: سمك جدار اللوحة أو الأنبوب بالملم.</li>
+      <li><code>σ<sub>t</sub>, σ<sub>l</sub></code>: الإجهاد الميكانيكي في المادة بـ N/mm² (MPa).</li>
+    </ul>
+
+    <p><strong>النسبة والنتيجة:</strong> بما أن <code>σ<sub>t</sub> = 2 · σ<sub>l</sub></code>، فإن الإجهاد المماسي هو بالضبط <strong>ضعف</strong> الإجهاد الطولي. يوضح هذا سبب تشقق الأنبوب أو الغلاف غالبًا طوليًا (بشكل موازٍ للمحور) عند الحمل الزائد.</p>
+
+    <p><strong>التصميم وفقًا للمعايير (DS/EN 13445-3 / EN 12952-3 / EN 12953-3):</strong> 
+      من الناحية العملية، يتم تعديل صيغة تصميم سماكة الجدار لتشمل إجهادًا مسموحًا به للصلب عند درجة حرارة التشغيل (<i>f</i>)، وكفاءة وصلة اللحام (<i>z</i>، عادة 0.85-1.0)، وبدل للتآكل والتفاوت (<i>c</i>):
+      <br><code style="font-weight: bold; display: block; margin-top: 6px; font-family: monospace;">s = (p · d<sub>i</sub>) / (2 · f · z - p) + c</code>
+    </p>
+  </div>
+  <div class="card">
+    <h3>🔥 إجهاد المواد (Fatigue)</h3>
+    <p>عند بدء تشغيل الغلاية وإيقافها، تتمدد المادة وتتقلص. يؤدي هذا <strong>الإجهاد الحراري الدوري</strong> بمرور الوقت إلى إعياء المواد (التعب)، والذي يمكن أن يسبب تشققات مجهرية في اللحامات.</p>
+  </div>
+  <div class="card">
+    <h3>🌡️ الزحف (Creep)</h3>
+    <p>في المحمصات، يعمل الفولاذ عند درجات حرارة عالية جدًا (غالبًا فوق 500 °C). عند درجات الحرارة هذه تحت الضغط، يتشوه الفولاذ ببطء ولكن بشكل دائم بمرور الوقت. تسمى هذه الظاهرة <strong>الزحف</strong> وهي العامل الأساسي المحدد لعمر أنابيب المحمص.</p>
+  </div>
+  <div class="card">
+    <h3>📐 التمدد الحراري</h3>
+    <p>سيتمدد أنبوب بخار طوله 50 مترًا يتم تسخينه من 20 °C إلى 400 °C بحوالي 23 سم! لذلك، عادة ما يتم تركيب الغلايات بحيث تكون معلقة من الأعلى (top-supported) أو توضع على أحذية انزلاق، ويتم تجهيز الأنابيب بوصلات تمدد لامتصاص التمدد دون إتلاف النظام.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ REGLER, STANDARDER & VEJLEDNINGER ═══════════════════ -->
+<h2>2.6 التشريعات، المعايير والموافقات</h2>
+<p>يخضع تصميم، تصنيع، تركيب، تشغيل، وفحص أنظمة الغلايات البخارية للتوحيد الدولي الصارم والتشريعات الوطنية لمنع الحوادث وضمان السلامة الميكانيكية للمحطة.</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>📋 المعايير الأوروبية: EN 12952 &amp; EN 12953</h3>
+    <p>يجب أن تتوافق الغلايات البخارية الأوروبية مع المعايير المنسقة بموجب PED (توجيه معدات الضغط):</p>
+    <ul>
+      <li><strong>EN 12952 — غلايات أنابيب المياه:</strong>
+        <ul>
+          <li><strong>EN 12952-3 (التصميم والحساب):</strong> تصميم الأجزاء المضغوطة بناءً على تحليل الإجهادات.</li>
+          <li><strong>EN 12952-7 (معدات الغلاية):</strong> متطلبات السلامة للأجهزة. يتطلب معدات سلامة مزدوجة، بما في ذلك محددين مستقلين على الأقل لمستوى المياه المنخفض لمنع الغليان الجاف.</li>
+          <li><strong>EN 12952-11 (المحددات):</strong> متطلبات مكونات سلسلة السلامة (محددات الضغط SDB، محددات الحرارة STB). يجب على المحددات أن تُفعل سلسلة الأمان، وتقطع الوقود، وتتطلب <strong>إعادة تعيين يدوي (reset)</strong>.</li>
+          <li><strong>EN 12952-12 (جودة المياه):</strong> تحدد الحدود الكيميائية لمياه التغذية ومياه الغلاية لتجنب التآكل والترسبات.</li>
+        </ul>
+      </li>
+      <li><strong>EN 12953 — غلايات أنابيب الدخان:</strong>
+        <ul>
+          <li><strong>EN 12953-3 (التصميم والحساب):</strong> تنظم تصميم غلاف الغلاية، وأنابيب اللهب (ضد الانهيار تحت الضغط الخارجي).</li>
+          <li><strong>EN 12953-6 (معدات الغلاية):</strong> متطلبات الأجهزة (مقاييس الضغط، صمامات الأمان، ومقاييس المستوى).</li>
+          <li><strong>EN 12953-9 (المحددات وسلاسل السلامة):</strong> تحدد متطلبات أنظمة الحماية وتشكل الأساس لتشغيل غير مراقب لمدة 24/72 ساعة.</li>
+          <li><strong>EN 12953-10 (جودة المياه):</strong> القيم الحدية لمياه التغذية والغلاية في غلايات أنابيب الدخان.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>تشغيل غير مراقب لمدة 72 ساعة:</strong> وفقًا لمعايير EN 12952-7 و EN 12953-6/9، يمكن اعتماد أنظمة الغلايات لمدة تصل إلى 72 ساعة من التشغيل المستمر دون إشراف يدوي، إذا كانت معدات السلامة متكررة، ذاتية المراقبة، ومصنفة بمستوى سلامة (SIL).</p>
+  </div>
+
+  <div class="card">
+    <h3>🇩🇰 القواعد الدنماركية (توجيهات هيئة بيئة العمل)</h3>
+    <p>في الدنمارك، يتم تنظيم التركيب، التشغيل والتحكم في غلايات البخار تحت إشراف هيئة بيئة العمل وفقًا لـ BEK nr. 99 af 24/01/2022 و BEK nr. 498 af 17/05/2024:</p>
+    <ul>
+      <li><strong>إرشادات AT B.4.8 — التحكم والفحص الدوري:</strong>
+        تصف فترات الفحص الإلزامية التي تقوم بها هيئة تفتيش معتمدة:
+        <ul>
+          <li><strong>فحص خارجي (تحكم التشغيل - كل 12 شهرًا):</strong> يتم اختبار الغلاية قيد التشغيل. ويشمل ذلك اختبار صمامات الأمان، المحددات (التوقف الطارئ، مستوى المياه، الضغط) وكذلك التحكم في سجلات التشغيل وجودة المياه.</li>
+          <li><strong>فحص داخلي (كل 24 شهرًا):</strong> يتم إيقاف الغلاية، تنظيفها وفحصها داخليًا بحثًا عن التآكل، التشققات (التعب الحراري في اللحامات)، قشور الغلاية والتشوهات الأخرى. (بالنسبة لبعض غلايات أنابيب المياه ذات جودة المياه العالية، يمكن تمديد الفترة إلى 48 شهرًا في ظل ظروف خاصة).</li>
+          <li><strong>اختبار الضغط / اختبار القوة:</strong> يُجرى عند الشك في قوة الهيكل، مثلاً بعد إصلاحات لحام كبيرة أو أضرار تآكل بالغة. يتم إجراؤه عادةً هيدروليكياً (درجة حرارة الماء 5-50 °C) عند 1.43 × ضغط التشغيل (PS). الفترة القياسية لاختبار القوة هي كل 8 سنوات لغلايات أنابيب الدخان وكل 10 سنوات لغلايات أنابيب المياه.</li>
+        </ul>
+      </li>
+      <li><strong>إرشادات AT B.4.3 — ترتيب موقع التثبيت:</strong>
+        تنظم تخطيط غرفة الغلاية. ويشمل ذلك توفير هواء احتراق كافي (تهوية)، مسارات هروب، مساحة خالية حول الغلاية (0.8-1.0 متر على الأقل خلوص للجدران) وظروف تفريغ آمنة لصمامات الأمان.
+      </li>
+      <li><strong>إرشادات AT B.4.4 — معدات الضغط - التثبيت والبدء والاستخدام:</strong>
+        يجب أن يتم فحص التثبيت من قبل هيئة معتمدة قبل استخدام النظام بعد تركيبه حديثًا أو نقله.
+      </li>
+      <li><strong>متطلبات شهادة مشغل الغلاية:</strong> وفقًا للقواعد الحالية، يجب تشغيل الغلايات ذات ضغط يزيد عن 0.5 بار بواسطة شخص يحمل شهادة صالحة (النوع A/I للمحطات الكبيرة، النوع B/II للمحطات الصغيرة).</li>
+      <li><strong>سجل الغلاية:</strong> يعد الاحتفاظ بسجل غلاية معتمد مطلبًا قانونيًا. يجب تسجيل جميع الاختبارات الوظيفية لمعدات السلامة، وتحليلات المياه، واضطرابات التشغيل، وتصريف القاع مع ذكر التاريخ والتوقيع.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../01-certifikater/">
+    <span class="label">← السابق</span>
+    01 · الشهادات
+  </a>
+  <a class="next" href="../03-termodynamik/">
+    <span class="label">التالي →</span>
+    03 · الديناميكا الحرارية
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">الوحدة 02 · أنواع الغلايات البخارية</div>
+  <div style="opacity:0.4;">Mercantec · دورة مشغل الغلايات</div>
+</div>
+
+</body>
+</html>

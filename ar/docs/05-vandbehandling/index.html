@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>الوحدة 05 · معالجة المياه والتحليل</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> دورة <b>مشغل</b> الغلايات</a></div>
+  <div class="topbar-nav">
+    <a href="../../../docs/05-vandbehandling/index.html">Dansk</a>
+    <a href="../04-forbraending/">← الوحدة 04</a>
+    <a href="../../index.html">الصفحة الرئيسية</a>
+    <a href="../06-armaturer-sikkerhed/">الوحدة 06 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">الصفحة الرئيسية</a> / الوحدة 05 — معالجة المياه</div>
+
+<div class="kapitel-tag">الوحدة 05</div>
+<h1>معالجة المياه &amp; <span class="underline">التحليل</span></h1>
+<p class="lede">
+  الرقم PA (القلوية p)، الرقم CA (القلوية m)، العسر، الفوسفات، الكبريتيت، 
+  والموصلية — كل شيء عن كيمياء مياه الغلاية. ما هي القيم الصحيحة؟ 
+  كيف تقوم بالجرعات؟ متى يجب إجراء التفوير السفلي (Blowdown)؟ 
+  مع متطلبات صارمة لغلايات الأنابيب المائية عند 60 بار مع تشغيل التوربينات.
+</p>
+
+<!-- ═══════════════════ HVORFOR VANDBEHANDLING ═══════════════════ -->
+<h2>5.1 لماذا تعتبر معالجة المياه حرجة؟</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>🪨 ترسبات الغلاية (CaCO₃, CaSO₄)</h3>
+    <p>تترسب معادن العسر (Ca²⁺، Mg²⁺) عند التسخين كترسبات صلبة على
+    أسطح التسخين. طبقة بسماكة 1 مم من الترسبات تزيد من استهلاك الوقود بنسبة 5–8٪، 
+    ويمكن أن تؤدي في أسوأ الحالات إلى تمزق الأنابيب.</p>
+  </div>
+
+  <div class="card">
+    <h3>⚡ التآكل (Corrosion)</h3>
+    <p>يهاجم الأكسجين المذاب (O₂) الصلب ويسبب نقراً (Pittings). يُكون 
+    ثاني أكسيد الكربون (CO₂) في المكثفات حمض الكربونيك الذي يهاجم أنابيب المكثفات
+    من الداخل. تتم مكافحة كليهما كيميائياً.</p>
+  </div>
+
+  <div class="card">
+    <h3>🫧 الرغوة وانتقال قطرات الماء (Carryover)</h3>
+    <p>يؤدي ارتفاع نسبة الأملاح أو القلوية إلى تكون رغوة في حيز البخار. تحمل الرغوة
+    قطرات الماء مع البخار — مما يلوث العملية ويمكن أن يدمر التوربين.</p>
+  </div>
+
+  <div class="card">
+    <h3>💎 حمض السيليسيك (SiO₂)</h3>
+    <p>حمض السيليسيك <strong>يتبخر</strong> عند الضغط العالي ويترسب كطبقة
+    زجاجية على شفرات التوربين. من المستحيل تقريباً إزالته. وهو معامل حرج
+    عند ضغط أعلى من 40 بار.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ PARAMETRE ═══════════════════ -->
+<h2>5.2 أهم المعايير (Parameters)</h2>
+
+<table>
+  <thead>
+    <tr><th>المعامل</th><th>ما الذي يقاس؟</th><th>النطاق الموصى به</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>الرقم PA (قلوية-p)</strong></td>
+      <td>قلوية OH⁻ (الاحتياطي القاعدي)</td>
+      <td class="num">6–10 (غلاية ≤ 20 بار)</td>
+    </tr>
+    <tr>
+      <td><strong>الرقم CA (قلوية-m)</strong></td>
+      <td>HCO₃⁻ (البيكربونات)</td>
+      <td class="num">&lt; الرقم PA</td>
+    </tr>
+    <tr>
+      <td><strong>الرقم الهيدروجيني (pH)</strong></td>
+      <td>الحموضة</td>
+      <td class="num">10.5–12.0</td>
+    </tr>
+    <tr>
+      <td><strong>العسر (°dH)</strong></td>
+      <td>Ca²⁺ + Mg²⁺</td>
+      <td class="num">0 °dH (خالٍ تماماً)</td>
+    </tr>
+    <tr>
+      <td><strong>الفوسفات (PO₄³⁻)</strong></td>
+      <td>الفوسفات المتبقي بعد ربط العسر</td>
+      <td class="num">5–15 g/m³</td>
+    </tr>
+    <tr>
+      <td><strong>الكبريتيت (Na₂SO₃)</strong></td>
+      <td>رابط الأكسجين في ماء الغلاية</td>
+      <td class="num">20–50 g/m³</td>
+    </tr>
+    <tr>
+      <td><strong>الموصلية (Conductivity)</strong></td>
+      <td>محتوى الملح الكلي</td>
+      <td class="num">&lt; 6,000 µS/cm</td>
+    </tr>
+    <tr>
+      <td><strong>SiO₂</strong></td>
+      <td>حمض السيليسيك (السيليكا)</td>
+      <td class="num">&lt; 70 + 6×PA mg/l</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════════ ACTION DIAGRAM ═══════════════════ -->
+<h2>5.3 مخطط الإجراءات — مرتفع جداً أم منخفض جداً؟</h2>
+
+<div class="diagram">
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+  <!-- Two columns -->
+
+  <!-- COL 1: For LAV -->
+  <rect x="20" y="40" width="320" height="290" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <rect x="20" y="40" width="320" height="40" rx="10" fill="#dc2626"/>
+  <text x="180" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="16" fill="white" font-weight="700">⬇ منخفض جداً — أضف</text>
+
+  <text x="40" y="105" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">PA منخفض جداً (&lt; 6)</text>
+  <text x="40" y="122" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ هيدروكسيد الصوديوم NaOH: (المطلوب−المقاس) × 40 × m³</text>
+
+  <text x="40" y="148" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">العسر &gt; 0</text>
+  <text x="40" y="165" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ فوسفات الصوديوم Na₃PO₄: °dH × 50 × m³</text>
+
+  <text x="40" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">الكبريتيت منخفض جداً (&lt; 20)</text>
+  <text x="40" y="208" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ كبريتيت الصوديوم Na₂SO₃: (المطلوب−المقاس) × m³</text>
+
+  <text x="40" y="234" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">الفوسفات منخفض جداً (&lt; 5)</text>
+  <text x="40" y="251" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ جرعة إضافية من Na₃PO₄</text>
+
+  <text x="40" y="282" font-family="DM Sans,sans-serif" font-size="11" fill="#dc2626" font-style="italic">العواقب إن لم يتم التصحيح:</text>
+  <text x="40" y="298" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">PA منخفض → تآكل</text>
+  <text x="40" y="312" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">عسر → ترسبات (تكلس)</text>
+  <text x="40" y="326" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">كبريتيت منخفض → تآكل أكسجيني</text>
+
+  <!-- COL 2: For HØJT -->
+  <rect x="380" y="40" width="320" height="290" rx="10" fill="#fef3c7" stroke="#ea580c" stroke-width="1.5"/>
+  <rect x="380" y="40" width="320" height="40" rx="10" fill="#ea580c"/>
+  <text x="540" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="16" fill="white" font-weight="700">⬆ مرتفع جداً — تفوير سفلي</text>
+
+  <text x="400" y="105" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">إجمالي الأملاح مرتفع جداً</text>
+  <text x="400" y="122" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ تفوير سفلي (Blowdown)</text>
+
+  <text x="400" y="148" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">PA مرتفع جداً (&gt; 12)</text>
+  <text x="400" y="165" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ تفوير + تقليل جرعة NaOH</text>
+
+  <text x="400" y="191" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">SiO₂ مرتفع جداً</text>
+  <text x="400" y="208" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ تفوير + تحسين المعالجة المسبقة</text>
+
+  <text x="400" y="234" font-family="DM Sans,sans-serif" font-size="12" fill="#1a1814" font-weight="700">CA &gt; PA</text>
+  <text x="400" y="251" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">→ ارفع PA أولاً (بواسطة NaOH)</text>
+
+  <text x="400" y="282" font-family="DM Sans,sans-serif" font-size="11" fill="#ea580c" font-style="italic">العواقب إن لم يتم التصحيح:</text>
+  <text x="400" y="298" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">PA مرتفع → تقصف كاوي (هشاشة قلوية)</text>
+  <text x="400" y="312" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">SiO₂ → ترسبات في التوربين</text>
+  <text x="400" y="326" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c">CA مرتفع → CO₂ في المكثفات</text>
+
+  <!-- Title -->
+  <text x="360" y="25" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">القاعدة الذهبية: منخفض = أضف، مرتفع = فَرِّغ (تفوير سفلي)</text>
+</svg>
+<div class="diagram-caption">الشكل 5.1 — مخطط الإجراءات لتحليل المياه</div>
+</div>
+
+<!-- ═══════════════════ DOSERINGSFORMLER ═══════════════════ -->
+<h2>5.4 صيغ حساب الجرعات</h2>
+
+<div class="formula">
+<b>NaOH</b>      (لرفع PA): &nbsp; الجرامات = (PA المطلوب − PA المقاس) × <em>40</em> × حجم الماء (m³)<br>
+<b>Na<sub>3</sub>PO<sub>4</sub></b> (للعسر):  &nbsp;  الجرامات = °dH × <em>50</em> × حجم الماء (m³)<br>
+<b>Na<sub>2</sub>SO<sub>3</sub></b> (للكبريتيت):  &nbsp;  الجرامات = (المطلوب − المقاس) × حجم الماء (m³)
+</div>
+
+<h3>مثال — تحليل كامل للمياه</h3>
+<div class="card">
+<p><strong>غلاية أنابيب دخان بقناة، حجم الماء 7.5 م³، الضغط 18 بار مطلق.</strong></p>
+<table style="margin:8px 0;">
+  <thead><tr><th>المعامل</th><th>القيمة المقاسة</th><th>المتطلبات</th><th>الحالة</th></tr></thead>
+  <tbody>
+    <tr><td>العسر</td><td class="num">0 °dH</td><td>0</td><td class="ok">جيد (OK)</td></tr>
+    <tr><td>الرقم PA</td><td class="num">2.5</td><td>6–10</td><td class="danger">منخفض جداً</td></tr>
+    <tr><td>الرقم CA</td><td class="num">3.0</td><td>&lt; PA</td><td class="danger">CA &gt; PA!</td></tr>
+    <tr><td>الكبريتيت</td><td class="num">15 g/m³</td><td>20–50</td><td class="warn">منخفض جداً</td></tr>
+    <tr><td>SiO₂</td><td class="num">100 g/m³</td><td>&lt; 50</td><td class="danger">مرتفع جداً</td></tr>
+  </tbody>
+</table>
+
+<h3>خطة التصحيح بالترتيب</h3>
+<ol>
+  <li><strong>التفوير السفلي (Bundblæsning)</strong> لخفض نسبة SiO₂.</li>
+  <li><strong>إضافة NaOH</strong> لرفع PA من 2.5 إلى 8:<br>
+    <code>(8 − 2.5) × 40 × 7.5 = <strong>1,650 جرام NaOH</strong></code></li>
+  <li><strong>إضافة Na₂SO₃</strong> لرفع الكبريتيت من 15 إلى 30:<br>
+    <code>(30 − 15) × 7.5 = <strong>112.5 جرام Na₂SO₃</strong></code></li>
+  <li>عندما يصبح PA &gt; CA، تختفي مشكلة البيكربونات تلقائياً.</li>
+</ol>
+</div>
+
+<!-- ═══════════════════ SKÆRPEDE KRAV ═══════════════════ -->
+<h2>5.5 متطلبات أكثر صرامة — تشغيل التوربينات والضغط العالي</h2>
+
+<p>مع ارتفاع ضغط التشغيل، وخاصة عند <strong>تشغيل التوربينات</strong>، تصبح 
+المتطلبات أكثر صرامة بكثير — لأن الشوائب في البخار تترسب على
+شفرات التوربين:</p>
+
+<table>
+  <thead>
+    <tr><th>المعامل</th><th>≤ 20 بار</th><th>≤ 40 بار</th><th>≤ 64 بار</th><th>تشغيل التوربين (ماء الغلاية)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>الرقم PA</td>
+      <td class="num">6–10</td>
+      <td class="num">3–6</td>
+      <td class="num">&lt; 3</td>
+      <td class="num">~9.4 (تحكم بـ pH)</td>
+    </tr>
+    <tr>
+      <td>SiO₂ (mg/l)</td>
+      <td class="num">70 + 6×PA</td>
+      <td class="num">~30</td>
+      <td class="num">&lt; 10</td>
+      <td class="num danger">&lt; 1 mg/kg</td>
+    </tr>
+    <tr>
+      <td>الموصلية (µS/cm)</td>
+      <td class="num">&lt; 6,000</td>
+      <td class="num">&lt; 2,500</td>
+      <td class="num">&lt; 2,500</td>
+      <td class="num">&lt; 40</td>
+    </tr>
+    <tr>
+      <td>العسر (°dH)</td>
+      <td class="num">&lt; 0.1</td>
+      <td class="num">&lt; 0.1</td>
+      <td class="num">0</td>
+      <td class="num">0 (منزوع الأملاح بالكامل)</td>
+    </tr>
+    <tr>
+      <td>O₂ (mg/kg)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="num danger">&lt; 0.02</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert danger">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">غلاية الأنابيب المائية عند 60 بار مع تشغيل التوربين</div>
+    <p>في ظروف التشغيل هذه، <strong>النزع الكامل للأملاح (Totalafsaltning)</strong> إلزامي.
+    لا يكفي تيسير المياه (إزالة العسر) العادي — يلزم استخدام نظام التناضح العكسي (RO) أو 
+    التبادل الأيوني ذو السرير المختلط (Mixed bed).</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ EKSTERN VANDBEHANDLING ═══════════════════ -->
+<h2>5.6 المعالجة الخارجية للمياه</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>التيسير / إزالة العسر (التبادل الأيوني)</h3>
+    <p>يتم استبدال Ca²⁺ و Mg²⁺ بـ Na⁺. يزيل العسر، ولكنه <strong>لا يزيل 
+    البيكربونات (القلوية)</strong>. يتم تجديده بمحلول ملحي (NaCl).</p>
+    <p><strong>يُستخدم في:</strong> الضغوط المنخفضة (&lt; 30 بار) حيث لا تكون القلوية 
+    المنخفضة أمراً حرجاً.</p>
+  </div>
+  <div class="card">
+    <h3>التناضح العكسي (RO) و EDI</h3>
+    <p>يُدفع الماء عبر غشاء شبه منفذ بضغط ميكانيكي يتغلب على الضغط الأسموزي الطبيعي. يزيل حوالي 99٪ من جميع الأملاح والمواد العضوية والبكتيريا. يجب تصفية مياه التغذية مسبقاً (غالباً ما يتم تيسيرها) لتجنب انسداد الغشاء (Fouling).</p>
+    <p><strong>EDI (التأين الكهربائي):</strong> مرحلة تنقية عالية التقنية تُوضع بعد نظام التناضح العكسي (بدلاً من مبادل الأيونات ذو السرير المختلط الكيميائي). تستخدم EDI مزيجاً من راتنج التبادل الأيوني والأغشية الانتقائية للأيونات والتيار المباشر <em>باستمرار</em> لتحلية المياه إلى مياه فائقة النقاء (تصل إلى 0.05 µS/cm) — بدون استخدام مواد كيميائية خطرة للتجديد (حمض/قاعدة). هذا النظام قياسي في محطات الطاقة الحديثة.</p>
+  </div>
+  <div class="card">
+    <h3>إزالة الغازات بالضغط (نزع الهواء)</h3>
+    <p>يتم تسخين الماء إلى 102–105 °C عند ضغط زائد يبلغ 0.2–0.5 بار. في هذه
+    الظروف، يتم طرد <strong>O₂ و CO₂</strong> حرارياً. يُستكمل بإضافة 
+    Na₂SO₃ في الغلاية.</p>
+  </div>
+  <div class="card">
+    <h3>النزع الكامل للأملاح (Totalafsaltning)</h3>
+    <p>مزيج من التبادل الكاتيوني والتبادل الأنيوني (أو سرير مختلط). يزيل
+    <strong>جميع الأملاح بما في ذلك SiO₂</strong>. ضروري للضغط العالي
+    وتشغيل التوربينات.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ INGENIØRENS PERSPEKTIV: KEMI ═══════════════════ -->
+<h2>5.7 منظور المهندس: كيمياء التآكل والتبادل الأيوني</h2>
+
+<p>معالجة المياه الصحيحة لا تمنع فقط ترسبات الغلاية، بل توقف عمليات التآكل الكهروكيميائية المعقدة وتدهور الصلب.</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>⚡ التآكل الأكسجيني (التنقر Pitting)</h3>
+    <p>الأكسجين المذاب في ماء الغلاية خطير. يعمل كمزيل استقطاب كاثودي في خلية كهروكيميائية. والنتيجة هي <strong>التنقر (Pittings)</strong> (ثقوب صدأ عميقة ومعزولة)، والتي تتآكل بسرعة من خلال أنبوب البخار، حتى لو كان الصلب المحيط سليماً. لذلك، يُضاف الكبريتيت (Na₂SO₃) لربط آخر أكسجين متبقي: <code>2 Na₂SO₃ + O₂ → 2 Na₂SO₄</code>.</p>
+  </div>
+  <div class="card">
+    <h3>💥 التقصف الكاوي (Caustic embrittlement) وأضرار الهيدروجين</h3>
+    <p>إذا أصبح الرقم PA (تركيز NaOH) مرتفعاً <em>جداً</em>، وكانت هناك إجهادات في الصلب (على سبيل المثال عند الدرفلة أو اللحامات)، يمكن أن تهاجم أيونات الهيدروكسيل (OH⁻) حدود حبيبات الصلب، مما يؤدي إلى <strong>التقصف الكاوي (هشاشة قلوية)</strong>. عند الضغوط العالية جداً، يمكن أن تشكل تفاعلات التآكل تحت الطلاءات أيضاً هيدروجيناً حراً، يتغلغل في الصلب ويسبب تصدعات مجهرية (أضرار الهيدروجين).</p>
+  </div>
+  <div class="card">
+    <h3>🧪 كيمياء التبادل الأيوني</h3>
+    <p>جهاز إزالة العسر (مبادل كاتيون) مليء براتنج اصطناعي (Resin). يكون الراتنج مشبعاً بالصوديوم (Na⁺) منذ البداية. عندما يمر الماء العسر (Ca²⁺ و Mg²⁺)، يرتبط الكالسيوم بالراتنج، ويتم إطلاق الصوديوم في الماء. التفاعل هو: <code>Resin-Na₂ + Ca²⁺ ↔ Resin-Ca + 2 Na⁺</code>. عند التجديد، يتم غسل النظام بمحلول ملحي قوي (NaCl)، مما يجبر التفاعل على الاتجاه المعاكس.</p>
+  </div>
+  <div class="card">
+    <h3>🧫 النزع الكامل للأملاح (السرير المختلط Mixed Bed)</h3>
+    <p>لتشغيل التوربين يتطلب 0 µS/cm. يُزيل المبادل الكاتيوني (المشحون بـ H⁺) المعادن، ويُزيل المبادل الأنيوني (المشحون بـ OH⁻) بقايا الأملاح (مثل الكبريتات والكلوريد والسيليكات). تتحد أيونات H⁺ و OH⁻ لتكوين ماء نقي H₂O. يحتوي <em>السرير المختلط (Mixed Bed)</em> على كلا النوعين من الراتنج مخلوطين معاً لضمان الإزالة القصوى لجميع الأيونات في خطوة واحدة.</p>
+  </div>
+  <div class="card">
+    <h3>⚖️ مؤشر تشبع لانجلير (LSI)</h3>
+    <p>لتحديد بدقة ما إذا كانت مياه التغذية مسببة للتآكل (Korrosivt) أو مكونة للترسبات (Scale-forming)، يستخدم المهندس النموذج الديناميكي الحراري المعروف باسم LSI. يُحسب LSI من درجة حموضة الماء (pH)، ودرجة الحرارة، والعسر (Ca²⁺)، والقلوية وإجمالي محتوى الملح (TDS):</p>
+    <div class="formula">LSI = pH<sub>المقاس</sub> - pH<sub>التشبع</sub></div>
+    <p>إذا كان <strong>LSI سلبياً</strong> (LSI &lt; 0)، فالماء غير مشبع وسيكون عدوانياً و<strong>يؤدي لتآكل</strong> (يذيب) المعدن. وإذا كان <strong>LSI إيجابياً</strong> (LSI &gt; 0)، فالماء مفرط التشبع، وسوف <strong>تترسب فيه أملاح الغلاية</strong>. يقوم برنامج معالجة المياه بتعديل الجرعات للحفاظ على LSI حول 0 أو موجب قليلاً (+0.5)، بحيث تتشكل طبقة تخميل واقية رقيقة في الأنابيب دون إنشاء ترسبات عازلة.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../04-forbraending/">
+    <span class="label">← السابق</span>
+    04 · الاحتراق
+  </a>
+  <a class="next" href="../06-armaturer-sikkerhed/">
+    <span class="label">التالي →</span>
+    06 · التجهيزات والسلامة
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">الوحدة 05 · معالجة المياه والتحليل</div>
+  <div style="opacity:0.4;">Mercantec · دورة مشغل الغلايات</div>
+</div>
+
+</body>
+</html>

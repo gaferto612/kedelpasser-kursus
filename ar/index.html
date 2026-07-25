@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>دورة مشغل الغلايات — مورد تعليمي عبر الإنترنت</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  /* Hero override only on landing page */
+  .hero {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--paper) 100%);
+    padding: 80px 24px 40px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
+  .hero-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.0;
+    margin-bottom: 24px;
+  }
+  .meta-strip {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--line);
+  }
+  .meta-strip span b { color: var(--ink); }
+
+  .modules {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .module-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, transparent 50%, currentColor 100%);
+    opacity: 0.04;
+    pointer-events: none;
+  }
+  .module-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--ink);
+  }
+  .module-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .module-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .module-desc {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .module-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+  .module-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .mc-icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+  }
+  html[dir="rtl"] .mc-icon {
+    right: auto;
+    left: 24px;
+  }
+  .mc-1 { background: var(--ink); }
+  .mc-2 { background: var(--steam); }
+  .mc-3 { background: var(--fire); }
+  .mc-4 { background: var(--warm); }
+  .mc-5 { background: var(--water); }
+  .mc-6 { background: var(--gas); }
+  .mc-7 { background: var(--green); }
+  .mc-8 { background: var(--hot); }
+  .mc-9 { background: var(--ink-2); }
+
+  .stats-strip {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 24px;
+    margin-top: 48px;
+  }
+  .stats-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--hot);
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand">
+    <a href="index.html"><span class="accent">⚙</span> دورة <b>مشغل</b> الغلايات</a>
+  </div>
+  <div class="topbar-nav">
+    <a href="../index.html">Dansk</a>
+    <a href="docs/01-certifikater/">01 الشهادات</a>
+    <a href="docs/02-dampkedler/">02 الغلايات</a>
+    <a href="docs/03-termodynamik/">03 الديناميكا الحرارية</a>
+    <a href="docs/04-forbraending/">04 الاحتراق</a>
+    <a href="docs/05-vandbehandling/">05 المياه</a>
+    <a href="docs/06-armaturer-sikkerhed/">06 التركيبات</a>
+    <a href="docs/07-drift-vedligehold/">07 التشغيل</a>
+    <a href="docs/08-energi-groen/">08 الطاقة</a>
+    <a href="docs/09-formler-tabeller/">09 القوانين</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-inner">
+    <div class="kapitel-tag">مورد تعليمي عبر الإنترنت · Mercantec</div>
+    <h1>دورة مشغل <span class="underline">الغلايات والآلات</span><br>الكاملة</h1>
+    <p class="lede">
+      دورة تدريبية شاملة عبر الإنترنت تعتمد على كتاب "مشغل الغلايات والآلات" 
+      وقانون BEK 498/2024. تحتوي على رسوم بيانية موسعة، حسابات، جداول بخار ومخططات تعليمية 
+      — مصممة لاختبارات الشهادات والاستخدام اليومي للمحطة.
+    </p>
+    <div class="meta-strip">
+      <span><b>9</b> وحدات</span>
+      <span><b>40+</b> مخطط</span>
+      <span><b>BEK 498</b>/2024</span>
+      <span><b>AR</b> اللغة</span>
+    </div>
+  </div>
+</section>
+
+<section class="modules">
+
+  <h2 style="border:none;margin-top:0;">نظرة عامة على الوحدات</h2>
+  <p class="lede" style="font-size:16px;">
+    تنقسم المواد إلى تسع وحدات. تحتوي كل وحدة على نظريات، قوانين، أمثلة حسابية ورسوم بيانية. اقرأها بالترتيب أو انتقل إلى الموضوع الذي تحتاجه.
+  </p>
+
+  <div class="module-grid">
+
+    <a class="module-card" href="docs/01-certifikater/">
+      <div class="mc-icon mc-1">📜</div>
+      <div class="module-num">الوحدة 01</div>
+      <div class="module-title">الشهادات والتشريعات</div>
+      <div class="module-desc">
+        BEK 498/2024، فئات التحكم A/B/C، حسابات PS×V، أنواع الشهادات I/II/III، فترات الفحص.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">BEK 498</span>
+        <span class="module-tag">الفئات</span>
+        <span class="module-tag">PS×V</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/02-dampkedler/">
+      <div class="mc-icon mc-2">🏭</div>
+      <div class="module-num">الوحدة 02</div>
+      <div class="module-title">أنواع الغلايات البخارية</div>
+      <div class="module-desc">
+        غلايات أنابيب الدخان، غلايات أنابيب المياه، الغلايات الكهربائية، أنظمة الماء الساخن والمياه المغلية.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">أنابيب الدخان</span>
+        <span class="module-tag">أنابيب المياه</span>
+        <span class="module-tag">مياه ساخنة</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/03-termodynamik/">
+      <div class="mc-icon mc-3">🔥</div>
+      <div class="module-num">الوحدة 03</div>
+      <div class="module-title">الديناميكا الحرارية وجداول البخار</div>
+      <div class="module-desc">
+        المحتوى الحراري، حرارة التبخر، الضغط المطلق، الكفاءة، دورة رانكن.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">المحتوى الحراري</span>
+        <span class="module-tag">جداول البخار</span>
+        <span class="module-tag">η</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/04-forbraending/">
+      <div class="mc-icon mc-4">💨</div>
+      <div class="module-num">الوحدة 04</div>
+      <div class="module-title">الاحتراق وغازات العادم</div>
+      <div class="module-desc">
+        معامل الهواء (λ)، استهلاك الهواء، حجم الغاز، قوانين فقدان الحرارة، تحليل غازات العادم.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">λ</span>
+        <span class="module-tag">CO₂/O₂</span>
+        <span class="module-tag">فقد الحرارة</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/05-vandbehandling/">
+      <div class="mc-icon mc-5">💧</div>
+      <div class="module-num">الوحدة 05</div>
+      <div class="module-title">معالجة المياه والتحليل</div>
+      <div class="module-desc">
+        قيم PA/CA، العسر، الفوسفات، التوصيلية الكهربائية، التناضح العكسي (RO)، إزالة الأيونات (EDI).
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">قيمة PA</span>
+        <span class="module-tag">NaOH</span>
+        <span class="module-tag">التفجير</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/06-armaturer-sikkerhed/">
+      <div class="mc-icon mc-6">🛡</div>
+      <div class="module-num">الوحدة 06</div>
+      <div class="module-title">التركيبات والسلامة</div>
+      <div class="module-desc">
+        صمامات الأمان، زجاج مستوى المياه، مفاتيح الضغط، مستويات المياه (L-W-L).
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">صمامات الأمان</span>
+        <span class="module-tag">L-W-L</span>
+        <span class="module-tag">الغاز</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/07-drift-vedligehold/">
+      <div class="mc-icon mc-7">🔧</div>
+      <div class="module-num">الوحدة 07</div>
+      <div class="module-title">التشغيل والصيانة</div>
+      <div class="module-desc">
+        إجراءات التشغيل، تسليم الورديات، المراقبة الدورية، الصيانة التنبؤية، وموثوقية النظام (RAMS).
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">التشغيل</span>
+        <span class="module-tag">السجل</span>
+        <span class="module-tag">دوري</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/08-energi-groen/">
+      <div class="mc-icon mc-8">🌿</div>
+      <div class="module-num">الوحدة 08</div>
+      <div class="module-title">الطاقة والتحول الأخضر</div>
+      <div class="module-desc">
+        تحسين الكفاءة، المضخات الحرارية، الكتلة الحيوية، الغلايات الكهربائية، ودراسات الحالة.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">η+</span>
+        <span class="module-tag">CO₂</span>
+        <span class="module-tag">دراسة حالة</span>
+      </div>
+    </a>
+
+    <a class="module-card" href="docs/09-formler-tabeller/">
+      <div class="mc-icon mc-9">📊</div>
+      <div class="module-num">الوحدة 09</div>
+      <div class="module-title">القوانين والجداول</div>
+      <div class="module-desc">
+        مجموعة القوانين الكاملة، جداول البخار، عوامل التحويل والثوابت — للطباعة والاستخدام.
+      </div>
+      <div class="module-tags">
+        <span class="module-tag">مرجع</span>
+        <span class="module-tag">طباعة</span>
+        <span class="module-tag">جداول</span>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+<section class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">9</div>
+      <div class="stat-label">وحدات</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40+</div>
+      <div class="stat-label">مخططات</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">قوانين وتعريفات</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2024</div>
+      <div class="stat-label">BEK 498</div>
+    </div>
+  </div>
+</section>
+
+<section class="modules">
+  <h2>كيفية استخدام هذا المورد</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>📚 لاختبارات الشهادات</h3>
+      <p>اقرأ الوحدات 01 → 06 بالترتيب. يجب طباعة الوحدة 09 (القوانين). يتم تمييز النقاط الهامة للاختبارات بمربعات تحذير حمراء.</p>
+    </div>
+    <div class="card">
+      <h3>🔧 للتشغيل اليومي</h3>
+      <p>الوحدة 07 (التشغيل) والوحدة 09 (القوانين) هما المراجع الأهم. تم تجميع قوائم الفحص وتفجير الغلايات في مكان واحد.</p>
+    </div>
+    <div class="card">
+      <h3>🧮 للحسابات</h3>
+      <p>الوحدة 03 (الديناميكا) والوحدة 04 (الاحتراق) تحتويان على جميع القوانين المطلوبة لحسابات الطاقة والكفاءة.</p>
+    </div>
+    <div class="card">
+      <h3>🌿 للمشاريع</h3>
+      <p>تحتوي الوحدة 08 على دراسات حالة حول تحسين الطاقة، وهي مثالية لمشاريع التحول الأخضر.</p>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-line">
+    مبني على كتاب <b>"مشغل الغلايات والآلات"</b> (Erhvervsskolernes Forlag, 2008).<br>
+    قانون BEK 498/2024 ساري المفعول من 1 يونيو 2024.<br>
+    تم تصميم هذه المادة كمورد تعليمي — ولا تحل محل التدريب المعتمد.
+  </div>
+  <div style="opacity:0.4;">
+    Mercantec · Viborg / Nørresundby · 2026
+  </div>
+</div>
+
+</body>
+</html>

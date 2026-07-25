@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>الوحدة 08 · الطاقة والتحول الأخضر</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> دورة <b>مشغل</b> الغلايات</a></div>
+  <div class="topbar-nav">
+    <a href="../../../docs/08-energi-groen/index.html">Dansk</a>
+    <a href="../07-drift-vedligehold/">← الوحدة 07</a>
+    <a href="../../index.html">الصفحة الرئيسية</a>
+    <a href="../09-formler-tabeller/">الوحدة 09 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">الصفحة الرئيسية</a> / الوحدة 08 — الطاقة والتحول الأخضر</div>
+
+<div class="kapitel-tag">الوحدة 08</div>
+<h1>الطاقة &amp; <span class="underline">التحول الأخضر</span></h1>
+<p class="lede">
+  ما مدى كفاءة الغلاية — وكيف يمكننا تحسينها؟ الكفاءة (Virkningsgrad)، 
+  الموفر (Economizer)، استرداد الحرارة، المضخات الحرارية، الكتلة الحيوية، 
+  الغلايات الكهربائية وتدفئة المناطق. بالإضافة إلى حالتين واقعيتين: Carletti و Arla.
+</p>
+
+<!-- ═══════════════════ ENERGIBALANCE ═══════════════════ -->
+<h2>8.1 أين تذهب الطاقة؟</h2>
+
+<p>تتمتع غلاية الغاز أو الزيت النموذجية بدون موفر بكفاءة تبلغ 
+<strong>85–90%</strong>. يخرج الباقي من المدخنة، ويتسرب عبر العزل،
+وكمفقودات تفوير سفلي (Blowdown). إليك أين تذهب الطاقة في غلاية متوسطة:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Energy in -->
+  <rect x="20" y="120" width="120" height="60" rx="4" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="80" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#b45309">دخول الوقود</text>
+  <text x="80" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#1a1814" font-weight="700">100%</text>
+
+  <!-- Main pipe -->
+  <path d="M 140 150 L 280 150" stroke="#1a1814" stroke-width="3" fill="none"/>
+
+  <!-- Boiler -->
+  <rect x="280" y="100" width="180" height="100" rx="6" fill="#fefcf6" stroke="#1a1814" stroke-width="2"/>
+  <text x="370" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" font-weight="700" fill="#1a1814">غلاية بخار</text>
+  <text x="370" y="160" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">احتراق +</text>
+  <text x="370" y="175" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">نقل حراري</text>
+
+  <!-- Useful steam out -->
+  <path d="M 460 130 L 600 130" stroke="#15803d" stroke-width="4" fill="none"/>
+  <polygon points="595,125 615,130 595,135" fill="#15803d"/>
+  <rect x="615" y="105" width="120" height="50" rx="4" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="675" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#15803d">بخار مفيد</text>
+  <text x="675" y="145" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="#1a1814" font-weight="700">87%</text>
+
+  <!-- Flue gas loss -->
+  <path d="M 370 100 L 370 40" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <polygon points="365,45 370,30 375,45" fill="#dc2626"/>
+  <rect x="290" y="10" width="160" height="30" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="370" y="29" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="700" fill="#991b1b">فقد غاز العادم ~10%</text>
+
+  <!-- Radiation/convection loss -->
+  <path d="M 320 200 L 280 240" stroke="#ea580c" stroke-width="2" fill="none"/>
+  <polygon points="282,235 275,245 290,243" fill="#ea580c"/>
+  <rect x="140" y="240" width="140" height="30" rx="4" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="210" y="259" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" fill="#b45309">فقد إشعاعي ~2%</text>
+
+  <!-- Blowdown loss -->
+  <path d="M 420 200 L 460 240" stroke="#0891b2" stroke-width="2" fill="none"/>
+  <polygon points="455,235 470,243 460,247" fill="#0891b2"/>
+  <rect x="460" y="240" width="160" height="30" rx="4" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="540" y="259" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="700" fill="#0e7490">فقد التفوير ~1%</text>
+
+  <!-- Bottom note -->
+  <text x="370" y="300" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#4a443c">إجمالي الفواقد ≈ 13% &nbsp;·&nbsp; الكفاءة η ≈ 87% &nbsp;·&nbsp; جميع القيم نموذجية لغلاية حديثة بدون موفر</text>
+</svg>
+</div>
+<div class="diagram-caption">تدفق الطاقة في غلاية بخار نموذجية — مخطط سانكي</div>
+
+<!-- ═══════════════════ FORBEDRINGER ═══════════════════ -->
+<h2>8.2 إجراءات تحسين الكفاءة</h2>
+
+<table>
+  <thead>
+    <tr><th>الإجراء</th><th>التأثير</th><th>التوفير المتوقع</th><th>الاستثمار</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>الموفر (Economizer)</strong></td>
+      <td>يسترد حرارة غاز العادم إلى ماء التغذية</td>
+      <td>+3 إلى +6%</td>
+      <td>متوسط</td>
+    </tr>
+    <tr>
+      <td><strong>تسخين مسبق لهواء الاحتراق</strong></td>
+      <td>غاز العادم → مسخن الهواء (LUVO)</td>
+      <td>+2 إلى +4%</td>
+      <td>متوسط</td>
+    </tr>
+    <tr>
+      <td><strong>ضبط الأكسجين (O₂-trim)</strong></td>
+      <td>مستشعر أكسجين يتحكم في فائض الهواء تلقائياً</td>
+      <td>+1 إلى +3%</td>
+      <td>منخفض</td>
+    </tr>
+    <tr>
+      <td><strong>مروحة بتحكم ترددي (VFD)</strong></td>
+      <td>يقلل استهلاك الكهرباء عند الأحمال الجزئية</td>
+      <td>توفير 30–60% في كهرباء المروحة</td>
+      <td>منخفض–متوسط</td>
+    </tr>
+    <tr>
+      <td><strong>غلاية تكثيف (غاز)</strong></td>
+      <td>تستفيد من حرارة التكثيف في غاز العادم</td>
+      <td>+8 إلى +12% (على القيمة الحرارية العليا)</td>
+      <td>مرتفع</td>
+    </tr>
+    <tr>
+      <td><strong>استرداد الحرارة من التفوير</strong></td>
+      <td>مبادل حراري على مياه التفوير</td>
+      <td>+0.5 إلى +1%</td>
+      <td>منخفض</td>
+    </tr>
+    <tr>
+      <td><strong>عزل أفضل</strong></td>
+      <td>يقلل من الفقد الإشعاعي</td>
+      <td>+0.5 إلى +1.5%</td>
+      <td>منخفض</td>
+    </tr>
+    <tr>
+      <td><strong>تجديد الحارق</strong></td>
+      <td>هندسة لهب مثالية، CO منخفض</td>
+      <td>+1 إلى +3%</td>
+      <td>متوسط</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">قاعدة عامة للموفر (Economizer)</div>
+    <p>كل <strong>تخفيض بمقدار 20°C</strong> في درجة حرارة غاز العادم ≈ <strong>تحسن بنسبة 1%</strong>
+    في الكفاءة. غلاية تبلغ درجة حرارة غاز العادم فيها 220°C
+    وتم تزويدها بموفر ليخفضها إلى 150°C → توفير بحوالي 3.5%.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ ALTERNATIVE ENERGIKILDER ═══════════════════ -->
+<h2>8.3 بدائل الوقود الأحفوري</h2>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-head"><div class="card-num">B</div><div class="card-title">الكتلة الحيوية / كريات الخشب (Biomasse)</div></div>
+    <p><strong>CO₂:</strong> محايد (أصل حيوي)</p>
+    <p><strong>القيمة الحرارية:</strong> كريات الخشب ~17 MJ/kg، القش ~14 MJ/kg</p>
+    <p><strong>التشغيل:</strong> يتطلب مستودع تخزين، ناقل، نظام رماد.
+    يتطلب عمالة أكثر مقارنة بالغاز/الزيت.</p>
+    <p><strong>مناسب لـ:</strong> المنشآت المتوسطة والكبيرة، الصناعات 
+    التي تمتلك موارد كتلة حيوية خاصة بها.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">E</div><div class="card-title">غلاية كهربائية (Elkedel)</div></div>
+    <p><strong>CO₂:</strong> يتبع مزيج شبكة الكهرباء (الشبكة الدنماركية ~80% خضراء 2024)</p>
+    <p><strong>الكفاءة:</strong> ~99%</p>
+    <p><strong>التشغيل:</strong> لا تحتاج صيانة تقريباً. تستجيب بسرعة 
+    للتشغيل/الإيقاف — جيدة للاستفادة من تعريفات الكهرباء الرخيصة والكهرباء الفائضة.</p>
+    <p><strong>مناسب لـ:</strong> أحمال الذروة/الاحتياطية، "تحويل الطاقة إلى حرارة"
+    (power-to-heat) وتكاملها مع طاقة الرياح/الشمس.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">V</div><div class="card-title">مضخة حرارية (Varmepumpe)</div></div>
+    <p><strong>CO₂:</strong> يتبع شبكة الكهرباء — انبعاثات فعلية منخفضة جداً بسبب COP</p>
+    <p><strong>COP:</strong> 3–5 في درجات الحرارة المعتدلة؛ ينخفض 
+    عند ارتفاع درجة حرارة التدفق (الإمداد)</p>
+    <p><strong>التشغيل:</strong> استثمار أولي مرتفع، تكلفة تشغيل منخفضة.
+    غالباً ما يتم دمجها مع غلاية البخار الحالية.</p>
+    <p><strong>مناسب لـ:</strong> حرارة العمليات &lt;100°C، تدفئة المناطق،
+    التسخين المسبق لماء التغذية.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">G</div><div class="card-title">الغاز الحيوي / الوقود الإلكتروني (Biogas / e-fuels)</div></div>
+    <p><strong>CO₂:</strong> الغاز الحيوي محايد؛ الميثان/الهيدروجين الإلكتروني يتطلب كهرباء خضراء</p>
+    <p><strong>القيمة الحرارية:</strong> مماثلة للغاز الطبيعي (حسب
+    محتوى الميثان)</p>
+    <p><strong>التشغيل:</strong> غالباً ما يمكن تحويل غلاية الغاز الحالية 
+    بتعديلات بسيطة (نسبة الهواء، الحارق).</p>
+    <p><strong>مناسب لـ:</strong> الصناعات القريبة من محطات الغاز الحيوي، 
+    الانتقال التدريجي.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CASE: CARLETTI ═══════════════════ -->
+<h2>8.4 حالة دراسية (Case): شركة Carletti A/S — التحول الأخضر</h2>
+
+<p>تنتج شركة Carletti A/S في Skødstrup الحلويات. تأتي حرارة العمليات اليوم من 
+<strong>غلايات الغاز الطبيعي</strong>. السؤال في مشروع التحول الأخضر هو: 
+كيف يمكن تقليل انبعاثات CO₂ بأكثر الطرق فعالية وفائدة؟</p>
+
+<div class="grid grid-3">
+  <div class="fact">
+    <div class="fact-label">نقطة البداية</div>
+    <div class="fact-val">غاز طبيعي</div>
+    <div class="fact-unit">غلايتي بخار</div>
+    <div class="fact-note">حرارة عمليات + تدفئة</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">الاحتياج</div>
+    <div class="fact-val">~3 MW</div>
+    <div class="fact-unit">طاقة حرارية</div>
+    <div class="fact-note">بخار عند 8–10 بار</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">الهدف</div>
+    <div class="fact-val">−70%</div>
+    <div class="fact-unit">CO₂ بحلول 2030</div>
+    <div class="fact-note">وفقاً لاستراتيجية الشركة</div>
+  </div>
+</div>
+
+<h3>نموذج الحل — مقاربة هجينة (مدمجة)</h3>
+
+<table>
+  <thead>
+    <tr><th>الخطوة</th><th>الإجراء</th><th>خفض CO₂</th><th>تعليق</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>فحص الطاقة + إجراءات LEAN</td>
+      <td>~5–10%</td>
+      <td>منخفضة/منعدمة التكلفة: إغلاق الصمامات، العزل، تقليل الاستعداد (Standby)</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>موفر (Economizer) + ضبط O₂ على الغلايات الحالية</td>
+      <td>~5%</td>
+      <td>فترة استرداد سريعة للاستثمار &lt;3 سنوات</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>مضخة حرارية لحرارة العمليات منخفضة الحرارة والمباني</td>
+      <td>~20%</td>
+      <td>تستفيد من الحرارة المهدرة من أنظمة التبريد</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>غلاية كهربائية لحمل الذروة / الاستفادة من الكهرباء الفائضة</td>
+      <td>~10%</td>
+      <td>تستغل ساعات الكهرباء الخضراء الرخيصة</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>التحويل إلى الغاز الحيوي لتغطية الطلب المتبقي على البخار</td>
+      <td>~30%</td>
+      <td>يتطلب مورّد غاز وربما تحويل الحارق</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert ok">
+  <div class="alert-icon">✓</div>
+  <div class="alert-body">
+    <div class="alert-title">لماذا الحل الهجين؟</div>
+    <p>استبدال كل شيء بحل واحد نادراً ما يكون مثالياً. المضخات الحرارية 
+    ممتازة عند &lt;100°C، لكنها غير فعالة عند بخار بحرارة 180°C. الغلايات الكهربائية 
+    مثالية كأحمال ذروة لكنها باهظة الثمن للتشغيل المستمر. يحل الغاز الحيوي
+    مشكلة حرارة العمليات ذات الحرارة المرتفعة دون بنية تحتية جديدة. الخطة الذكية 
+    تستخدم كل تقنية في المكان الأنسب لها.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CASE: ARLA ═══════════════════ -->
+<h2>8.5 حالة دراسية (Case): Arla — مضخة حرارية + غلاية بخار</h2>
+
+<p>قامت شركة Arla بتنفيذ <strong>مضخات حرارية صناعية</strong> في العديد من
+المنشآت. المبدأ: يتم رفع درجة الحرارة المهدرة من مركز التبريد (تبريد الحليب)
+إلى ~85°C وتستخدم مباشرة في أنظمة التسخين المسبق والتنظيف (CIP).
+بينما تغطي غلايات البخار ما يتبقى من الاحتياجات ذات درجات الحرارة العالية.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cooling center -->
+  <rect x="20" y="80" width="140" height="80" rx="6" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="90" y="110" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#0e7490">مركز التبريد</text>
+  <text x="90" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">حرارة مهدرة</text>
+  <text x="90" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">~30°C</text>
+
+  <path d="M 160 120 L 220 120" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <polygon points="215,115 230,120 215,125" fill="#dc2626"/>
+
+  <!-- Heat pump -->
+  <rect x="230" y="80" width="160" height="80" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="310" y="110" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#15803d">مضخة حرارية</text>
+  <text x="310" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">COP ≈ 4</text>
+  <text x="310" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">85°C خروج</text>
+
+  <path d="M 390 120 L 450 120" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <polygon points="445,115 460,120 445,125" fill="#dc2626"/>
+
+  <!-- Process -->
+  <rect x="460" y="40" width="160" height="80" rx="6" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="540" y="70" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#b45309">تسخين مسبق</text>
+  <text x="540" y="88" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">+ تنظيف (CIP)</text>
+  <text x="540" y="103" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">~80°C</text>
+
+  <!-- Dampkedel -->
+  <rect x="460" y="140" width="160" height="80" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="540" y="170" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#991b1b">غلاية بخار</text>
+  <text x="540" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814">الاحتياج الحراري المتبقي</text>
+  <text x="540" y="203" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#1a1814">8–12 بار بخار</text>
+
+  <!-- El input to HP -->
+  <path d="M 310 80 L 310 30" stroke="#7c3aed" stroke-width="2" fill="none"/>
+  <polygon points="305,35 310,20 315,35" fill="#7c3aed"/>
+  <text x="310" y="15" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#7c3aed">دخول كهرباء (1 kW)</text>
+  <text x="310" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#15803d">→ 4 kW حرارة</text>
+
+  <!-- Bottom note -->
+  <text x="380" y="232" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a443c" font-style="italic">تتحول "الحرارة المهدرة" من مركز التبريد إلى حرارة عمليات — 75% حرارة مجانية من الفاقد</text>
+</svg>
+</div>
+<div class="diagram-caption">نموذج Arla: مضخة حرارية صناعية + غلاية بخار حالية كنظام هجين</div>
+
+<!-- ═══════════════════ KEDELPASSEREN ═══════════════════ -->
+<h2>8.6 دور مشغل الغلاية في التحول الأخضر</h2>
+
+<p>لا يعني التحول الأخضر أن وظيفة مشغل الغلاية ستختفي — 
+بل يعني أن <strong>الوظيفة ستتوسع</strong>. فالأنظمة الهجينة، والمضخات الحرارية، 
+والبطاريات، والمراقبة عن بُعد، واستراتيجيات التعامل مع أحمال الذروة والاحتياط، تتطلب
+مشغلين يفهمون كلاً من الغلاية التقليدية وإدارة الطاقة 
+الحديثة.</p>
+
+<div class="grid grid-3">
+  <div class="card">
+    <div class="card-head"><div class="card-num">1</div><div class="card-title">توزيع الأحمال</div></div>
+    <p>في النظام الهجين، تحدد ساعة بساعة أي مصدر طاقة هو 
+    الأرخص والأكثر صداقة للبيئة. يتطلب هذا فهماً لأسعار الكهرباء، أسعار الغاز، 
+    عوامل ثاني أكسيد الكربون والأتمتة.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">2</div><div class="card-title">تسجيل الطاقة</div></div>
+    <p>تتطلب إدارة الطاقة وفقاً لـ ISO 50001 تسجيلاً دقيقاً ومستمراً.
+    غالباً ما يكون مشغل الغلاية هو المسؤول عن جمع البيانات وضمان
+    جودة القياسات.</p>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-num">3</div><div class="card-title">التحسين (Optimering)</div></div>
+    <p>تتراكم المكاسب الصغيرة: هواء السحب من المكان الصحيح،
+    صيانة العزل، الصمامات التي لا تسرب. مشغل الغلاية
+    هو أول من يلاحظ ذلك.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ INGENIØRENS PERSPEKTIV: EL & STYRING ═══════════════════ -->
+<h2>8.7 منظور المهندس: الكهربة (الكهربة) وتكامل الشبكة</h2>
+
+<p>غرفة الغلايات في المستقبل مدمجة بشكل وثيق مع شبكة الكهرباء الوطنية. ينظر مهندس الكهرباء إلى المنشأة كمكون نشط في تنظيم تردد شبكة الكهرباء (الشبكة الذكية - Smart Grid).</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>⚡ غلايات الأقطاب الكهربائية ذات الجهد العالي (Elektrodekedler)</h3>
+    <p>في حين تستخدم الغلايات الكهربائية الصغيرة عناصر تسخين (أسلاك مقاومة)، تعمل الغلايات الكهربائية الصناعية التي تزيد طاقتها عن 5 ميجاوات تقريباً بمثابة <strong>غلايات أقطاب كهربائية</strong> متصلة مباشرة بشبكة الجهد العالي (مثل 10 كيلوفولت). هنا لا توجد عناصر تسخين يمكن أن تحترق — حيث يعمل ماء الغلاية نفسه كمقاومة كهربائية بين الأقطاب. يتم تنظيم الطاقة بسرعة فائقة عن طريق رفع وخفض أسطوانة عازلة حول الأقطاب الكهربائية، أو عن طريق تنظيم مستوى الماء.</p>
+  </div>
+  <div class="card">
+    <h3>📉 تنظيم التردد (FCR / aFRR)</h3>
+    <p>نظراً لأن الغلاية الكهربائية يمكن أن تغير استهلاكها من 0 إلى 100٪ في بضع ثوانٍ، يمكن بيع ذلك كـ "خدمة نظام" لشركة (Energinet). إذا أنتجت توربينات الرياح الكثير، يرتفع تردد الشبكة عن 50.00 هرتز، وتعمل الغلاية الكهربائية تلقائياً لامتصاص الكهرباء الخضراء الفائضة. يحصل مالك الغلاية على أموال مقابل "مساعدة الشبكة" عبر أسواق (FCR) احتياطيات احتواء التردد و (aFRR) احتياطيات استعادة التردد التلقائية.</p>
+  </div>
+  <div class="card">
+    <h3>🔌 محركات التردد المتغير (VFD) وقوانين التقارب (Affinitetslovene)</h3>
+    <p>تستخدم العديد من الغلايات القديمة خانق ميكانيكي لتقليل تدفق الهواء من مروحة السحب القسري (FD)، بينما يعمل المحرك بأقصى سرعة. من خلال تركيب <strong>محرك تردد متغير (VFD)</strong>، يتم التحكم في حجم الهواء بدلاً من ذلك عن طريق تغيير سرعة المحرك (RPM). وفقاً لـ <em>قوانين التقارب</em>، يتغير استهلاك الطاقة في القوة الثالثة (مكعب) لسرعة الدوران: إذا قمت بتخفيض التدفق إلى النصف، ينخفض استهلاك المحرك للكهرباء إلى <strong>⅛ (12.5٪)</strong>! هذا يوفر وفورات هائلة في الطاقة على المضخات والمراوح.</p>
+  </div>
+</div>
+
+<div class="pagenav">
+  <a href="../07-drift-vedligehold/">
+    <div class="label">← السابق</div>
+    <div class="title">الوحدة 07 · التشغيل والصيانة</div>
+  </a>
+  <a href="../09-formler-tabeller/" class="next">
+    <div class="label">التالي →</div>
+    <div class="title">الوحدة 09 · القوانين والجداول</div>
+  </a>
+</div>
+
+<div class="footer">
+  <div class="footer-line"></div>
+  <p>المصدر: <em>Kedel- og maskinpasser</em>, Erhvervsskolernes forlag, الطبعة الخامسة (2008) ·
+  تحليل الطاقة الصناعية · الحالات الدراسية لـ Carletti / Arla</p>
+</div>
+
+</div>
+</body>
+</html>

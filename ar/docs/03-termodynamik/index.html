@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>الوحدة 03 · الديناميكا الحرارية وجداول البخار</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><a href="../../index.html"><span class="accent">⚙</span> دورة <b>مشغل</b> الغلايات</a></div>
+  <div class="topbar-nav">
+    <a href="../../../docs/03-termodynamik/index.html">Dansk</a>
+    <a href="../02-dampkedler/">← الوحدة 02</a>
+    <a href="../../index.html">الصفحة الرئيسية</a>
+    <a href="../04-forbraending/">الوحدة 04 →</a>
+  </div>
+</div>
+
+<div class="page">
+<div class="crumbs"><a href="../../index.html">الصفحة الرئيسية</a> / الوحدة 03 — الديناميكا الحرارية وجداول البخار</div>
+
+<div class="kapitel-tag">الوحدة 03</div>
+<h1>الديناميكا الحرارية &amp; <span class="underline">جداول البخار</span></h1>
+<p class="lede">
+  المحتوى الحراري (الإنثالبي)، حرارة التبخر، الكفاءة ومعدل التبخر — جميع
+  المصطلحات والصيغ التي تحتاجها لحسابات الطاقة في الغلايات البخارية.
+  تعلم كيفية استخدام جداول البخار ومخطط موليير.
+</p>
+
+<!-- ═══════════════════ ENTALPI ═══════════════════ -->
+<h2>3.1 الإنثالبي (h) — محتوى الطاقة</h2>
+
+<p>الإنثالبي هو <strong>كمية الطاقة المخزنة في مادة ما</strong> — عادة الماء
+أو البخار — عند ضغط ودرجة حرارة معينين. الوحدة هي <strong>kJ/kg</strong>.</p>
+
+<div class="grid grid-3">
+  <div class="fact">
+    <div class="fact-label">h' (h شرطة)</div>
+    <div class="fact-val">سائل مشبع</div>
+    <div class="fact-note">الماء قبل الغليان مباشرة</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">h'' (h شرطتين)</div>
+    <div class="fact-val">بخار مشبع</div>
+    <div class="fact-note">متبخر بالكامل عند نفس الضغط</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label">r = h'' − h'</div>
+    <div class="fact-val">حرارة التبخر</div>
+    <div class="fact-note">الطاقة لتحويل السائل إلى بخار</div>
+  </div>
+</div>
+
+<h3>كيف نجد 'h؟</h3>
+<p>بالنسبة للسائل المشبع (الماء عند نقطة الغليان)، يعتمد الإنثالبي على الضغط ودرجة الحرارة:</p>
+<div class="formula">
+<b>الماء تحت 105 °C:</b>  h' ≈ T × c<sub>p</sub> = T × <em>4.19</em> kJ/(kg·K)<br>
+<b>الماء فوق 105 °C:</b>   ابحث في <em>جداول البخار</em> (سائل مشبع)
+</div>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">السعة الحرارية النوعية (c<sub>p</sub>) متغيرة</div>
+    <p>القيمة <strong>4.19 kJ/(kg·K)</strong> هي متوسط عملي للماء تحت 105 °C عند الضغط الجوي. في الواقع، يتغير c<sub>p</sub> مع كل من درجة الحرارة والضغط. للحسابات الصناعية الدقيقة، يتم استخدام المعيار الدولي <strong>IAPWS-IF97</strong>، والذي يحدد المعادلات الرياضية الدقيقة لخصائص الماء والبخار.</p>
+  </div>
+</div>
+
+<p>مثال: مياه تغذية عند 80 °C →
+<span class="badge badge-blue">h' ≈ 80 × 4.19 = 335.2 kJ/kg</span></p>
+
+<h3>3.1.1 البخار المحمص والسعة الحرارية النوعية</h3>
+<p>
+  عند إضافة حرارة إضافية للبخار المشبع في المحمص، ترتفع درجة حرارته فوق درجة حرارة التشبع عند الضغط المعين. يحتوي البخار المحمص على طاقة أكبر من البخار المشبع، ويمكن تنظيم درجة الحرارة بشكل مستقل عن الضغط. يمكن تقريب الإنثالبي النوعي للبخار المحمص بالصيغة التالية:
+</p>
+
+<div class="formula">
+  <b>h<sub>محمص</sub> = h'' + c<sub>p,بخار</sub> × (T<sub>محمص</sub> − T<sub>تشبع</sub>)</b> &nbsp; <em>[kJ/kg]</em>
+</div>
+
+<p>حيث:</p>
+<ul>
+  <li><strong>h''</strong> هو الإنثالبي للبخار المشبع عند الضغط المعطى [kJ/kg] (يوجد في جدول البخار).</li>
+  <li><strong>c<sub>p,بخار</sub></strong> هي السعة الحرارية النوعية للبخار، والتي عند ضغوط الغلاية النموذجية (1-20 بار) يمكن افتراض أنها <strong>~2.0 kJ/(kg·K)</strong> (أو بدقة أكثر 2.0 - 2.5 kJ/(kg·K) اعتمادًا على الضغط والحرارة).</li>
+  <li><strong>T<sub>محمص</sub></strong> هي درجة الحرارة الفعلية للبخار المحمص [°C].</li>
+  <li><strong>T<sub>تشبع</sub></strong> هي درجة حرارة التشبع عند الضغط المعطى [°C] (توجد في جدول البخار).</li>
+</ul>
+
+<div class="card">
+  <div class="card-head">
+    <div class="card-num">مثال</div>
+    <div class="card-title">إنثالبي البخار المحمص</div>
+  </div>
+  <p>
+    توفر غلاية بخارًا محمصًا عند <strong>ضغط مطلق 10 بار</strong> ودرجة حرارة <strong>250 °C</strong>.
+  </p>
+  <ul>
+    <li>درجة حرارة التشبع من جدول البخار عند 10 بار: T<sub>تشبع</sub> = 179.9 °C</li>
+    <li>إنثالبي البخار المشبع من جدول البخار: h'' = 2778.1 kJ/kg</li>
+    <li>التحميص بالكلفن: &Delta;T = 250 − 179.9 = 70.1 K</li>
+  </ul>
+  <div class="formula">
+    h<sub>محمص</sub> = 2778.1 + 2.0 × 70.1 = <b>2918.3 kJ/kg</b>
+  </div>
+</div>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">استخدام جداول البخار المحمص</div>
+    <p>بما أن السعة الحرارية النوعية للبخار تتغير بشكل ملحوظ مع الضغط والحرارة، فإنه للحسابات الدقيقة يجب دائمًا البحث عن الإنثالبي في جدول البخار المحمص أو استخدام برنامج يعتمد على IAPWS-IF97 بدلاً من التقريب الخطي البسيط.</p>
+  </div>
+</div>
+
+<h3>3.1.2 البخار الرطب وجودة البخار (x)</h3>
+<p>
+  في العديد من الغلايات (خاصة غلايات أنابيب الدخان بدون محمص)، سيسحب البخار قطرات ماء صغيرة معه. يسمى هذا <strong>البخار الرطب</strong>. يشار إلى جودة البخار بدرجة الجفاف <b>x</b> (جودة البخار)، والتي تشير إلى الجزء الكتلي للبخار الجاف في الخليط:
+</p>
+<div class="formula">
+  <b>x = m<sub>بخار</sub> ÷ (m<sub>بخار</sub> + m<sub>ماء</sub>)</b> &nbsp; <em>(حيث 0 ≤ x ≤ 1)</em>
+</div>
+<p>
+  يتم حساب إنثالبي البخار الرطب (h<sub>x</sub>) من إنثالبي السائل المشبع (h') وحرارة التبخر (r):
+</p>
+<div class="formula">
+  <b>h<sub>x</sub> = h' + x × r = h' + x × (h'' − h')</b> &nbsp; <em>[kJ/kg]</em>
+</div>
+<p>
+  جودة البخار x = 0.97 تعني مثلاً أن تيار البخار يحتوي على 3٪ ماء سائل. هذا يقلل من الطاقة الحرارية المتاحة ويزيد من خطر الطرق المائي في خطوط الأنابيب.
+</p>
+
+
+<!-- ═══════════════════ ABSOLUT TRYK ═══════════════════ -->
+<h2>3.2 الضغط المطلق مقابل ضغط التشغيل</h2>
+
+<div class="alert warn">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">مهم لجميع استخدامات جداول البخار</div>
+    <p>يُظهر المقياس <strong>ضغط التشغيل</strong> (الضغط القياسي). تستخدم
+    جداول البخار <strong>الضغط المطلق</strong>. أضف دائمًا 1 بار قبل البحث:</p>
+  </div>
+</div>
+
+<div class="formula">
+<b>الضغط المطلق = ضغط التشغيل + 1 بار</b>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Manometer -->
+  <circle cx="150" cy="100" r="65" fill="#fefcf6" stroke="#1a1814" stroke-width="2"/>
+  <circle cx="150" cy="100" r="58" fill="white" stroke="#1a1814" stroke-width="1"/>
+  <!-- Scale -->
+  <text x="105" y="80" font-family="JetBrains Mono,monospace" font-size="9" fill="#1a1814">0</text>
+  <text x="180" y="80" font-family="JetBrains Mono,monospace" font-size="9" fill="#1a1814">10</text>
+  <text x="105" y="125" font-family="JetBrains Mono,monospace" font-size="9" fill="#1a1814">20</text>
+  <text x="180" y="125" font-family="JetBrains Mono,monospace" font-size="9" fill="#1a1814">30</text>
+  <!-- Needle -->
+  <line x1="150" y1="100" x2="180" y2="75" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="150" cy="100" r="5" fill="#1a1814"/>
+  <text x="150" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#1a1814" font-weight="700">9 بار</text>
+  <text x="150" y="180" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">ضغط التشغيل</text>
+
+  <!-- Plus -->
+  <text x="270" y="108" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="36" fill="#1a1814" font-weight="700">+</text>
+
+  <!-- Atmosphere -->
+  <rect x="320" y="60" width="120" height="80" rx="5" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="380" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#0891b2" font-weight="700">الضغط الجوي</text>
+  <text x="380" y="115" text-anchor="middle" font-family="Fraunces,serif" font-size="20" fill="#0891b2" font-weight="700">1 بار</text>
+  <text x="380" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">دائماً</text>
+
+  <!-- = -->
+  <text x="490" y="108" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="36" fill="#1a1814" font-weight="700">=</text>
+
+  <!-- Result -->
+  <rect x="540" y="50" width="140" height="100" rx="8" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="610" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ea580c" font-weight="700">الضغط المطلق</text>
+  <text x="610" y="115" text-anchor="middle" font-family="Fraunces,serif" font-size="32" fill="#1a1814" font-weight="800">10 بار</text>
+  <text x="610" y="135" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#8a8478">لجدول البخار</text>
+</svg>
+<div class="diagram-caption">الشكل 3.1 — التحويل من قراءة المقياس إلى الضغط المطلق</div>
+</div>
+
+<!-- ═══════════════════ DAMPTABEL UDDRAG ═══════════════════ -->
+<h2>3.3 جدول البخار — مقتطف</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>الضغط المطلق [بار]</th>
+      <th>حرارة التشبع [°C]</th>
+      <th>h' [kJ/kg]</th>
+      <th>h'' [kJ/kg]</th>
+      <th>r = h''−h' [kJ/kg]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="num">1</td><td class="num">99.6</td><td class="num">417.5</td><td class="num">2675.4</td><td class="num">2257.9</td></tr>
+    <tr><td class="num">2</td><td class="num">120.2</td><td class="num">504.7</td><td class="num">2706.3</td><td class="num">2201.6</td></tr>
+    <tr><td class="num">4</td><td class="num">143.6</td><td class="num">604.7</td><td class="num">2737.6</td><td class="num">2132.9</td></tr>
+    <tr><td class="num">6</td><td class="num">158.8</td><td class="num">670.4</td><td class="num">2756.1</td><td class="num">2085.7</td></tr>
+    <tr><td class="num">8</td><td class="num">170.4</td><td class="num">720.9</td><td class="num">2768.3</td><td class="num">2047.4</td></tr>
+    <tr><td class="num">10</td><td class="num">179.9</td><td class="num">762.6</td><td class="num">2778.1</td><td class="num">2015.5</td></tr>
+    <tr><td class="num">13</td><td class="num">191.6</td><td class="num">814.7</td><td class="num">2787.6</td><td class="num">1972.9</td></tr>
+    <tr><td class="num">18</td><td class="num">207.1</td><td class="num">884.5</td><td class="num">2794.8</td><td class="num">1910.3</td></tr>
+    <tr><td class="num">20</td><td class="num">212.4</td><td class="num">908.6</td><td class="num">2797.2</td><td class="num">1888.6</td></tr>
+    <tr><td class="num">40</td><td class="num">250.3</td><td class="num">1087.4</td><td class="num">2800.3</td><td class="num">1712.9</td></tr>
+    <tr><td class="num">60</td><td class="num">275.5</td><td class="num">1213.7</td><td class="num">2784.3</td><td class="num">1570.6</td></tr>
+    <tr><td class="num">100</td><td class="num">311.0</td><td class="num">1408.1</td><td class="num">2724.7</td><td class="num">1316.6</td></tr>
+  </tbody>
+</table>
+
+<div class="alert info">
+  <div class="alert-icon">i</div>
+  <div class="alert-body">
+    <div class="alert-title">احتفظ بجميع الكسور العشرية</div>
+    <p>عند البحث في جدول البخار، <strong>احتفظ بالكسور العشرية الموضحة في الجدول</strong>.
+    لا تقم بالتقريب إلا في نهاية الحساب.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ LINEÆR INTERPOLATION ═══════════════════ -->
+<h3>3.3.1 الاستيفاء الخطي في جدول البخار</h3>
+<p>إذا كان الضغط الحالي أو درجة الحرارة الحالية تقع بين نقطتين في جدول البخار، يجب استخدام <strong>الاستيفاء الخطي</strong> لإيجاد القيمة المتوسطة. صيغة الاستيفاء الخطي هي:</p>
+
+<div class="formula">
+  <b>y = y<sub>1</sub> + [ (x − x<sub>1</sub>) ÷ (x<sub>2</sub> − x<sub>1</sub>) ] × (y<sub>2</sub> − y<sub>1</sub>)</b>
+</div>
+
+<p>حيث:</p>
+<ul>
+  <li><strong>x</strong> هي القيمة التي تعرفها وتريد البحث عنها (مثلاً الضغط 5 بار أو 15 بار).</li>
+  <li><strong>x<sub>1</sub></strong> و <strong>x<sub>2</sub></strong> هما القيمتان الأقرب المدرجتان في الجدول أسفل وأعلى x.</li>
+  <li><strong>y<sub>1</sub></strong> و <strong>y<sub>2</sub></strong> هما القيمتان المقابلتان في الجدول للخاصية التي تريد إيجادها.</li>
+  <li><strong>y</strong> هي القيمة المحسوبة (المستوفاة).</li>
+</ul>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h4>مثال 1: الاستيفاء عند 5 بار</h4>
+    <p>أوجد الإنثالبي النوعي للسائل المشبع (h') عند ضغط مطلق قدره <strong>5 بار</strong>.</p>
+    <p>من جدول البخار في القسم 3.3 نجد أقرب قيمتين:</p>
+    <ul>
+      <li>x<sub>1</sub> = 4 بار &rarr; y<sub>1</sub> (h'<sub>1</sub>) = 604.7 kJ/kg</li>
+      <li>x<sub>2</sub> = 6 بار &rarr; y<sub>2</sub> (h'<sub>2</sub>) = 670.4 kJ/kg</li>
+    </ul>
+    <p>أدخل القيم في المعادلة:</p>
+    <div class="formula">
+      h'<sub>(5 bar)</sub> = 604.7 + [ (5 − 4) ÷ (6 − 4) ] × (670.4 − 604.7)<br>
+      h'<sub>(5 bar)</sub> = 604.7 + 0.5 × 65.7 = <b>637.55 kJ/kg</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>مثال 2: الاستيفاء عند 15 بار</h4>
+    <p>أوجد الإنثالبي النوعي للسائل المشبع (h') عند ضغط مطلق قدره <strong>15 بار</strong>.</p>
+    <p>من جدول البخار نجد أقرب قيمتين:</p>
+    <ul>
+      <li>x<sub>1</sub> = 13 بار &rarr; y<sub>1</sub> (h'<sub>1</sub>) = 814.7 kJ/kg</li>
+      <li>x<sub>2</sub> = 18 بار &rarr; y<sub>2</sub> (h'<sub>2</sub>) = 884.5 kJ/kg</li>
+    </ul>
+    <p>أدخل القيم في المعادلة:</p>
+    <div class="formula">
+      h'<sub>(15 bar)</sub> = 814.7 + [ (15 − 13) ÷ (18 − 13) ] × (884.5 − 814.7)<br>
+      h'<sub>(15 bar)</sub> = 814.7 + 0.4 × 69.8 = <b>842.62 kJ/kg</b>
+    </div>
+  </div>
+</div>
+
+<!-- TILFØJELSE: Det kritiske punkt og Mollier-diagrammet -->
+<h3>3.3.2 حرارة التبخر (r) والنقطة الحرجة</h3>
+<p>
+  تُشير حرارة التبخر (r = h'' − h') إلى كمية الطاقة المطلوبة لتحويل 1 كجم من الماء المغلي إلى بخار جاف عند ضغط ثابت. كما يظهر في جدول البخار، <strong>تنخفض حرارة التبخر تدريجياً مع زيادة الضغط</strong>.
+</p>
+<p>
+  يرجع ذلك إلى أن الفرق في الكثافة (وبالتالي المسافة الجزيئية) بين الماء والبخار يتضاءل. عند <strong>النقطة الحرجة</strong> (ضغط مطلق يبلغ <strong>221.2 بار</strong> ودرجة حرارة <strong>374.15 °C</strong>) يختفي الانتقال الطوري تمامًا:
+</p>
+<div class="formula">
+  عند النقطة الحرجة: <b>r = 0 kJ/kg</b> و <b>h' = h'' = 2011.1 kJ/kg</b>
+</div>
+<p>
+  فوق النقطة الحرجة يمكن تسخين الماء وتحويله إلى بخار دون غليان (تدفق أحادي الطور)، والذي يُستغل في غلايات محطات الطاقة فوق الحرجة (مثل غلايات بنسون).
+</p>
+
+<h3>3.3.3 مخطط موليير (مخطط h-s)</h3>
+<p>
+  مخطط موليير هو أداة رسومية تعرض الإنثالبي النوعي (h على المحور الصادي) مقابل الإنتروبي النوعي (s على المحور السيني). يُستخدم لتبسيط تصور العمليات البخارية بسرعة دون الرجوع إلى الجداول المعقدة:
+</p>
+<ul>
+  <li><strong>الأيسوبارات (ضغط ثابت):</strong> خطوط تقطع المخطط صعودًا. في منطقة البخار الرطب تكون خطوطًا مستقيمة، ولكنها تنحني للأعلى في منطقة التحميص.</li>
+  <li><strong>الأيسوثرمات (درجة حرارة ثابتة):</strong> تتبع الأيسوبارات في منطقة البخار الرطب (حيث يكون الضغط ودرجة الحرارة متصلين أثناء الغليان)، ولكنها تتسطح باتجاه اليمين في منطقة التحميص.</li>
+  <li><strong>خطوط x الثابتة (جودة البخار):</strong> منحنيات تحت خط التشبع (x = 1.0)، تتيح قراءة إنثالبي البخار الرطب مباشرة.</li>
+</ul>
+<p>
+  العمليات مثل <strong>الخنق</strong> (انخفاض الضغط دون تبادل طاقة، مثلاً في صمام تخفيض) تستمر كخط أفقي في المخطط (h = ثابت)، بينما التمدد المثالي في التوربين البخاري يستمر كخط رأسي (s = ثابت).
+</p>
+
+<!-- ═══════════════════ VIRKNINGSGRAD ═══════════════════ -->
+<h2>3.4 الكفاءة وحساب الطاقة (EN 12953-11 / EN 12952-15)</h2>
+
+<p>سلسلة الحساب الرئيسية للغلاية البخارية:</p>
+
+<div class="diagram">
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1a1814"/>
+    </marker>
+  </defs>
+
+  <!-- Brændsel -->
+  <rect x="20" y="80" width="110" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="75" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#dc2626" font-weight="700">الوقود</text>
+  <text x="75" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#1a1814" font-weight="700">m × hi</text>
+
+  <line x1="130" y1="110" x2="170" y2="110" stroke="#1a1814" stroke-width="2" marker-end="url(#arrf)"/>
+
+  <!-- Q indfyret -->
+  <rect x="170" y="80" width="120" height="60" rx="8" fill="#fef3c7" stroke="#ea580c" stroke-width="2"/>
+  <text x="230" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#ea580c" font-weight="700">طاقة مدخلة (Q)</text>
+  <text x="230" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#1a1814" font-weight="700">[MJ/h]</text>
+
+  <line x1="290" y1="110" x2="330" y2="110" stroke="#1a1814" stroke-width="2" marker-end="url(#arrf)"/>
+  <text x="310" y="100" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#15803d" font-weight="700">× η</text>
+
+  <!-- Q produceret -->
+  <rect x="330" y="80" width="120" height="60" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="390" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#15803d" font-weight="700">طاقة منتجة (Q)</text>
+  <text x="390" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#1a1814" font-weight="700">[MJ/h]</text>
+
+  <line x1="450" y1="110" x2="490" y2="110" stroke="#1a1814" stroke-width="2" marker-end="url(#arrf)"/>
+  <text x="470" y="100" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#0891b2" font-weight="700">÷ Δh</text>
+
+  <!-- Damp -->
+  <rect x="490" y="80" width="180" height="60" rx="8" fill="#f0f9ff" stroke="#0891b2" stroke-width="2"/>
+  <text x="580" y="105" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#0891b2" font-weight="700">البخار</text>
+  <text x="580" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" fill="#1a1814" font-weight="700">[kg/h]</text>
+
+  <!-- Tab arrow down -->
+  <line x1="390" y1="140" x2="390" y2="180" stroke="#8a8478" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrf)"/>
+  <text x="390" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#8a8478">فواقد (غاز العادم + إشعاع)</text>
+
+  <text x="350" y="35" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#1a1814" font-weight="700">تدفق الطاقة عبر غلاية البخار</text>
+  <text x="350" y="55" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#8a8478">الوقود → مدخل → منتج → البخار</text>
+</svg>
+<div class="diagram-caption">الشكل 3.2 — سلسلة الحساب: يمكن حلها بالاتجاهين</div>
+</div>
+
+<h3>3.4.1 كفاءة الغلاية — الطريقة المباشرة وغير المباشرة</h3>
+<p>تشير كفاءة الغلاية (&eta;) إلى مقدار الطاقة المزودة في الوقود التي يتم نقلها إلى وسط البخار. يتم تحديد الكفاءة بإحدى طريقتين رئيسيتين:</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>1. الطريقة المباشرة</h3>
+    <p>تُحسب الكفاءة مباشرة كنسبة بين الطاقة المستفادة في البخار والطاقة المزودة في الوقود:</p>
+    
+    <div class="formula">
+      <b>&eta;<sub>مباشر</sub> = Q<sub>منتج</sub> ÷ Q<sub>مدخل</sub></b>
+    </div>
+    
+    <p>حيث:</p>
+    <ul>
+      <li><strong>Q<sub>منتج</sub></strong> = ṁ<sub>بخار</sub> × (h<sub>بخار</sub> − h'<sub>مياه_تغذية</sub>) [MJ/h]</li>
+      <li><strong>Q<sub>مدخل</sub></strong> = ṁ<sub>وقود</sub> × h<sub>i</sub> [MJ/h] (h<sub>i</sub> هي القيمة الحرارية الدنيا للوقود)</li>
+      <li><strong>ṁ<sub>بخار</sub></strong> = كمية البخار [kg/h]</li>
+      <li><strong>h<sub>بخار</sub></strong> = إنثالبي البخار المنتج ($h''$ أو $h$) [kJ/kg]</li>
+      <li><strong>h'<sub>مياه_تغذية</sub></strong> = إنثالبي مياه التغذية ($h'$) [kJ/kg]</li>
+      <li><strong>ṁ<sub>وقود</sub></strong> = استهلاك الوقود [kg/h أو m³<sub>n</sub>/h]</li>
+    </ul>
+    
+    <p><strong>معدل التبخر:</strong> يشير إلى عدد كيلوغرامات البخار المنتج لكل كجم وقود (أو لكل م³<sub>n</sub> غاز):</p>
+    <div class="formula">
+      <b>معدل التبخر = kg<sub>بخار</sub> ÷ kg<sub>وقود</sub></b>
+    </div>
+    
+    <p class="note"><strong>الميزة:</strong> سهلة الفهم.<br><strong>العيب:</strong> تتطلب قياسات تدفق دقيقة جدًا لكل من البخار والوقود، مما قد ينطوي على قدر كبير من عدم اليقين في الممارسة العملية.</p>
+  </div>
+  
+  <div class="card">
+    <h3>2. الطريقة غير المباشرة (طريقة الفواقد)</h3>
+    <p>هنا تُحدد الكفاءة عن طريق قياس وطرح الفواقد الفردية للطاقة (كنسبة مئوية من الطاقة المزودة) من 100٪:</p>
+    
+    <div class="formula">
+      <b>&eta;<sub>غير مباشر</sub> = 100 % − (q<sub>غاز_عادم</sub> + q<sub>إشعاع</sub> + q<sub>رماد</sub> + q<sub>أخرى</sub>)</b>
+    </div>
+    
+    <p>حيث تُعطى الفواقد بالنسبة المئوية [%]:</p>
+    <ul>
+      <li><strong>q<sub>غاز_عادم</sub>:</strong> فقد غاز العادم (الطاقة الحرارية التي تغادر الغلاية مع غاز العادم — وعادة ما تكون أكبر فقد على الإطلاق).</li>
+      <li><strong>q<sub>إشعاع</sub>:</strong> فواقد الإشعاع والحمل الحراري من غلاف الغلاية إلى البيئة المحيطة.</li>
+      <li><strong>q<sub>رماد</sub>:</strong> الفقد الناتج عن بقايا غير محترقة في الخبث والرماد.</li>
+      <li><strong>q<sub>أخرى</sub>:</strong> الفواقد المتبقية (مثلاً فواقد مياه التعويض، وإزالة الأملاح والتصريف).</li>
+    </ul>
+    <p class="note"><strong>الميزة:</strong> دقة قياس أعلى بكثير، لأن الأخطاء النسبية في قياس معلمات غاز العادم لها تأثير أقل على الكفاءة الإجمالية.</p>
+  </div>
+</div>
+
+<h3>معادلة سيجيرت لفقد غاز العادم (q<sub>غاز_عادم</sub>)</h3>
+<p>فقد غاز العادم هو الفقد المسيطر ويمكن تقديره تحت ظروف التشغيل العادية بناءً على درجة حرارة غاز العادم ومحتوى CO<sub>2</sub> أو O<sub>2</sub> في غاز العادم الجاف. لضمان التوافق مع مجموعة الصيغ في الوحدة 09، يتم استخدام النسختين التاليتين:</p>
+
+<div class="formula">
+  <b>1. بناءً على ثاني أكسيد الكربون الجاف (CO<sub>2</sub>) — صيغة سيجيرت البسيطة:</b><br>
+  q<sub>غاز_عادم</sub> ≈ K × (T<sub>غاز_عادم</sub> − T<sub>هواء</sub>) ÷ (CO<sub>2,%</sub> × 100) &nbsp; [%]
+  <br><br>
+  <b>2. بناءً على الأكسجين الجاف (O<sub>2</sub>) — الصيغة القياسية:</b><br>
+  q<sub>غاز_عادم</sub> = (T<sub>غاز_عادم</sub> − T<sub>هواء</sub>) × [ A<sub>1</sub> ÷ (21 − O<sub>2,%</sub>) + B ] &nbsp; [%]
+</div>
+
+<p>حيث:</p>
+<ul>
+  <li><strong>T<sub>غاز_عادم</sub></strong> = درجة حرارة غاز العادم بعد الغلاية/الموفر [°C]</li>
+  <li><strong>T<sub>هواء</sub></strong> = درجة حرارة هواء الاحتراق المسحوب [°C]</li>
+  <li><strong>CO<sub>2,%</sub></strong> = النسبة المئوية الحجمية المقاسة لثاني أكسيد الكربون في غاز العادم الجاف [%] (مثلاً، يُكتب 12 عند 12٪)</li>
+  <li><strong>O<sub>2,%</sub></strong> = النسبة المئوية الحجمية المقاسة للأكسجين في غاز العادم الجاف [%] (مثلاً، يُكتب 3 عند 3٪)</li>
+  <li><strong>K</strong> = ثابت سيجيرت البسيط من الجدول أدناه. لاحظ أن الثابت K في الصيغة مقسوم على 100 (لذلك K = 68 يعادل عاملاً قدره 0.68).</li>
+  <li><strong>A<sub>1</sub>, B</strong> = ثوابت سيجيرت القياسية لصيغة الأكسجين.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>نوع الوقود</th>
+      <th>الثابت البسيط K</th>
+      <th>الثابت A<sub>1</sub> (عند O<sub>2</sub>)</th>
+      <th>الثابت B (عند O<sub>2</sub>)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>الغاز الطبيعي</td><td class="num">66</td><td class="num">0.38</td><td class="num">0.009</td></tr>
+    <tr><td>زيت التدفئة (زيت خفيف)</td><td class="num">68</td><td class="num">0.48</td><td class="num">0.007</td></tr>
+    <tr><td>زيت الوقود (زيت ثقيل)</td><td class="num">70</td><td class="num">0.52</td><td class="num">0.007</td></tr>
+    <tr><td>خشب / كتلة حيوية</td><td class="num">74</td><td class="num">0.70</td><td class="num">0.008</td></tr>
+  </tbody>
+</table>
+
+<h3>3.4.2 معدل التبخر المُطبع (f<sub>norm</sub>)</h3>
+<p>
+  يشير معدل التبخر الخام (f = كجم بخار / كجم وقود) إلى كمية البخار المنتجة لكل وحدة وقود. ونظرًا لأن الغلايات تعمل في ظل درجات حرارة مياه تغذية وضغوط مختلفة، لا يمكن مقارنة معدلات التبخر الخام بشكل مباشر.
+</p>
+<p>
+  لإتاحة المقارنة، تم إدخال <strong>معدل التبخر المُطبع</strong> (f<sub>norm</sub> / التبخر المكافئ). وهو يحول إنتاج البخار الفعلي إلى تبخر مرجعي "من وعند 100 °C" تحت الضغط الجوي، حيث تكون حرارة التبخر ثابتة (r<sub>0</sub> = 2257.9 kJ/kg):
+</p>
+<div class="formula">
+  <b>f<sub>norm</sub> = f × (h'' − h'<sub>مياه_تغذية</sub>) ÷ 2257.9</b> &nbsp; <em>[كجم بخار/كجم وقود]</em>
+</div>
+<p>
+  تعمل هذه القيمة كمؤشر أداء رئيسي (KPI) للكفاءة الديناميكية الحرارية الحقيقية للغلاية بمرور الوقت، بغض النظر عن ظروف التشغيل المتغيرة.
+</p>
+
+<!-- ═══════════════════ EKSEMPEL ═══════════════════ -->
+<h2>3.5 مثال حسابي كامل</h2>
+
+<div class="card">
+  <h3>البيانات المعطاة</h3>
+  <p>غلاية أنابيب دخان بضغط <strong>9 بار</strong> تنتج
+  <strong>6,500 كجم بخار/ساعة</strong>. مياه التغذية <strong>98 °C</strong>.
+  استهلاك الزيت: <strong>475 لتر/ساعة</strong>، γ = 0.927 كجم/لتر، h<sub>i</sub> = 40.1 MJ/kg.</p>
+
+  <h3>الخطوة 1 — h''</h3>
+  <p>الضغط المطلق = 9 + 1 = 10 بار → من جدول البخار: <strong>h'' = 2778 kJ/kg</strong></p>
+
+  <h3>الخطوة 2 — h' مياه التغذية</h3>
+  <p>98 °C أقل من 105 °C: h' = 98 × 4.19 = <strong>410.6 kJ/kg</strong></p>
+
+  <h3>الخطوة 3 — الطاقة المنتجة (Q)</h3>
+  <div class="formula">
+  Δh        = 2778 − 410.6 = 2367.4 kJ/kg<br>
+  Q منتجة. = 6500 × 2367.4 = <b>15,388 MJ/h</b>
+  </div>
+
+  <h3>الخطوة 4 — الطاقة المدخلة (Q)</h3>
+  <div class="formula">
+  m زيت    = 475 × 0.927 = 440.3 kg/h<br>
+  Q مدخلة. = 440.3 × 40.1 = <b>17,656 MJ/h</b>
+  </div>
+
+  <h3>الخطوة 5 — الكفاءة</h3>
+  <div class="formula">
+  η = 15,388 ÷ 17,656 = <b>0.872 = 87.2 %</b>
+  </div>
+</div>
+
+<!-- ═══════════════════ INGENIØRENS PERSPEKTIV: MEKANIK ═══════════════════ -->
+<h2>3.6 منظور المهندس: التوربينات والمضخات</h2>
+
+<p>لفهم دورة البخار بأكملها (مثل دورة رانكين)، يجب علينا أيضًا تحليل المكونات التي تستخرج العمل (التوربين البخاري) أو التي تزود العمل (مضخة مياه التغذية).</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>⚙️ كفاءة التوربين الأيسنتروبية (&eta;<sub>is,turbine</sub>)</h3>
+    <p>عندما يتمدد البخار عبر التوربين، فإن الاحتكاك الداخلي، الدوامات، وفقدان الحرارة يتسبب في انحراف العملية عن العملية المثالية (الأيسنتروبية). تصف الكفاءة الأيسنتروبية النسبة بين الانخفاض الفعلي للإنثالبي والانخفاض النظري الأقصى (الأيسنتروبي):</p>
+    
+    <div class="formula">
+      <b>&eta;<sub>is,turbine</sub> = (h<sub>1</sub> − h<sub>2,فعلي</sub>) ÷ (h<sub>1</sub> − h<sub>2,أيسنتروبي</sub>)</b>
+    </div>
+    
+    <p>حيث:</p>
+    <ul>
+      <li><strong>h<sub>1</sub></strong> = الإنثالبي النوعي عند مدخل التوربين [kJ/kg]</li>
+      <li><strong>h<sub>2,فعلي</sub></strong> = الإنثالبي النوعي الفعلي عند مخرج التوربين [kJ/kg]</li>
+      <li><strong>h<sub>2,أيسنتروبي</sub></strong> = الإنثالبي النوعي النظري للمخرج عند التمدد الأيسنتروبي (s<sub>2</sub> = s<sub>1</sub>) [kJ/kg]</li>
+    </ul>
+
+    <p>تُحسب قوة العمود الميكانيكية الفعلية (W<sub>عمود</sub>) التي يوفرها التوربين كالتالي:</p>
+    <div class="formula">
+      <b>W<sub>عمود</sub> = ṁ<sub>بخار</sub> × (h<sub>1</sub> − h<sub>2,فعلي</sub>) × &eta;<sub>ميكانيكي</sub></b> [kW]
+    </div>
+    <p>حيث ṁ<sub>بخار</sub> هو تدفق البخار بـ [kg/s] (أو تدفق البخار بـ [kg/h] مقسوماً على 3600)، و &eta;<sub>ميكانيكي</sub> هي الكفاءة الميكانيكية للمحامل والقوابض والتروس وما إلى ذلك.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌊 NPSH للمضخة وميكانيكا التكهف</h3>
+    <p>تعمل مضخات مياه تغذية الغلايات مع الماء بالقرب من نقطة الغليان (درجة حرارة التشبع). لتجنب الغليان على جانب الشفط للمضخة، يجب أن يكون الضغط المتاح عند فتحة الشفط (NPSHa) دائمًا أكبر من الضغط الذي تطلبه الشركة المصنعة (NPSHr) بالإضافة إلى هامش أمان:</p>
+    
+    <div class="formula">
+      <b>NPSHa &gt; NPSHr + هامش أمان</b>
+    </div>
+
+    <p>يمكن تحديد NPSH المتاح (NPSHa) مباشرة عند شفة الشفط للمضخة كالتالي:</p>
+    <div class="formula">
+      <b>NPSHa = (p<sub>شفط,مطلق</sub> − p<sub>v</sub>(T)) ÷ (&rho; × g)</b> [متر]
+    </div>
+    <p>أو يمكن حسابه بناءً على موقع خزان مياه التغذية وفقدان الضغط في خط الشفط:</p>
+    <div class="formula">
+      <b>NPSHa = (p<sub>خزان,مطلق</sub> − p<sub>v</sub>(T)) ÷ (&rho; × g) + z<sub>ثابت</sub> − h<sub>f,شفط</sub></b> [متر]
+    </div>
+
+    <p>حيث:</p>
+    <ul>
+      <li><strong>p<sub>شفط,مطلق</sub></strong> = الضغط الثابت المطلق عند فوهة الشفط [Pa]</li>
+      <li><strong>p<sub>خزان,مطلق</sub></strong> = الضغط الثابت المطلق على سطح السائل في الخزان [Pa] (حوالي 101,325 Pa عند الضغط الجوي)</li>
+      <li><strong>p<sub>v</sub>(T)</strong> = ضغط بخار التشبع للماء عند درجة الحرارة الحالية T [Pa] (يوجد في جدول البخار)</li>
+      <li><strong>&rho;</strong> = كثافة الماء عند درجة الحرارة الحالية [kg/m³] (مثلاً حوالي 958 kg/m³ عند 100 °C)</li>
+      <li><strong>g</strong> = تسارع الجاذبية (9.81 m/s²)</li>
+      <li><strong>z<sub>ثابت</sub></strong> = فرق الارتفاع الجيوديسي العمودي من سطح الماء بالخزان إلى خط المنتصف لفتحة شفط المضخة [متر]</li>
+      <li><strong>h<sub>f,شفط</sub></strong> = إجمالي فقدان ضغط الاحتكاك في خط الشفط محولاً إلى متر عمود سائل [متر]</li>
+      <li><strong>NPSHr</strong> = متطلبات NPSH من الشركة المصنعة للمضخة [متر]. هامش الأمان عادة لا يقل عن 0.5 إلى 1.0 متر.</li>
+    </ul>
+
+    <h4>ميكانيكا التكهف</h4>
+    <p>إذا انخفض الضغط المحلي في دافع المضخة عن ضغط بخار الماء (NPSHa &lt; NPSHr)، يبدأ الماء في الغليان محلياً، مكوناً فقاعات بخار. عندما تُحمل هذه الفقاعات مع تدفق السائل إلى مناطق ذات ضغط أعلى داخل المضخة، فإنها تنهار (تنفجر للداخل) بشكل فوري. تُشكل هذه الانفجارات الدقيقة نفاثات سائلة بسرعات تصل إلى 1000 م/ث وضغوط ذروة تصل إلى 10,000 بار (1 جيجا باسكال). يؤدي هذا إلى ضوضاء عالية (تبدو كحصى في المضخة)، اهتزازات، انخفاض في أداء المضخة وتآكل شديد في المواد (أضرار نقرية) في دافع المضخة.</p>
+
+    <h4>استراتيجيات التخفيف من التكهف:</h4>
+    <ol>
+      <li><strong>زيادة الارتفاع الجيوديسي (z<sub>ثابت</sub>):</strong> ارفع خزان مياه التغذية أعلى بالنسبة للمضخة لزيادة الضغط الثابت للمدخل.</li>
+      <li><strong>خفض درجة حرارة مياه التغذية:</strong> درجات الحرارة المنخفضة تقلل ضغط البخار p<sub>v</sub>(T) بشكل كبير، مما يزيد من NPSHa.</li>
+      <li><strong>تقليل فواقد الشفط (h<sub>f,شفط</sub>):</strong> استخدم خطوط شفط بقطر أكبر، واجعل الخط قصيراً ومستقيماً، وتجنب الانحناءات الحادة/الصمامات غير الضرورية، ونظف مرشح الشفط بانتظام.</li>
+      <li><strong>تعديل التشغيل واختيار المضخة:</strong> تنظيم سرعة المضخة، أو اختيار مضخة ذات NPSHr منخفض، أو تركيب مضخة معززة.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════════ LITTERATUR, STANDARDER & REFERENCER ═══════════════════ -->
+<h2>3.7 المراجع، المعايير والأدبيات</h2>
+<p>
+  تُشير جميع الحسابات الديناميكية الحرارية، ومتطلبات السلامة، وظروف التشغيل في هذه الوحدة إلى المعايير المعترف بها، التشريعات الدنماركية، والأدبيات الفنية:
+</p>
+<div class="grid grid-2">
+  <div class="card">
+    <h4>التشريعات والمعايير</h4>
+    <ul style="margin: 0; padding-right: 20px; line-height: 1.6;">
+      <li><strong>BEK nr. 1009 af 25/08/2017:</strong> <em>الأمر التنفيذي بشأن استخدام معدات الضغط.</em> يحدد الإطار القانوني للتشغيل الآمن، وضوابط التركيب، وعمليات التفتيش الدورية ومتطلبات شهادة مشغل الغلايات في الدنمارك.</li>
+      <li><strong>DS/EN 12953-11:</strong> <em>غلايات أنابيب الدخان - الجزء 11: متطلبات فحص القبول للغلاية ومعدات الاحتراق.</em> المعيار الدنماركي/الأوروبي لتحديد الكفاءة والفواقد على غلايات أنابيب الدخان (طريقة مباشرة/غير مباشرة).</li>
+      <li><strong>DS/EN 12952-15:</strong> <em>غلايات أنابيب المياه والمنشآت المساعدة - الجزء 15: اختبارات القبول.</em> المعيار الدنماركي/الأوروبي لقياس الكفاءة والفواقد على غلايات أنابيب المياه.</li>
+      <li><strong>صيغة سيجيرت (Siegert-formlen):</strong> ممارسة قياسية للغلايات لحسابات فواقد غاز العادم، مستمدة أصلاً من DIN 1942.</li>
+      <li><strong>API Standard 610 / ISO 13709:</strong> <em>"مضخات الطرد المركزي للبترول والبتروكيماويات والغاز الطبيعي"</em>. يصف، من بين أمور أخرى، قواعد التصميم وهوامش السلامة لـ NPSH ومنع التكهف.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>الكتب المرجعية والجداول</h4>
+    <ul style="margin: 0; padding-right: 20px; line-height: 1.6;">
+      <li><strong>Praktisk Dampteknik:</strong> (تكنولوجيا البخار العملية) بقلم Carl-Erik Andersen. المرجع الرئيسي لمشغلي ومديري الغلايات في الدنمارك، ويغطي تكنولوجيا البخار العملية وطرق الحساب.</li>
+      <li><strong>Kedel- og maskinpasser:</strong> كتاب مرجعي قياسي يُستخدم في التدريس بالمدارس المهنية الدنماركية.</li>
+      <li><strong>IAPWS-IF97:</strong> <em>"صياغة 1997 للخصائص الديناميكية الحرارية للماء والبخار للاستخدام الصناعي"</em>. المعيار المعمول به لحساب الخصائص الديناميكية الحرارية للمياه والبخار في الصناعة.</li>
+      <li><strong>Thermodynamics: An Engineering Approach</strong> بقلم Yunus A. Çengel و Michael A. Boles. كتاب مدرسي أكاديمي كلاسيكي حول الديناميكا الحرارية التطبيقية، والتمدد الأيسنتروبي، وميكانيكا الموائع.</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="pagenav">
+  <a href="../02-dampkedler/">
+    <span class="label">← السابق</span>
+    02 · أنواع الغلايات البخارية
+  </a>
+  <a class="next" href="../04-forbraending/">
+    <span class="label">التالي →</span>
+    04 · الاحتراق
+  </a>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-line">الوحدة 03 · الديناميكا الحرارية وجداول البخار</div>
+  <div style="opacity:0.4;">Mercantec · دورة مشغل الغلايات</div>
+</div>
+
+</body>
+</html>
