@@ -243,12 +243,22 @@ røgmængde aflæses fra et diagram:</p>
 <div class="alert warn">
   <div class="alert-icon">!</div>
   <div class="alert-body">
-    <div class="alert-title">Eksplosionsgrænser — vigtigt for gas</div>
-    <p>For naturgas: 5–15 vol% i luft. For propan: 2,1–9,5 vol%. Inden for disse
-    grænser er gasblandingen <strong>eksplosiv</strong>. Derfor er gasrampens
-    sikkerhedssystem (OT/UT, tæthedskontrol) afgørende.</p>
+    <div class="alert-title">Eksplosionsgrænser (LEL / UEL) — kritisk for gaskedler</div>
+    <p>For naturgas (primært metan) ligger eksplosionsgrænsen (flammability limits) mellem <strong>5% (LEL - Lower Explosive Limit) og 15% (UEL - Upper Explosive Limit)</strong> i luft. For propan er det 2,1–9,5 vol%. Inden for disse grænser er gasblandingen ekstremt eksplosiv. For at undgå akkumulering af gaslommer i forbrændingskammeret, som kan medføre katastrofale røggaseksplosioner ved tænding, er <strong>forskylning</strong> (min. 30 sek. ved fuld luftmængde) et absolut lovkrav for at ventilere gasserne under LEL-grænsen.</p>
   </div>
 </div>
+
+<h3>Wobbe-Index (W) — Gassens udskiftelighed</h3>
+<p>Når en brænder er indstillet til en bestemt type gas (f.eks. dansk Nordsø-gas), og forsyningsnettet ændrer til en anden gas (f.eks. iblandet biogas eller LNG), skal ingeniøren vide, om brænderen skal dyses om. Dette afgøres af Wobbe-indekset, som er et mål for energi-flowet gennem dysen:</p>
+
+<div class="formula">
+  <strong>W = H<sub>s</sub> / √(d)</strong><br><br>
+  Hvor:<br>
+  W = Wobbe-indeks (MJ/m³)<br>
+  H<sub>s</sub> = Øvre brændværdi (MJ/m³)<br>
+  d = Relativ densitet af gassen i forhold til luft (ρ_gas / ρ_luft)
+</div>
+<p style="margin-top: 10px;">To forskellige gasser med præcis samme Wobbe-indeks vil frigive den <strong>samme mængde termiske energi</strong> ved samme gastryk gennem den samme brænderdyse, selvom deres kemiske sammensætning er forskellig. Hvis Wobbe-indekset varierer mere end ~5%, risikerer man farlig CO-dannelse eller at flammen "løfter sig" fra brænderen.</p>
 
 <!-- ═══════════════════ INGENIØRENS PERSPEKTIV: KEMI ═══════════════════ -->
 <h2>4.6 Ingeniørens Perspektiv: Kemiske Reaktioner &amp; Emissioner</h2>
@@ -256,6 +266,12 @@ røgmængde aflæses fra et diagram:</p>
 <p>Forbrænding er i sin kerne en kemisk reaktion. For at forstå og optimere processen, samt overholde strenge miljøkrav, dykker ingeniøren ned i de specifikke støkiometriske balancer og reaktionskinetikken.</p>
 
 <div class="grid grid-2">
+  <div class="card">
+    <h3>🔥 Forbrændingskinetik (Arrhenius-ligningen)</h3>
+    <p>Forbrænding er ikke bare simpel støkiometri, det er en reaktion, der afhænger stærkt af temperatur. Hastigheden, hvormed brændsel og ilt reagerer molekylært (reaktionskinetikken), beskrives fysisk af Arrhenius-ligningen:</p>
+    <div class="formula">k = A × e<sup>-(E<sub>a</sub> / (R·T))</sup></div>
+    <p>Hvor <strong>T</strong> er den absolutte temperatur (Kelvin), og <strong>E<sub>a</sub></strong> er aktiveringsenergien. Dette beviser matematisk princippet om <em>De 3 T'er for forbrænding</em>: <strong>T</strong>id (reaktionstiden <em>k</em>), <strong>T</strong>emperatur (<em>T</em>, indgår eksponentielt), og <strong>T</strong>urbulens (kollisionsfaktoren <em>A</em>). Hvis temperaturen i brændkammeret falder bare en lille smule i brænderzonen, styrtdykker reaktionshastigheden <em>eksponentielt</em>, hvilket medfører ufuldstændig forbrænding, sod og kulilte (CO).</p>
+  </div>
   <div class="card">
     <h3>⚗️ Støkiometri (Metan &amp; Biomasse)</h3>
     <p>Den eksakte reaktion for naturgas (primært metan, CH₄) kræver præcis 2 mol O₂ per mol CH₄:</p>

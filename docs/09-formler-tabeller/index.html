@@ -190,13 +190,22 @@ h<sub>d</sub> = entalpi mættet damp, r = fordampningsvarme = h<sub>d</sub> − 
   </tbody>
 </table>
 
-<div class="alert info">
-  <div class="alert-icon">i</div>
-  <div class="alert-body">
-    <div class="alert-title">Kritisk punkt</div>
-    <p>Ved 221,2 bar og 374,15°C er der ingen forskel på vand og damp —
-    de har samme entalpi og massefylde. Over dette tryk arbejder Benson- og
-    Sulzer-kedler i overkritisk regime uden synlig fordampning.</p>
+<div class="grid grid-2" style="margin-top: 1rem;">
+  <div class="card">
+    <h3>🔍 Ingeniørens Perspektiv: Kritiske Tryktrin</h3>
+    <p>Hvorfor designer maskiningeniører kedler til netop disse tryk?</p>
+    <ul class="checklist">
+      <li><strong>10 bar (180 °C):</strong> Standard industri-damp. Perfekt balance mellem materialetykkelse (omkostninger) og høj nok temperatur til sterilisation og procesvarme.</li>
+      <li><strong>40 bar (250 °C):</strong> Typisk øvre grænse for røgrørskedler. Her begynder kiselsyre (SiO₂) at flygte med dampen.</li>
+      <li><strong>100 bar (311 °C):</strong> Kraftværksdrift. Meget lille fordampningsvarme (r = 1319 kJ/kg). Det koster næsten intet energi at fordampe vandet; primærenergien bruges på at nå kogepunktet og overophede dampen til turbinen.</li>
+    </ul>
+  </div>
+  <div class="alert info" style="margin: 0;">
+    <div class="alert-icon">i</div>
+    <div class="alert-body">
+      <div class="alert-title">Kritisk punkt (221,2 bar)</div>
+      <p>Ved præcis 221,2 bar og 374,15 °C forsvinder forskellen på vand og damp fuldstændig. De har eksakt samme entalpi (h<sub>v</sub> = h<sub>d</sub>) og samme massefylde. Over dette tryk arbejder Benson- og Sulzer-kedler i det <strong>overkritiske regime</strong>. Her findes ingen damptromle, fordi der ikke eksisterer nogen vandoverflade at udskille dampen fra!</p>
+    </div>
   </div>
 </div>
 
@@ -253,8 +262,58 @@ talt uafhængig af tryk i dette område.</p>
   </tbody>
 </table>
 
+<!-- ═══════════════════ STØKIOMETRI ═══════════════════ -->
+<h2>9.5 Støkiometriske Forbrændingsreaktioner (Ingeniørdata)</h2>
+
+<p>Forbrændingens kemiske balancer, baseret på 1 mol af brændstoffet ved fuldstændig forbrænding iht. 1. hovedsætning (entalpitilvækst).</p>
+
+<table class="reftable">
+  <thead>
+    <tr>
+      <th>Brændstof</th>
+      <th>Kemisk Reaktion</th>
+      <th>Varmeudvikling (ΔH)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Kulstof (C)</strong></td>
+      <td>C + O₂ → CO₂</td>
+      <td>- 393,5 kJ/mol (Fast kul)</td>
+    </tr>
+    <tr>
+      <td><strong>Brint (H₂)</strong></td>
+      <td>2 H₂ + O₂ → 2 H₂O</td>
+      <td>- 285,8 kJ/mol (Vanddamp)</td>
+    </tr>
+    <tr>
+      <td><strong>Svovl (S)</strong></td>
+      <td>S + O₂ → SO₂</td>
+      <td>- 296,8 kJ/mol (Syredannelse)</td>
+    </tr>
+    <tr>
+      <td><strong>Metan (CH₄)</strong></td>
+      <td>CH₄ + 2 O₂ → CO₂ + 2 H₂O</td>
+      <td>- 890,3 kJ/mol (Naturgas)</td>
+    </tr>
+    <tr>
+      <td><strong>Propan (C₃H₈)</strong></td>
+      <td>C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O</td>
+      <td>- 2220,0 kJ/mol (F-gas)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert warn" style="margin-top: 1rem;">
+  <div class="alert-icon">!</div>
+  <div class="alert-body">
+    <div class="alert-title">Ufuldstændig Forbrænding (Kulilte)</div>
+    <p>Hvis kulstof mangler ilt (for lav lambda), dannes CO i stedet for CO₂: <code>2 C + O₂ → 2 CO</code>. Denne reaktion frigiver kun <strong>-110,5 kJ/mol</strong>. Man taber altså over 70% af energiudbyttet ved ufuldstændig forbrænding, foruden at CO er ekstremt giftigt for personale og ekstremt eksplosivt (brand-fare).</p>
+  </div>
+</div>
+
 <!-- ═══════════════════ OMREGNING ═══════════════════ -->
-<h2>9.5 Omregningsfaktorer</h2>
+<h2>9.6 Omregningsfaktorer</h2>
 
 <table class="reftable">
   <thead><tr><th>Fra</th><th>Til</th><th>Faktor</th></tr></thead>
@@ -274,7 +333,7 @@ talt uafhængig af tryk i dette område.</p>
 </table>
 
 <!-- ═══════════════════ GRÆNSEVÆRDIER ═══════════════════ -->
-<h2>9.6 Grænseværdier — vandkvalitet</h2>
+<h2>9.7 Grænseværdier — vandkvalitet</h2>
 
 <p>Vejledende grænser for kedelvand. Konkrete krav afhænger af kedeltype,
 tryk og vandbehandlingsspecifikation.</p>
@@ -300,7 +359,7 @@ tryk og vandbehandlingsspecifikation.</p>
 </table>
 
 <!-- ═══════════════════ KONTROLKLASSER ═══════════════════ -->
-<h2>9.7 Kontrolklasser — hurtig oversigt</h2>
+<h2>9.8 Kontrolklasser — hurtig oversigt</h2>
 
 <table class="reftable">
   <thead>
@@ -322,7 +381,7 @@ tryk og vandbehandlingsspecifikation.</p>
 forklaring af BEK 498/2024 og certifikatkrav.</p>
 
 <!-- ═══════════════════ HURTIG TJEKLISTE ═══════════════════ -->
-<h2>9.8 Hurtig formel-tjekliste</h2>
+<h2>9.9 Hurtig formel-tjekliste</h2>
 
 <div class="grid grid-2">
   <div class="card">

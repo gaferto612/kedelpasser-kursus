@@ -386,6 +386,40 @@ genstart. Følg producentens procedure — herunder er den generelle.</p>
 
 <p>Se Modul 01 for de specifikke krav til eftersyn baseret på kontrolklasse A/B/C.</p>
 
+<!-- ═══════════════════ INGENIØRENS PERSPEKTIV: VEDLIGEHOLD ═══════════════════ -->
+<h2>7.8 Ingeniørens Perspektiv: Predictive Maintenance &amp; RAMS</h2>
+
+<p>Mens den daglige kedelpasser udfører korrektivt (afhjælpende) og forebyggende (tidsbaseret) vedligehold, designer maskiningeniøren strategier for <strong>Forudsigende Vedligehold (Predictive Maintenance / Condition-Based Monitoring)</strong> baseret på data.</p>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3>📡 Condition-Based Monitoring (CBM)</h3>
+    <p>I stedet for at udskifte kritiske dele (f.eks. lejer i fødevandspumper) blindt efter et fast antal driftstimer, måles maskinens tilstand løbende. Dele udskiftes <em>kun</em>, når data indikerer begyndende slitage. Dette gøres bl.a. via:</p>
+    <ul class="checklist">
+      <li><strong>Vibrationsanalyse:</strong> Sensorer på pumper og blæsere optager vibrations-spektra (FFT - Fast Fourier Transform). Et stigende peak ved en specifik frekvens kan f.eks. afsløre en defekt kugle i et leje uger før, lejet rent faktisk svigter mekanisk.</li>
+      <li><strong>Termografi:</strong> Infrarøde kameraer scænner elektriske tavler for hotspots (løse forbindelser) eller kedelsvøbet for nedbrudt isolering og lækager.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🔬 Non-Destructive Testing (NDT)</h3>
+    <p>Ved de lovpligtige indvendige eftersyn skal inspektionsorganet vurdere stålstrukturen uden at ødelægge den. Hertil anvendes NDT-teknikker:</p>
+    <ul class="checklist">
+      <li><strong>Ultralyd (UT):</strong> Bruges til at foretage præcise godstykkelsesmålinger på damprør og tromler for at verificere, at korrosion ikke har gennemtæret stålet under design-kravet.</li>
+      <li><strong>Røntgen (RT) &amp; Magnetpulver (MPI):</strong> Bruges til at finde usynlige, mikroskopiske udmattelsesrevner (fatigue cracks) inde i og omkring de kritiske svejsesømme, som opstår pga. termiske cyklusser.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>📈 RAMS Analyse (Pålidelighed &amp; Tilgængelighed)</h3>
+    <p>For kritisk forsyningsinfrastruktur arbejder ingeniører med RAMS-modeller (<strong>R</strong>eliability, <strong>A</strong>vailability, <strong>M</strong>aintainability, <strong>S</strong>afety). To centrale begreber er:</p>
+    <ul class="checklist">
+      <li><strong>MTBF (Mean Time Between Failures):</strong> Den forventede gennemsnitlige tid mellem nedbrud. Højere er bedre (fås ved at vælge kvalitetskomponenter).</li>
+      <li><strong>MTTR (Mean Time To Repair):</strong> Den gennemsnitlige tid, det tager at fejlfinde og reparere skaden. Lavere er bedre (fås ved let adgang og reservedele på lager).</li>
+    </ul>
+    <div class="formula">Availability (Tilgængelighed) = MTBF / (MTBF + MTTR)</div>
+    <p>Et dampsvigt koster en moderne produktionsvirksomhed enorme beløb. Derfor designes anlægget ofte med redundans (f.eks. to 100% fødepumper i parallel), hvilket dramatisk øger MTBF for hele systemet og bringer den samlede tilgængelighed (Availability) op over 99,9%.</p>
+  </div>
+</div>
+
 <div class="pagenav">
   <a href="../06-armaturer-sikkerhed/">
     <div class="label">← Forrige</div>

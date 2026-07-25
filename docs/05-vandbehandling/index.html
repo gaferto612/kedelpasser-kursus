@@ -275,10 +275,9 @@ turbinebladene:</p>
     ikke er kritisk.</p>
   </div>
   <div class="card">
-    <h3>Omvendt osmose (RO)</h3>
-    <p>Vand presses gennem membran. Fjerner ~99% af salte, alkalitet, organisk
-    stof og bakterier. Kræver forfiltrering.</p>
-    <p><strong>Bruges til:</strong> Højere tryk og hvor lav alkalitet kræves.</p>
+    <h3>Omvendt osmose (RO) &amp; EDI</h3>
+    <p>Vand presses gennem en semipermeabel membran med et mekanisk tryk, der overvinder det naturlige osmotiske tryk. Fjerner ~99% af alle salte, organisk stof og bakterier. Fødevandet skal forfiltreres (ofte blødgøres) for at undgå membran-fouling.</p>
+    <p><strong>EDI (Electrodeionization):</strong> Et højteknologisk poleringstrin, der sættes efter RO-anlægget (i stedet for en kemisk mixed-bed ionbytter). EDI bruger en kombination af ionbytterharpiks, ionselektive membraner og jævnstrøm til <em>kontinuerligt</em> at afsalte vandet til ultra-rent vand (ned til 0,05 µS/cm) — helt uden brug af farlige regenereringskemikalier (syre/base). Dette system er standard på moderne kraftværker.</p>
   </div>
   <div class="card">
     <h3>Trykafgasning (afluftning)</h3>
@@ -315,6 +314,12 @@ turbinebladene:</p>
   <div class="card">
     <h3>🧫 Totalafsaltning (Mixed Bed)</h3>
     <p>Ved turbinedrift kræves 0 µS/cm. En kationbytter (lader med H⁺) fjerner metaller, og en anionbytter (ladet med OH⁻) fjerner saltrester (f.eks. sulfat, klorid, og silikat). H⁺ og OH⁻ ionerne går sammen og danner rent H₂O. En <em>Mixed Bed</em> indeholder begge typer resin blandet sammen for at sikre den ultimative fjernelse af alle ioner i ét trin.</p>
+  </div>
+  <div class="card">
+    <h3>⚖️ Langelier Saturation Index (LSI)</h3>
+    <p>For at afgøre præcist om fødevandet er tærende (korrosivt) eller belægningsdannende (scale-forming), bruger ingeniøren den termodynamiske model kendt som LSI. LSI beregnes ud fra vandets pH, temperatur, hårdhed (Ca²⁺), alkalitet og totale saltindhold (TDS):</p>
+    <div class="formula">LSI = pH<sub>målt</sub> - pH<sub>mætning</sub></div>
+    <p>Hvis <strong>LSI er negativ</strong> (LSI &lt; 0), er vandet umættet og vil være aggresivt og <strong>tære</strong> (opløse) metallet. Hvis <strong>LSI er positiv</strong> (LSI &gt; 0), er vandet overmættet, og der vil <strong>udfældes kedelsten</strong>. Vandbehandlingsprogrammet justerer doseringen for at holde LSI lige omkring 0 eller svagt positiv (+0,5), så der dannes et tyndt, beskyttende passiveringslag i rørene uden at skabe isolerende kedelsten.</p>
   </div>
 </div>
 
